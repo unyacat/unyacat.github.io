@@ -1,0 +1,96 @@
+body {
+  -webkit-text-size-adjust: 100%;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+}
+
+.text-title {
+  font: 300 60px 'Roboto', sans-serif;
+  text-align: center;
+  margin: 5px;
+}
+
+@media only screen and (min-device-width: 520px) and (max-device-width: 768px) {
+  .text-title {
+    font-size: 40px;
+  }
+}
+
+@media (max-width:520px) {
+  .text-title {
+    font-size: 40px;
+  }
+}
+
+.text-other {
+  font: 300 40px 'Roboto', sans-serif;
+  text-align: center;
+  margin: 5px;
+}
+
+@media only screen and (min-device-width: 520px) and (max-device-width: 768px) {
+  .text-other {
+    font-size: 25px;
+  }
+}
+
+@media (max-width:520px) {
+  .text-other {
+    font-size: 25px;
+  }
+}
+
+.profile {
+  text-align: center;
+}
+
+.profile img {
+  border-radius: 50%;
+  text-align: center;
+  width: auto;
+  height: 20%;
+  margin: 2% 2%;
+  box-shadow: 0 2px 10px rgba(0,0,0,.2);
+}
+
+@media (max-width:768px) {
+  .profile img {
+    margin: 5% 5%;
+  }
+}
+
+div.text-other img {
+  width: 1%;
+  vertical-align: middle;
+}
+
+div.text-other img {
+  font: 300 40px 'Roboto', sans-serif;
+  text-align: center;
+  margin: 5px;
+}
+
+@media only screen and (min-device-width: 520px) and (max-device-width: 768px) {
+  div.text-other img {
+    font-size: 25px;
+  }
+}
+
+@media (max-width:520px) {
+  div.text-other img {
+    font-size: 25px;
+  }
+}
+
+.box-left {
+  float: left;
+  width: 40%;
+}
+
+.box-right {
+  float: right;
+  width: 40%;
+}

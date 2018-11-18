@@ -72,7 +72,7 @@ td {
   outline: 0;
   font-weight: "inherit";
   font-style: "inherit";
-  font-family: "inherit";
+  font-family: "inherit", sans-serif;
   font-size: 100%;
   vertical-align: baseline;
 }
@@ -135,7 +135,7 @@ code {
   font-size: 0.8em;
   -webkit-border-radius: 2px;
   border-radius: 2px;
-  font-family: "Source Code Pro", Consolas, Monaco, Menlo, Consolas, monospace;
+  font-family: "Source Code Pro", Consolas, Monaco, Menlo, Consolas, monospace, sans-serif;
   background-color: #f8f8f8;
 }
 .outer {
@@ -942,7 +942,7 @@ a.article-title:hover {
 }
 .article-entry blockquote {
   position: relative;
-  font-family: Georgia, "Times New Roman", "Microsoft Yahei", serif;
+  font-family: Georgia, "Times New Roman", "Microsoft Yahei", serif, sans-serif;
   font-size: 1.1em;
   margin: 0 -20px;
   padding: 10px 20px 10px 54px;
@@ -2077,7 +2077,7 @@ ol.toc {
   overflow-x: auto;
   padding: 15px 20px;
   font-size: 14px;
-  font-family: "Source Code Pro", Consolas, Monaco, Menlo, Consolas, monospace;
+  font-family: "Source Code Pro", Consolas, Monaco, Menlo, Consolas, monospace, sans-serif;
   line-height: 22.400000000000002px;
 }
 .highlight table {

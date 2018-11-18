@@ -114,11 +114,12 @@ html,
 body,
 #container {
   height: 100%;
+　font-family: "sans-serif" ;
 }
 body {
   color: #565a5f;
   background: #f5f8f9;
-  font: 14px "sans-serif", "open sans", "Helvetica Neue", "Microsoft Yahei", Helvetica, Arial;
+  font: 14px "open sans", "Helvetica Neue", "Microsoft Yahei", Helvetica, Arial, sans-serif;
   -webkit-text-size-adjust: 100%;
 }
 a {

@@ -1,0 +1,1026 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+<head>
+    <title>UserStream廃止と各サードパーティークライアントの対応まとめ - うにゃのぶろぐ</title>
+    <meta name="generator" content="Hugo 0.49.2" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="author" content="うにゃ / unyacat">
+    
+      <meta name="description" content="">
+    
+    
+    <link rel="canonical" href="https://unyacat.net/2018/08/27/userstream-client/"/>
+    <link rel="icon" href="https://unyacat.net/favicon.ico">
+    <link rel="apple-touch-icon" href="https://unyacat.net/apple-touch-icon.png"/>
+    <link rel="stylesheet" href="https://unyacat.net/css/style.css">
+    <link rel="stylesheet" href="https://unyacat.net/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://unyacat.net/css/monokai.css">
+    <link rel="stylesheet" href="https://unyacat.net/fancybox/jquery.fancybox.css">
+    
+    <link href="https://fonts.googleapis.com/earlyaccess/mplus1p.css" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Source+Code+Pro' rel='stylesheet' type='text/css'>
+    <meta property="og:title" content="UserStream廃止と各サードパーティークライアントの対応まとめ" />
+<meta property="og:description" content="精度は保証しません。世の中にある全てのそれを載せているわけではありません。
+
+" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://unyacat.net/2018/08/27/userstream-client/" /><meta property="article:published_time" content="2018-08-27T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2018-08-27T00:00:00&#43;00:00"/>
+
+    
+    
+<meta itemprop="name" content="UserStream廃止と各サードパーティークライアントの対応まとめ">
+<meta itemprop="description" content="精度は保証しません。世の中にある全てのそれを載せているわけではありません。
+
+">
+
+
+<meta itemprop="datePublished" content="2018-08-27T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2018-08-27T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="498">
+
+
+
+<meta itemprop="keywords" content="Twitter,サードパーティクライアント,UserStream," />
+
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="UserStream廃止と各サードパーティークライアントの対応まとめ"/>
+<meta name="twitter:description" content="精度は保証しません。世の中にある全てのそれを載せているわけではありません。
+
+"/>
+<meta name="twitter:site" content="@unya_2"/>
+
+    
+
+    
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+</head>
+<body>
+<div class="container">
+
+
+<div id="container">
+	<header id="header">
+  <div id="header-main" class="header-inner">
+    <div class="outer">
+      <a href="https://unyacat.net/" id="logo">
+          
+          <span class="site-title">うにゃのぶろぐ</span>
+      </a>
+      <nav id="main-nav">
+          
+          
+          <a class="main-nav-link" href="https://unyacat.net/">Home</a>
+          
+          
+          
+          
+          
+          
+
+          
+
+          
+          
+          
+          
+          <a class="main-nav-link" href="https://unyacat.net/tags/">Tags</a>
+          
+          
+          
+          <a class="main-nav-link" href="https://unyacat.net/categories/">Categories</a>
+          
+          
+      </nav>
+        <nav id="sub-nav">
+          <div class="profile" id="profile-nav">
+            <a id="profile-anchor" href="javascript:;"><img class="avatar" src="https://unyacat.net/css/images/avatar.jpg"><i class="fa fa-caret-down"></i></a>
+          </div>
+        </nav>
+        <div id="search-form-wrap">
+          <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form">
+              <input type="search" name="q" class="search-form-input" placeholder="">
+              <button type="submit" class="search-form-submit">
+              </button>
+              <input type="hidden" name="sitesearch" value="https://unyacat.net/" />
+         </form>
+        </div>
+    </div>
+  </div>
+  <div id="main-nav-mobile" class="header-sub header-inner">
+    <table class="menu outer">
+      <tbody>
+          <tr>
+          
+          
+          <td><a class="main-nav-link" href="https://unyacat.net/">Home</a></td>
+          
+          
+          
+          
+          
+          
+
+          
+
+          
+          
+          
+          
+          <td><a class="main-nav-link" href="https://unyacat.net/tags/">Tags</a></td>
+          
+          
+          
+          <td><a class="main-nav-link" href="https://unyacat.net/categories/">Categories</a></td>
+          
+          
+          <td>
+          <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form">
+          <input type="search" name="q" class="search-form-input" placeholder="Search">
+          <input type="hidden" name="sitesearch" value="https://unyacat.net/" />
+          </form>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</header>
+
+   	
+   	<div class="outer">
+   	
+    	<aside id="profile">
+  <div class="inner profile-inner">
+    <div class="base-info profile-block">
+      <img id="avatar" src="https://unyacat.net/css/images/avatar.jpg">
+      <h2 id="name">うにゃ / unyacat</h2>
+      <h3 id="title">Twitter がすき</h3>
+      <span id="location"><i class="fa fa-map-marker"></i>Kobe, Japan</span>
+      
+          <a id="follow" href="https://twitter.com/unya_2">
+               Follow me
+          </a>
+      
+    </div>
+
+    <div class="profile-block social-links">
+      <table>
+        <tr>
+          
+
+
+
+
+
+
+
+
+
+
+<td><a href="//foursquare.com/unya_2" target="_blank" title="Foursquare"><i class="fa fa-foursquare"></i></a></td>
+
+
+
+
+
+
+
+
+
+
+
+<td><a href="//instagram.com/unya_2" target="_blank" title="Instagram"><i class="fa fa-instagram"></i></a></td>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<td><a href="//twitter.com/unya_2" target="_blank" title="Twitter"><i class="fa fa-twitter"></i></a></td>
+
+
+          <td><a href="https://unyacat.net/index.xml" target="_blank" title="RSS"><i class="fa fa-rss"></i></a></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</aside>
+
+    
+
+    <section id="main">
+    
+    <article id="page-undefined" class="article article-type-page" itemscope="" itemprop="blogPost">
+    <div class="article-inner">
+        
+
+        <header class="article-header">
+    <a href="https://unyacat.net/2018/08/27/userstream-client/">
+    <h1 class="article-title" itemprop="name">
+        UserStream廃止と各サードパーティークライアントの対応まとめ
+    </h1>
+    </a>
+    <div class="article-meta">
+
+        
+        <div class="article-date">
+            <i class="fa fa-calendar"></i>
+            <time datetime="2018-08-27 00:00:00 &#43;0000 UTC" itemprop="datePublished">2018-08-27</time>
+        </div>
+        
+        
+            
+            
+            <div class="article-category">
+                <i class="fa fa-folder"></i>
+                
+                
+                <a class="article-category-link" href="https://unyacat.net/categories/twitter">Twitter</a>
+                
+                
+            </div>
+            
+        
+
+        
+            
+            
+            <div class="article-category">
+                <i class="fa fa-tags"></i>
+                
+                
+                <a class="article-category-link" href="https://unyacat.net/tags/twitter">Twitter</a>
+                &middot;
+                
+                
+                <a class="article-category-link" href="https://unyacat.net/tags/%E3%82%B5%E3%83%BC%E3%83%89%E3%83%91%E3%83%BC%E3%83%86%E3%82%A3%E3%82%AF%E3%83%A9%E3%82%A4%E3%82%A2%E3%83%B3%E3%83%88">サードパーティクライアント</a>
+                &middot;
+                
+                
+                <a class="article-category-link" href="https://unyacat.net/tags/userstream">UserStream</a>
+                
+                
+            </div>
+            
+        
+    </div>
+</header>
+
+        <div class="article-entry" itemprop="articleBody">
+            <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>    
+            <p>精度は保証しません。世の中にある全てのそれを載せているわけではありません。</p>
+
+<p></p>
+
+<h2 id="windows">Windows</h2>
+
+<h3 id="janetter-for-windows-http-janetter-net-jp"><a href="http://janetter.net/jp/">Janetter for Windows</a></h3>
+
+<p><a href="http://blog-jp.janetter.net/post/177049462397/janetter-for-windows-v4501-%E5%85%AC%E9%96%8B">Janetter for Windows v4.5.0.1 公開</a></p>
+
+<blockquote>
+<p>今回の更新ではUser Streams API終了に伴う対応をしました。リアルタイムでタイムラインを更新できなくなりました。また通知がリアルタイムで届かなくなります。アカウントの新規登録ができないため、新規ユーザーはご利用いただけません。</p>
+</blockquote>
+
+<h3 id="tween-https-sites-google-com-site-tweentwitterclient"><a href="https://sites.google.com/site/tweentwitterclient/">Tween</a></h3>
+
+<p>機能削除<br />
+<a href="https://sites.google.com/site/tweentwitterclient/project-updates/ver1720ririsu">Ver1.7.2.0リリース</a></p>
+
+<blockquote>
+<p>TwitterのUserStreamsが段階的停止を経て廃止されるため、Tweenから接続機能を削除しました。</p>
+</blockquote>
+
+<h3 id="krile-http-krile-troidworks-com"><a href="http://krile.troidworks.com/">Krile</a></h3>
+
+<p>既に開発終了を宣言しているが将来的に公開も中止することを予告</p>
+
+<p><blockquote class="twitter-tweet" data-lang="ja"><p lang="ja" dir="ltr">Krileの開発についてはすでに終了を宣言していますが、8/16以降どこかのタイミングでバイナリの公開も終了させて頂きます。<br>Krile 0.41 のリリースからおよそ9年、長らくアップデートを続けて来られたのは、Krileをご利用頂いた皆様のおかげです。<br>本当にありがとうございました。</p>&mdash; くるるたん (@kriletan) <a href="https://twitter.com/kriletan/status/1028986589815300096?ref_src=twsrc%5Etfw">2018年8月13日</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></p>
+
+<h3 id="ツイタマ-http-twitter-softama-com"><a href="http://twitter.softama.com/">ツイタマ</a></h3>
+
+<p>将来的公開中止を予告<br />
+<a href="http://www.softama.com/blog/archives/1079">UserStream APIの廃止と影響について</a></p>
+
+<blockquote>
+<p>こちらは既に開発が終了しています。UserStreamへの依存が大きいことから、8/16前の適切なタイミングでアプリの公開を終了いたします。</p>
+</blockquote>
+
+<h2 id="mac">Mac</h2>
+
+<h3 id="tweetbot-3-for-twitter-https-itunes-apple-com-jp-app-tweetbot-3-for-twitter-id1384080005-mt-12-ign-mpt-uo-3d4"><a href="https://itunes.apple.com/jp/app/tweetbot-3-for-twitter/id1384080005?mt=12&amp;ign-mpt=uo%3D4">Tweetbot 3 for Twitter</a></h3>
+
+<p>機能削除<br />
+v3.1<br />
+1-2分おきの自動更新対応</p>
+
+<blockquote>
+<ul>
+<li>Timeline streaming is now disabled. Your timelines will now refresh automatically every 1-2 minutes instead.</li>
+</ul>
+</blockquote>
+
+<p>通知の削除 / 遅れを宣言</p>
+
+<blockquote>
+<ul>
+<li>Notifications for Mentions, Direct Messages, Follows and Follower&rsquo;s Tweets will now be delayed by a few minutes.</li>
+<li>Notifications for Likes and Retweets have been disabled.</li>
+</ul>
+</blockquote>
+
+<h3 id="twitterrific-5-for-twitter-https-itunes-apple-com-us-app-twitterrific-5-for-twitter-id1289378661"><a href="https://itunes.apple.com/us/app/twitterrific-5-for-twitter/id1289378661">Twitterrific 5 for Twitter</a></h3>
+
+<p>機能削除<br />
+v5.3.4
+毎分の自動更新対応</p>
+
+<blockquote>
+<p>Live streaming has been removed. Workaround: Twitterrific will now automatically refresh every few minutes while the app is open, or you can manually pull to refresh.</p>
+</blockquote>
+
+<h2 id="linux">Linux</h2>
+
+<h3 id="mikutter-https-mikutter-hachune-net"><a href="https://mikutter.hachune.net/">mikutter</a></h3>
+
+<p>TweetDeckからいろいろするPluginを作っている人がいる<br />
+<a href="https://github.com/takemar/mikuttdeck">mikuttdeck</a></p>
+
+<h2 id="android">Android</h2>
+
+<h3 id="sobacha-https-play-google-com-store-apps-details-id-net-wakamesoba98-sobacha-matecha-https-play-google-com-store-apps-details-id-net-wakamesoba98-matecha"><a href="https://play.google.com/store/apps/details?id=net.wakamesoba98.sobacha">SobaCha</a> / <a href="https://play.google.com/store/apps/details?id=net.wakamesoba98.matecha">MateCha</a></h3>
+
+<p>SobaCha v2.11.1 (WakameSoba)<br />
+MateCha v3.2.1 (WakameSoba)</p>
+
+<blockquote>
+<p>UserStream API の対応を終了</p>
+</blockquote>
+
+<p>しかしSobaChaはTweetDeckにSobaChaの投稿UIをそのまま持ち込む事ができます</p>
+
+<blockquote>
+<p>TweetDeck オーバーレイモードを追加
+<blockquote class="twitter-tweet" data-lang="ja"><p lang="ja" dir="ltr">SobaChaをMastodonに対応することはUserStream廃止への本質的な対策ではないのでChromeで開いたリアルタイムに流れるTweetDeckの上にSobaChaのバーを表示するなんて言うメチャクチャなことをやってるんだ <a href="https://t.co/R55XpBLB9h">pic.twitter.com/R55XpBLB9h</a></p>&mdash; わかめそば@日曜日東ト03a (@wakamesoba98) <a href="https://twitter.com/wakamesoba98/status/1026862149954502656?ref_src=twsrc%5Etfw">2018年8月7日</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></p>
+</blockquote>
+
+<h3 id="yukari-https-play-google-com-store-apps-details-id-shibafu-yukari"><a href="https://play.google.com/store/apps/details?id=shibafu.yukari">Yukari</a></h3>
+
+<p>機能削除<br />
+v2.0.10.413 (planche 180824)</p>
+
+<blockquote>
+<ul>
+<li>UserStream接続機能の廃止</li>
+</ul>
+</blockquote>
+
+<p>1分間隔での自動更新対応済み<br />
+v2.0.8の更新内容</p>
+
+<blockquote>
+<ul>
+<li>Home/Mentionsを1分前後の間隔で自動取得する機能の追加</li>
+</ul>
+</blockquote>
+
+<h3 id="twitterのついっとぺーん-twitpane-https-play-google-com-store-apps-details-id-com-twitpane"><a href="https://play.google.com/store/apps/details?id=com.twitpane">Twitterのついっとぺーん (TwitPane)</a></h3>
+
+<p>機能削除<br />
+v10.0.0</p>
+
+<blockquote>
+<p>UserStream 機能を廃止</p>
+</blockquote>
+
+<h3 id="tweecha-https-play-google-com-store-apps-details-id-net-sinproject-android-tweecha-tweecha-lite-https-play-google-com-store-apps-details-id-net-sinproject-android-tweecha-lite-tweecha-prime-https-play-google-com-store-apps-details-id-net-sinproject-android-tweecha-prime"><a href="https://play.google.com/store/apps/details?id=net.sinproject.android.tweecha">Tweecha</a> / <a href="https://play.google.com/store/apps/details?id=net.sinproject.android.tweecha.lite">Tweecha Lite</a> / <a href="https://play.google.com/store/apps/details?id=net.sinproject.android.tweecha.prime">Tweecha Prime</a></h3>
+
+<p>更新なし(説明文にはUserStream廃止に関する記述あり)<br />
+Tweecha v67.1.2<br />
+Tweecha Lite  v76.2.51<br />
+Tweecha Prime v76.2.51</p>
+
+<h3 id="twitcle-plus-https-play-google-com-store-apps-details-id-jp-yoshika-twitcle-plus"><a href="https://play.google.com/store/apps/details?id=jp.yoshika.twitcle.plus">twitcle plus</a></h3>
+
+<p>機能削除
+v1.4.2</p>
+
+<blockquote>
+<p>UserStream API廃止のためUserStream機能を削除</p>
+</blockquote>
+
+<h3 id="びよーんったー-https-play-google-com-store-apps-details-id-jp-gifu-abs104a-twitterproject-びよーんったーpro-https-play-google-com-store-apps-details-id-com-abs104a-biyontterpro"><a href="https://play.google.com/store/apps/details?id=jp.gifu.abs104a.twitterproject">びよーんったー</a> / <a href="https://play.google.com/store/apps/details?id=com.ABS104a.biyontterpro">びよーんったーPro</a></h3>
+
+<p>ひよーんったー v4.2.4 (<a href="https://twitter.com/alice_pidrkey/status/1029678207874654208">?</a>)<br />
+びよーんったー Pro v端末により異なります<br />
+廃止</p>
+
+<p>[<a href="https://twitter.com/ABS104a/status/1028525179968712704:embed">https://twitter.com/ABS104a/status/1028525179968712704:embed</a>]</p>
+
+<h3 id="absolutter-https-play-google-com-store-apps-details-id-com-abs104a-secondedition-absolutter-lite-https-play-google-com-store-apps-details-id-jp-gifu-abs104a-biyonbeta2"><a href="https://play.google.com/store/apps/details?id=com.ABS104a.secondedition">Absolutter</a> / <a href="https://play.google.com/store/apps/details?id=jp.gifu.abs104a.biyonbeta2">Absolutter Lite</a></h3>
+
+<p>Absolutter v1.3.0 (?)<br />
+Absolutter Lite v端末により異なります<br />
+廃止(びよーんったーのツイート参照)</p>
+
+<h3 id="ツイタマ-https-play-google-com-store-apps-details-id-com-softama-twitama-ツイタマ-https-play-google-com-store-apps-details-id-com-softama-twitamaplus"><a href="https://play.google.com/store/apps/details?id=com.softama.twitama">ツイタマ</a> / <a href="https://play.google.com/store/apps/details?id=com.softama.twitamaplus">ツイタマ+</a></h3>
+
+<p>ツイタマv2.1.0 / ツイタマ+v2.1.0</p>
+
+<blockquote>
+<p>TwitterのAPIの変更に対応しました</p>
+</blockquote>
+
+<p>ツイタマにはそもそもUserStream APIに対応してないので影響なし<br />
+ツイタマ+は検索のストリーミングを別のAPIに対応<br />
+将来的廃止を予告(公式ブログ記事 <a href="http://www.softama.com/blog/archives/1102">ツイタマ for Android v2.1のお知らせ</a>)
+UserStreamに関する公式ブログ記事あり <a href="http://www.softama.com/blog/archives/1079">UserStream APIの廃止と影響について</a></p>
+
+<h3 id="talon-for-twitter-https-play-google-com-store-apps-details-id-com-klinker-android-twitter-l"><a href="https://play.google.com/store/apps/details?id=com.klinker.android.twitter_l">Talon for Twitter</a></h3>
+
+<p>機能削除<br />
+v7.4.1</p>
+
+<blockquote>
+<p>Talon Pull has been removed from the app, Twitter is no longer supporting the service that this feature used.</p>
+</blockquote>
+
+<h3 id="tweetings-for-twitter-https-play-google-com-store-apps-details-id-com-dwdesign-tweetings"><a href="https://play.google.com/store/apps/details?id=com.dwdesign.tweetings">Tweetings for Twitter</a></h3>
+
+<p>機能削除<br />
+v11.14.1.3</p>
+
+<blockquote>
+<ul>
+<li>Removal of streaming feature as Twitter is imminently retiring this service</li>
+</ul>
+</blockquote>
+
+<h3 id="fenix-2-https-play-google-com-store-apps-details-id-it-mvilla-android-fenix2"><a href="https://play.google.com/store/apps/details?id=it.mvilla.android.fenix2">Fenix 2</a></h3>
+
+<p>機能削除<br />
+v2.8</p>
+
+<blockquote>
+<p>Fenix will no longer be able to stream tweets, interactions and messages in real time.</p>
+</blockquote>
+
+<h3 id="justaway-https-justaway-info"><a href="https://justaway.info/">Justaway</a></h3>
+
+<p>公開終了</p>
+
+<p><blockquote class="twitter-tweet" data-lang="ja"><p lang="ja" dir="ltr">🙋 !!! 公開終了 !!!<br>・ストアでの公開を終了しました。<br>end.</p>&mdash; Justaway (@justawayfactory) <a href="https://twitter.com/justawayfactory/status/1029287452094001152?ref_src=twsrc%5Etfw">2018年8月14日</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></p>
+
+<h3 id="ツイッターするやつ-https-twitter-suruyatu-com"><a href="https://twitter.suruyatu.com/">ツイッターするやつ</a></h3>
+
+<p>公開終了
+<blockquote class="twitter-tweet" data-lang="ja"><p lang="ja" dir="ltr">ツイやつシリーズ終焉のお知らせ<br>google+に投稿しました！<a href="https://t.co/liHVIdCxVK">https://t.co/liHVIdCxVK</a></p>&mdash; ツイッターするやつ (@suruyatu) <a href="https://twitter.com/suruyatu/status/1029246003487039493?ref_src=twsrc%5Etfw">2018年8月14日</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<a href="https://plus.google.com/u/0/112977123297043486073/posts/csucu2dmP1i">Google+</a>
+&gt; ツイやつシリーズは、日本時間の2018年8月17日をもってサービスを終了します。
+サービス終了の要因に関しては、ご存知可と思いますが、
+TwitterのAPIの仕様変更により、アプリの維持が困難と判断したためです。
+ツイやつで主に使われている、UserStreamが8月17日をもって終了します。
+よって、ツイやつに関する全てのサポートを終了し、「ツイッターするやつ」シリーズの幕引きとします。
+終了は残念ですが、今までご利用いただき大変感謝しています。
+皆様、ありがとうございました！</p>
+
+<h3 id="twidare-https-play-google-com-store-apps-details-id-org-mariotaku-twidere"><a href="https://play.google.com/store/apps/details?id=org.mariotaku.twidere">Twidare</a></h3>
+
+<p>時間がないとの発言あり</p>
+
+<p><blockquote class="twitter-tweet" data-lang="ja"><p lang="en" dir="ltr">It&#39;s been a long time since last update. There&#39;re too much work to do in the past year so I really don&#39;t have time for Twidere. Now situation becomes better, and I&#39;ll continue develop Twidere.</p>&mdash; Twidere Project (@TwidereProject) <a href="https://twitter.com/TwidereProject/status/1024577817336532992?ref_src=twsrc%5Etfw">2018年8月1日</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></p>
+
+<p>v3.7.3(更新日: 2017年11月15日)</p>
+
+<h3 id="beeter-for-twitter-https-play-google-com-store-apps-details-id-me-b0ne-android-apps-beeter"><a href="https://play.google.com/store/apps/details?id=me.b0ne.android.apps.beeter">beeter for Twitter</a></h3>
+
+<p>情報更新なし<br />
+v0.87.3(更新日: 2017年4月20日)
+<a href="http://apps-of-a-feather.com/">http://apps-of-a-feather.com/</a></p>
+
+<h3 id="janetter-for-twitter-https-play-google-com-store-apps-details-id-net-janesoft-janetter-android-free-janetter-pro-for-twitter-https-play-google-com-store-apps-details-id-net-janesoft-janetter-android-pro"><a href="https://play.google.com/store/apps/details?id=net.janesoft.janetter.android.free">Janetter for Twitter</a> / <a href="https://play.google.com/store/apps/details?id=net.janesoft.janetter.android.pro">Janetter Pro for Twitter</a></h3>
+
+<p>情報更新なし</p>
+
+<h2 id="ios">iOS</h2>
+
+<h3 id="tweetbot-4-for-twitter-https-itunes-apple-com-jp-app-tweetbot-4-for-twitter-id1018355599"><a href="https://itunes.apple.com/jp/app/tweetbot-4-for-twitter/id1018355599">Tweetbot 4 for Twitter</a></h3>
+
+<p>機能削除<br />
+v4.9<br />
+1-2分おきの自動更新対応</p>
+
+<blockquote>
+<ul>
+<li>Timeline streaming on WiFi is now disabled. Your timelines will now refresh automatically every 1-2 minutes instead.</li>
+</ul>
+</blockquote>
+
+<p>同時に独自通知の削除 / 遅れも宣言</p>
+
+<blockquote>
+<ul>
+<li>Push notifications for Mentions and Direct Messages will now be delayed by a few minutes.</li>
+<li>Push notifications for Likes, Retweets, Follows and Quotes have been disabled. We&rsquo;ll be investigating bring some of these back in the future.</li>
+</ul>
+</blockquote>
+
+<h3 id="theworld-for-twitter-https-itunes-apple-com-jp-app-theworld-for-twitter-id548994749"><a href="https://itunes.apple.com/jp/app/theworld-for-twitter/id548994749">TheWorld for Twitter</a></h3>
+
+<p>更新なし<br />
+v3.7(更新日: 2018年1月9日)
+1分毎の自動更新実装予定の発言あり
+<a href="https://twitter.com/TheWorld_JP/status/1029031198079631360">https://twitter.com/TheWorld_JP/status/1029031198079631360</a></p>
+
+<h3 id="feather-for-twitter-https-itunes-apple-com-jp-app-feather-for-twitter-id793157344-feather-lite-for-twitter-https-itunes-apple-com-jp-app-feather-lite-for-twitter-id1218696976"><a href="https://itunes.apple.com/jp/app/feather-for-twitter/id793157344">feather for Twitter</a> / <a href="https://itunes.apple.com/jp/app/feather-lite-for-twitter/id1218696976">feather lite for Twitter</a></h3>
+
+<p>v3.11.1</p>
+
+<blockquote>
+<p>今回のアップデートでは Twitter が <sup>8</sup>&frasl;<sub>16</sub> に User Stream API を削除するのに伴い関連する機能を削除しました。</p>
+</blockquote>
+
+<h3 id="hel2um-for-twitter-https-itunes-apple-com-jp-app-hel2um-for-twitter-id1146280429"><a href="https://itunes.apple.com/jp/app/hel2um-for-twitter/id1146280429">Hel2um for Twitter</a></h3>
+
+<p>v0.5.3</p>
+
+<blockquote>
+<p>TwitterのAPI変更（UserStream廃止）の対応</p>
+</blockquote>
+
+<h3 id="janetter-for-twitter-https-itunes-apple-com-jp-app-janetter-for-twitter-id555594731-janetter-pro-for-twitter-https-itunes-apple-com-jp-app-janetter-pro-for-twitter-id555600657"><a href="https://itunes.apple.com/jp/app/janetter-for-twitter/id555594731">Janetter for Twitter</a> / <a href="https://itunes.apple.com/jp/app/janetter-pro-for-twitter/id555600657">Janetter Pro for Twitter</a></h3>
+
+<p>v1.8.6(更新日: 2018年8月14日)<br />
+Streamingに関する記述なし</p>
+
+<h3 id="echofon-for-twitter-https-itunes-apple-com-jp-app-echofon-for-twitter-id286756410"><a href="https://itunes.apple.com/jp/app/echofon-for-twitter/id286756410">Echofon for Twitter</a></h3>
+
+<p>v11.4(更新日: 2018年8月1日)<br />
+Streamingに関する記述なし<br />
+機能削除</p>
+
+<p><blockquote class="twitter-tweet" data-lang="ja"><p lang="ja" dir="ltr">Hel2um v0.5.3をリリースしました<br>8/16のUserStream廃止の対応で色々機能が無くなってます</p>&mdash; Hel2umApp (@Hel2umApp) <a href="https://twitter.com/Hel2umApp/status/1029536455649980416?ref_src=twsrc%5Etfw">2018年8月15日</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></p>
+
+<h2 id="あとがき">あとがき</h2>
+
+<p>海外大手サードパーティークライアントが<a href="http://apps-of-a-feather.com/">問題提起するページ</a>を作成しTwitterに訴えた。<br />
+国内サードパーティークライアント開発者は<a href="https://mikutter-book.booth.pm/items/965207">レズと青い鳥</a>という本を書きC94で頒布しTwitterへの愛を語った。<br />
+<a href="https://github.com/SlashNephy/Tweetstorm">UserStreamの代替実装</a>をする者も現れた。<br />
+UserStreamで息をする(していた)ツイ廃はどこへ向かうのだろう。</p>
+
+<h2 id="あとがきのあとがき">あとがきのあとがき</h2>
+
+<p>このメモはUserStream代替実装へ対応(=UserStream機能がいつまで残っていたかのメモ)に向けたものだった、けれど書いてるうちに長くいろいろ使ってきたサードパーティクライアントへの弔いの気持ちになってしまった。<br />
+レズと青い鳥は実際ビッグサイトに行って手に入れてUS廃止前に読ませていただいた。(一緒にいたツイ廃と中身をちら見して会場で大騒ぎした)(すごくよかった)<br />
+使ったことないクライアントも多くあるので記事自体かなり適当だし、まず実行できる環境持ってない物もあるので参考程度に。</p>
+        </div>
+        <footer class="article-footer">
+    
+    
+
+    <script>
+    (function ($) {
+        
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>'
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+    </script>
+</footer>
+
+    </div>
+
+    
+<nav id="article-nav">
+    
+    <a href="https://unyacat.net/2017/12/04/conversational-card/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">
+          
+      </strong>
+      <div class="article-nav-title">にゃーん ~カンバセーショナルカードを使った定型ツイートの容易化~</div>
+    </a>
+    
+
+    
+</nav>
+
+
+</article>
+
+
+
+    </section>
+
+   	
+    	<aside id="sidebar">
+    
+<div class="widget-wrap">
+    <h3 class="widget-title">
+        
+    </h3>
+    <div class="widget">
+        <ul id="recent-post">
+            
+            <li>
+                <div class="item-thumbnail">
+                    <a href="https://unyacat.net/2018/08/27/userstream-client/" class="thumbnail">
+                    
+                        <span class="thumbnail-image thumbnail-none"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    <p class="item-category">
+                        
+                        <a class="article-category-link" href="https://unyacat.net/categories/twitter">
+                        Twitter
+                        </a>
+                    </p>
+                    
+                    
+                    <p class="item-title"><a href="https://unyacat.net/2018/08/27/userstream-client/" class="title">UserStream廃止と各サードパーティークライアントの対応まとめ</a></p>
+                    <p class="item-date">
+                        <time datetime="2018-08-27 00:00:00 &#43;0000 UTC" itemprop="datePublished">2018-08-27</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li>
+                <div class="item-thumbnail">
+                    <a href="https://unyacat.net/2017/12/04/conversational-card/" class="thumbnail">
+                    
+                        <span class="thumbnail-image thumbnail-none"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    <p class="item-category">
+                        
+                        <a class="article-category-link" href="https://unyacat.net/categories/twitter">
+                        Twitter
+                        </a>
+                    </p>
+                    
+                    
+                    <p class="item-title"><a href="https://unyacat.net/2017/12/04/conversational-card/" class="title">にゃーん ~カンバセーショナルカードを使った定型ツイートの容易化~</a></p>
+                    <p class="item-date">
+                        <time datetime="2017-12-04 00:00:00 &#43;0000 UTC" itemprop="datePublished">2017-12-04</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li>
+                <div class="item-thumbnail">
+                    <a href="https://unyacat.net/2017/04/08/twitter-egosearch/" class="thumbnail">
+                    
+                        <span class="thumbnail-image thumbnail-none"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    <p class="item-category">
+                        
+                        <a class="article-category-link" href="https://unyacat.net/categories/twitter">
+                        Twitter
+                        </a>
+                    </p>
+                    
+                    
+                    <p class="item-title"><a href="https://unyacat.net/2017/04/08/twitter-egosearch/" class="title">Twitterエゴサ用コマンド</a></p>
+                    <p class="item-date">
+                        <time datetime="2017-04-08 00:00:00 &#43;0000 UTC" itemprop="datePublished">2017-04-08</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li>
+                <div class="item-thumbnail">
+                    <a href="https://unyacat.net/2017/04/08/better-twitter-icon-upload/" class="thumbnail">
+                    
+                        <span class="thumbnail-image thumbnail-none"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    <p class="item-category">
+                        
+                        <a class="article-category-link" href="https://unyacat.net/categories/twitter">
+                        Twitter
+                        </a>
+                    </p>
+                    
+                    
+                    <p class="item-title"><a href="https://unyacat.net/2017/04/08/better-twitter-icon-upload/" class="title">僕が考える最強のTwitterアイコンアップロード方法</a></p>
+                    <p class="item-date">
+                        <time datetime="2017-04-08 00:00:00 &#43;0000 UTC" itemprop="datePublished">2017-04-08</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li>
+                <div class="item-thumbnail">
+                    <a href="https://unyacat.net/2016/11/27/amazon-chinapost/" class="thumbnail">
+                    
+                        <span class="thumbnail-image thumbnail-none"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    <p class="item-category">
+                        
+                        <a class="article-category-link" href="https://unyacat.net/categories/amazon">
+                        Amazon
+                        </a>
+                    </p>
+                    
+                    
+                    <p class="item-title"><a href="https://unyacat.net/2016/11/27/amazon-chinapost/" class="title">Amazonで注文したら配送業者がChina Postだったとき</a></p>
+                    <p class="item-date">
+                        <time datetime="2016-11-27 00:00:00 &#43;0000 UTC" itemprop="datePublished">2016-11-27</time>
+                    </p>
+                </div>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+
+    
+
+
+<div class="widget-wrap">
+    <h3 class="widget-title"></h3>
+    <div class="widget">
+        <ul class="category-list">
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://unyacat.net/categories/amazon">
+                    amazon
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://unyacat.net/categories/chinapost">
+                    chinapost
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://unyacat.net/categories/twitter">
+                    twitter
+                </a>
+                <span class="category-list-count">4</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://unyacat.net/categories/%E8%90%BD%E6%9B%B8%E3%81%8D">
+                    落書き
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+
+
+
+    
+
+
+<div class="widget-wrap">
+    <h3 class="widget-title">
+        
+    </h3>
+    <div class="widget">
+        <ul class="category-list">
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://unyacat.net/tags/amazon">
+                    amazon
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://unyacat.net/tags/api">
+                    api
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://unyacat.net/tags/twitter">
+                    twitter
+                </a>
+                <span class="category-list-count">4</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://unyacat.net/tags/userstream">
+                    userstream
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://unyacat.net/tags/%E3%82%A8%E3%82%B4%E3%82%B5">
+                    エゴサ
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://unyacat.net/tags/%E3%82%B5%E3%83%BC%E3%83%89%E3%83%91%E3%83%BC%E3%83%86%E3%82%A3%E3%82%AF%E3%83%A9%E3%82%A4%E3%82%A2%E3%83%B3%E3%83%88">
+                    サードパーティクライアント
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+
+
+
+    
+
+
+<div class="widget-wrap">
+    <h3 class="widget-title">
+        
+    </h3>
+    <div class="widget tagcloud">
+        
+        
+        <a href="https://unyacat.net/tags/amazon" style="font-size: 12px;">amazon</a>
+        
+        
+        <a href="https://unyacat.net/tags/api" style="font-size: 12px;">api</a>
+        
+        
+        <a href="https://unyacat.net/tags/twitter" style="font-size: 12px;">twitter</a>
+        
+        
+        <a href="https://unyacat.net/tags/userstream" style="font-size: 12px;">userstream</a>
+        
+        
+        <a href="https://unyacat.net/tags/%E3%82%A8%E3%82%B4%E3%82%B5" style="font-size: 12px;">エゴサ</a>
+        
+        
+        <a href="https://unyacat.net/tags/%E3%82%B5%E3%83%BC%E3%83%89%E3%83%91%E3%83%BC%E3%83%86%E3%82%A3%E3%82%AF%E3%83%A9%E3%82%A4%E3%82%A2%E3%83%B3%E3%83%88" style="font-size: 12px;">サードパーティクライアント</a>
+        
+    </div>
+</div>
+
+
+
+
+
+    <div id="toTop" class="fa fa-angle-up"></div>
+</aside>
+
+    
+	</div>
+</div>
+
+<footer id="footer">
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018
+      unyacat.net
+    </div>
+  </div>
+</footer>
+
+
+<script src="https://unyacat.net/fancybox/jquery.fancybox.pack.js"></script>
+<script src="https://unyacat.net/js/script.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js"></script>
+
+
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']]}
+  });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+
+
+</body>
+</html>

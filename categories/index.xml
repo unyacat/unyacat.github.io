@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Categories on うにゃのぶろぐ</title>
+    <link>https://unyacat.net/categories/</link>
+    <description>Recent content in Categories on うにゃのぶろぐ</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-JP</language>
+    <lastBuildDate>Sun, 27 Nov 2016 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://unyacat.net/categories/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Amazon</title>
+      <link>https://unyacat.net/categories/amazon/</link>
+      <pubDate>Sun, 27 Nov 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://unyacat.net/categories/amazon/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Chinapost</title>
+      <link>https://unyacat.net/categories/chinapost/</link>
+      <pubDate>Sun, 27 Nov 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://unyacat.net/categories/chinapost/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Twitter</title>
+      <link>https://unyacat.net/categories/twitter/</link>
+      <pubDate>Mon, 27 Aug 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://unyacat.net/categories/twitter/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>落書き</title>
+      <link>https://unyacat.net/categories/%E8%90%BD%E6%9B%B8%E3%81%8D/</link>
+      <pubDate>Sun, 27 Nov 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://unyacat.net/categories/%E8%90%BD%E6%9B%B8%E3%81%8D/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

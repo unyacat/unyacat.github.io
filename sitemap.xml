@@ -28,13 +28,18 @@
   </url>
   
   <url>
-    <loc>https://unyacat.net/categories/amazon/</loc>
-    <lastmod>2016-11-27T00:00:00+00:00</lastmod>
+    <loc>https://unyacat.net/tags/</loc>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://unyacat.net/tags/amazon/</loc>
+    <lastmod>2016-11-27T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://unyacat.net/categories/amazon/</loc>
     <lastmod>2016-11-27T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
@@ -70,13 +75,13 @@
   </url>
   
   <url>
-    <loc>https://unyacat.net/categories/twitter/</loc>
+    <loc>https://unyacat.net/tags/twitter/</loc>
     <lastmod>2018-08-27T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://unyacat.net/tags/twitter/</loc>
+    <loc>https://unyacat.net/categories/twitter/</loc>
     <lastmod>2018-08-27T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
@@ -103,6 +108,10 @@
     <loc>https://unyacat.net/tags/%E3%82%B5%E3%83%BC%E3%83%89%E3%83%91%E3%83%BC%E3%83%86%E3%82%A3%E3%82%AF%E3%83%A9%E3%82%A4%E3%82%A2%E3%83%B3%E3%83%88/</loc>
     <lastmod>2018-08-27T00:00:00+00:00</lastmod>
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://unyacat.net/1/01/01/privacy-policy/</loc>
   </url>
   
   <url>

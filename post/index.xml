@@ -6,10 +6,21 @@
     <description>Recent content in Posts on うにゃのぶろぐ</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-JP</language>
-    <lastBuildDate>Mon, 27 Aug 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 02 Dec 2018 00:00:00 +0900</lastBuildDate>
     
 	<atom:link href="https://unyacat.net/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>増殖する ○○Pay をかき集めてみた 2018</title>
+      <link>https://unyacat.net/2018/12/02/pay-2018/</link>
+      <pubDate>Sun, 02 Dec 2018 00:00:00 +0900</pubDate>
+      
+      <guid>https://unyacat.net/2018/12/02/pay-2018/</guid>
+      <description>&lt;p&gt;最近謎に増殖する Pay がついてるサービスをメモしていたんですがあまりにも多すぎたのでメモ代わりに記事にしました。&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>UserStream廃止と各サードパーティークライアントの対応まとめ</title>

@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://unyacat.net/2018/12/02/pay-2018/</loc>
+    <lastmod>2018-12-02T00:00:00+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://unyacat.net/2018/08/27/userstream-client/</loc>
     <lastmod>2018-08-27T00:00:00+00:00</lastmod>
   </url>
@@ -64,7 +69,7 @@
   
   <url>
     <loc>https://unyacat.net/post/</loc>
-    <lastmod>2018-08-27T00:00:00+00:00</lastmod>
+    <lastmod>2018-12-02T00:00:00+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -94,13 +99,25 @@
   
   <url>
     <loc>https://unyacat.net/</loc>
-    <lastmod>2018-08-27T00:00:00+00:00</lastmod>
+    <lastmod>2018-12-02T00:00:00+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://unyacat.net/tags/%E3%82%A8%E3%82%B4%E3%82%B5/</loc>
     <lastmod>2017-04-08T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://unyacat.net/tags/%E3%82%AD%E3%83%A3%E3%83%83%E3%82%B7%E3%83%A5%E3%83%AC%E3%82%B9/</loc>
+    <lastmod>2018-12-02T00:00:00+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://unyacat.net/categories/%E3%82%AD%E3%83%A3%E3%83%83%E3%82%B7%E3%83%A5%E3%83%AC%E3%82%B9/</loc>
+    <lastmod>2018-12-02T00:00:00+09:00</lastmod>
     <priority>0</priority>
   </url>
   

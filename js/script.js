@@ -1,6 +1,6 @@
 (function($){
     var toTop = ($('#sidebar').height() - $(window).height()) + 60;
-    // Caption
+    /** Caption
     $('.article-entry').each(function(i){
         $(this).find('img').each(function(){
             if ($(this).parent().hasClass('fancybox')) {
@@ -21,7 +21,7 @@
     if ($.fancybox){
         $('.fancybox').fancybox();
     }
-
+**/
     // Profile card
     $(document).on('click', function () {
         $('#profile').removeClass('card');

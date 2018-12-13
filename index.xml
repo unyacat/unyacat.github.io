@@ -6,10 +6,25 @@
     <description>Recent content on うにゃのぶろぐ</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-JP</language>
-    <lastBuildDate>Sun, 02 Dec 2018 00:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 13 Dec 2018 00:00:00 +0900</lastBuildDate>
     
 	<atom:link href="https://unyacat.net/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Hugo で Twitter Cards をいい感じに適用させる</title>
+      <link>https://unyacat.net/2018/12/13/hugo-twitter-card/</link>
+      <pubDate>Thu, 13 Dec 2018 00:00:00 +0900</pubDate>
+      
+      <guid>https://unyacat.net/2018/12/13/hugo-twitter-card/</guid>
+      <description>&lt;p&gt;この記事は &lt;a href=&#34;https://adventar.org/calendars/2886&#34;&gt;Kaigen Discord Advent Calendar 2018&lt;/a&gt; の12月12日枠です。&lt;/p&gt;
+
+&lt;h2 id=&#34;このブログを見てできること&#34;&gt;このブログを見てできること&lt;/h2&gt;
+
+&lt;p&gt;記事.mdに画像 URL が埋め込まれているときは summary_large_image (2:1の画像が使われた大きめのカード)を適用し、ない場合は summary (正方形の画像が使われた小さめのカード) で埋め込めるようになる機能を実装します。&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>増殖する ○○Pay をかき集めてみた 2018</title>

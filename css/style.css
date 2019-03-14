@@ -129,7 +129,7 @@ body,
 
 body {
     color: #565a5f;
-    background: #f5f8f9;
+    background: #E6ECF0;
     font: 14px "open sans", "Helvetica Neue", "Microsoft Yahei", Helvetica, Arial, sans-serif;
     -webkit-text-size-adjust: 100%;
 }
@@ -265,7 +265,13 @@ code {
 #toTop {
     background: #fff;
     -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.15);
+    border-radius: 4px
+}
+
+.article-entry p,
+.widget p {
+    font-size: 1.1em;
 }
 
 .article-entry h1,
@@ -280,7 +286,7 @@ code {
 
 .article-entry h3,
 .widget h3 {
-    font-size: 1.3em;
+    font-size: 1.5em;
 }
 
 .article-entry h4,
@@ -907,6 +913,7 @@ code {
     display: block;
     min-width: 280px;
     position: absolute;
+    
 }
 
 #profile.card .profile-inner {
@@ -1039,7 +1046,7 @@ a.article-title:hover {
 .article-entry p,
 .article-entry table {
     line-height: 1.6em;
-    margin: 1.6em 0;
+    margin: 2em 0;
 }
 
 .article-entry h1,
@@ -1493,7 +1500,7 @@ a.article-title:hover {
 }
 
 .toc-article .toc-title {
-    font-size: 120%;
+    font-size: 130%;
 }
 
 .toc-article strong {
@@ -2068,7 +2075,7 @@ ol.toc {
 }
 
 .widget {
-    padding: 15px 5px;
+    padding: 0px 5px;
 }
 
 .widget a {
@@ -2189,7 +2196,11 @@ ol.toc {
 }
 
 #recent-post li {
-    padding: 10px 0 10px 94px;
+    padding: 0px 0px 0px;
+    background: #fff;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.15);
 }
 
 #recent-post li:before,
@@ -2209,7 +2220,7 @@ ol.toc {
 #recent-post li .item-thumbnail {
     opacity: 1;
     float: left;
-    margin-left: -94px;
+    margin-left: 94px;
     -webkit-transition: all 0.2s ease;
     -moz-transition: all 0.2s ease;
     -ms-transition: all 0.2s ease;
@@ -2249,16 +2260,17 @@ ol.toc {
 #recent-post li .item-inner .item-category {
     font-size: 13px;
     text-transform: uppercase;
+    padding: 94px 0 0;
 }
 
 #recent-post li .item-inner a a,
 #recent-post li .item-inner .item-category a {
-    color: #38b7ea;
+    color: #fff;
 }
 
 #recent-post li .item-inner a a:hover,
 #recent-post li .item-inner .item-category a:hover {
-    color: #333;
+    color: #fff;
 }
 
 #recent-post li .item-inner a a,
@@ -2273,7 +2285,7 @@ ol.toc {
 }
 
 #recent-post li .item-inner .item-title a {
-    color: #333;
+    color: #fff;
     -webkit-transition: all 0.2s ease;
     -moz-transition: all 0.2s ease;
     -ms-transition: all 0.2s ease;
@@ -2557,4 +2569,23 @@ screen and (max-height: 479px) {
 .highlight .code .type,
 .highlight .code .selector-id {
     font-weight: bold;
+}
+
+.darker {
+  height: 100%;
+  background-size: cover;
+  position: relative;
+  z-index: 0;
+}
+.darker::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  bottom: -2px;
+  left: -2px;
+  right: -2px;
+  background: inherit;
+  filter: blur(2px) brightness(50%);
+  /* position:absoluteのせいで最前面に来てしまうため */
+  z-index: -1;
 }

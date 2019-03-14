@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Twitter on うにゃのすみか</title>
-    <link>https://unyacat.net/categories/twitter/</link>
+    <link>https://sumika.unyacat.net/categories/twitter/</link>
     <description>Recent content in Twitter on うにゃのすみか</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-JP</language>
     <lastBuildDate>Wed, 12 Dec 2018 00:00:00 +0900</lastBuildDate>
     
-	<atom:link href="https://unyacat.net/categories/twitter/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://sumika.unyacat.net/categories/twitter/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Hugo で Twitter Cards をいい感じに適用させる</title>
-      <link>https://unyacat.net/2018/12/12/hugo-twitter-card/</link>
+      <link>https://sumika.unyacat.net/2018/12/12/hugo-twitter-card/</link>
       <pubDate>Wed, 12 Dec 2018 00:00:00 +0900</pubDate>
       
-      <guid>https://unyacat.net/2018/12/12/hugo-twitter-card/</guid>
+      <guid>https://sumika.unyacat.net/2018/12/12/hugo-twitter-card/</guid>
       <description>&lt;p&gt;この記事は &lt;a href=&#34;https://adventar.org/calendars/2886&#34;&gt;Kaigen Discord Advent Calendar 2018&lt;/a&gt; の12月12日枠です。&lt;/p&gt;
 
 &lt;h2 id=&#34;このブログを見てできること&#34;&gt;このブログを見てできること&lt;/h2&gt;
@@ -28,10 +28,10 @@
     
     <item>
       <title>UserStream廃止と各サードパーティークライアントの対応まとめ</title>
-      <link>https://unyacat.net/2018/08/27/userstream-client/</link>
+      <link>https://sumika.unyacat.net/2018/08/27/userstream-client/</link>
       <pubDate>Mon, 27 Aug 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://unyacat.net/2018/08/27/userstream-client/</guid>
+      <guid>https://sumika.unyacat.net/2018/08/27/userstream-client/</guid>
       <description>&lt;p&gt;精度は保証しません。世の中にある全てのそれを載せているわけではありません。&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
@@ -39,10 +39,10 @@
     
     <item>
       <title>にゃーん ~カンバセーショナルカードを使った定型ツイートの容易化~</title>
-      <link>https://unyacat.net/2017/12/04/conversational-card/</link>
+      <link>https://sumika.unyacat.net/2017/12/04/conversational-card/</link>
       <pubDate>Mon, 04 Dec 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://unyacat.net/2017/12/04/conversational-card/</guid>
+      <guid>https://sumika.unyacat.net/2017/12/04/conversational-card/</guid>
       <description>&lt;p&gt;この記事は、&lt;a href=&#34;https://adventar.org/calendars/2598&#34;&gt;Lava Bucket Advent Calendar&lt;/a&gt; 4日目の記事です。&lt;/p&gt;
 
 &lt;h3 id=&#34;やりたいこと&#34;&gt;やりたいこと&lt;/h3&gt;
@@ -57,10 +57,10 @@
     
     <item>
       <title>Twitterエゴサ用コマンド</title>
-      <link>https://unyacat.net/2017/04/08/twitter-egosearch/</link>
+      <link>https://sumika.unyacat.net/2017/04/08/twitter-egosearch/</link>
       <pubDate>Sat, 08 Apr 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://unyacat.net/2017/04/08/twitter-egosearch/</guid>
+      <guid>https://sumika.unyacat.net/2017/04/08/twitter-egosearch/</guid>
       <description>&lt;h1 id=&#34;コマンド&#34;&gt;コマンド&lt;/h1&gt;
 
 &lt;pre&gt;&lt;code&gt;[エゴサしたいワード] -from:[自分のID] filter:follows
@@ -71,10 +71,10 @@
     
     <item>
       <title>僕が考える最強のTwitterアイコンアップロード方法</title>
-      <link>https://unyacat.net/2017/04/08/better-twitter-icon-upload/</link>
+      <link>https://sumika.unyacat.net/2017/04/08/better-twitter-icon-upload/</link>
       <pubDate>Sat, 08 Apr 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://unyacat.net/2017/04/08/better-twitter-icon-upload/</guid>
+      <guid>https://sumika.unyacat.net/2017/04/08/better-twitter-icon-upload/</guid>
       <description>&lt;p&gt;ぼくがかんがえるさいきょうのTwitterアイコンアップロードのほうほう&lt;/p&gt;
 
 &lt;p&gt;=========簡単に言うと=========&lt;br /&gt;

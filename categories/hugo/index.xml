@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Hugo on うにゃのすみか</title>
-    <link>https://unyacat.net/categories/hugo/</link>
+    <link>https://sumika.unyacat.net/categories/hugo/</link>
     <description>Recent content in Hugo on うにゃのすみか</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-JP</language>
     <lastBuildDate>Wed, 12 Dec 2018 00:00:00 +0900</lastBuildDate>
     
-	<atom:link href="https://unyacat.net/categories/hugo/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://sumika.unyacat.net/categories/hugo/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Hugo で Twitter Cards をいい感じに適用させる</title>
-      <link>https://unyacat.net/2018/12/12/hugo-twitter-card/</link>
+      <link>https://sumika.unyacat.net/2018/12/12/hugo-twitter-card/</link>
       <pubDate>Wed, 12 Dec 2018 00:00:00 +0900</pubDate>
       
-      <guid>https://unyacat.net/2018/12/12/hugo-twitter-card/</guid>
+      <guid>https://sumika.unyacat.net/2018/12/12/hugo-twitter-card/</guid>
       <description>&lt;p&gt;この記事は &lt;a href=&#34;https://adventar.org/calendars/2886&#34;&gt;Kaigen Discord Advent Calendar 2018&lt;/a&gt; の12月12日枠です。&lt;/p&gt;
 
 &lt;h2 id=&#34;このブログを見てできること&#34;&gt;このブログを見てできること&lt;/h2&gt;

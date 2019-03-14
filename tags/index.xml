@@ -2,102 +2,102 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on うにゃのすみか</title>
-    <link>https://sumika.unyacat.net/tags/</link>
+    <link>https://unyacat.net/tags/</link>
     <description>Recent content in Tags on うにゃのすみか</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-JP</language>
     <lastBuildDate>Sun, 27 Nov 2016 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://sumika.unyacat.net/tags/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://unyacat.net/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title></title>
-      <link>https://sumika.unyacat.net/tags/</link>
+      <link>https://unyacat.net/tags/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://sumika.unyacat.net/tags/</guid>
+      <guid>https://unyacat.net/tags/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Amazon</title>
-      <link>https://sumika.unyacat.net/tags/amazon/</link>
+      <link>https://unyacat.net/tags/amazon/</link>
       <pubDate>Sun, 27 Nov 2016 00:00:00 +0000</pubDate>
       
-      <guid>https://sumika.unyacat.net/tags/amazon/</guid>
+      <guid>https://unyacat.net/tags/amazon/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Api</title>
-      <link>https://sumika.unyacat.net/tags/api/</link>
+      <link>https://unyacat.net/tags/api/</link>
       <pubDate>Sat, 08 Apr 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://sumika.unyacat.net/tags/api/</guid>
+      <guid>https://unyacat.net/tags/api/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Twitter</title>
-      <link>https://sumika.unyacat.net/tags/twitter/</link>
+      <link>https://unyacat.net/tags/twitter/</link>
       <pubDate>Mon, 27 Aug 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://sumika.unyacat.net/tags/twitter/</guid>
+      <guid>https://unyacat.net/tags/twitter/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Userstream</title>
-      <link>https://sumika.unyacat.net/tags/userstream/</link>
+      <link>https://unyacat.net/tags/userstream/</link>
       <pubDate>Mon, 27 Aug 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://sumika.unyacat.net/tags/userstream/</guid>
+      <guid>https://unyacat.net/tags/userstream/</guid>
       <description></description>
     </item>
     
     <item>
       <title>きっぷ</title>
-      <link>https://sumika.unyacat.net/tags/%E3%81%8D%E3%81%A3%E3%81%B7/</link>
+      <link>https://unyacat.net/tags/%E3%81%8D%E3%81%A3%E3%81%B7/</link>
       <pubDate>Fri, 21 Dec 2018 00:00:00 +0900</pubDate>
       
-      <guid>https://sumika.unyacat.net/tags/%E3%81%8D%E3%81%A3%E3%81%B7/</guid>
+      <guid>https://unyacat.net/tags/%E3%81%8D%E3%81%A3%E3%81%B7/</guid>
       <description></description>
     </item>
     
     <item>
       <title>エゴサ</title>
-      <link>https://sumika.unyacat.net/tags/%E3%82%A8%E3%82%B4%E3%82%B5/</link>
+      <link>https://unyacat.net/tags/%E3%82%A8%E3%82%B4%E3%82%B5/</link>
       <pubDate>Sat, 08 Apr 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://sumika.unyacat.net/tags/%E3%82%A8%E3%82%B4%E3%82%B5/</guid>
+      <guid>https://unyacat.net/tags/%E3%82%A8%E3%82%B4%E3%82%B5/</guid>
       <description></description>
     </item>
     
     <item>
       <title>キャッシュレス</title>
-      <link>https://sumika.unyacat.net/tags/%E3%82%AD%E3%83%A3%E3%83%83%E3%82%B7%E3%83%A5%E3%83%AC%E3%82%B9/</link>
+      <link>https://unyacat.net/tags/%E3%82%AD%E3%83%A3%E3%83%83%E3%82%B7%E3%83%A5%E3%83%AC%E3%82%B9/</link>
       <pubDate>Sun, 02 Dec 2018 00:00:00 +0900</pubDate>
       
-      <guid>https://sumika.unyacat.net/tags/%E3%82%AD%E3%83%A3%E3%83%83%E3%82%B7%E3%83%A5%E3%83%AC%E3%82%B9/</guid>
+      <guid>https://unyacat.net/tags/%E3%82%AD%E3%83%A3%E3%83%83%E3%82%B7%E3%83%A5%E3%83%AC%E3%82%B9/</guid>
       <description></description>
     </item>
     
     <item>
       <title>サードパーティクライアント</title>
-      <link>https://sumika.unyacat.net/tags/%E3%82%B5%E3%83%BC%E3%83%89%E3%83%91%E3%83%BC%E3%83%86%E3%82%A3%E3%82%AF%E3%83%A9%E3%82%A4%E3%82%A2%E3%83%B3%E3%83%88/</link>
+      <link>https://unyacat.net/tags/%E3%82%B5%E3%83%BC%E3%83%89%E3%83%91%E3%83%BC%E3%83%86%E3%82%A3%E3%82%AF%E3%83%A9%E3%82%A4%E3%82%A2%E3%83%B3%E3%83%88/</link>
       <pubDate>Mon, 27 Aug 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://sumika.unyacat.net/tags/%E3%82%B5%E3%83%BC%E3%83%89%E3%83%91%E3%83%BC%E3%83%86%E3%82%A3%E3%82%AF%E3%83%A9%E3%82%A4%E3%82%A2%E3%83%B3%E3%83%88/</guid>
+      <guid>https://unyacat.net/tags/%E3%82%B5%E3%83%BC%E3%83%89%E3%83%91%E3%83%BC%E3%83%86%E3%82%A3%E3%82%AF%E3%83%A9%E3%82%A4%E3%82%A2%E3%83%B3%E3%83%88/</guid>
       <description></description>
     </item>
     
     <item>
       <title>鉄道</title>
-      <link>https://sumika.unyacat.net/tags/%E9%89%84%E9%81%93/</link>
+      <link>https://unyacat.net/tags/%E9%89%84%E9%81%93/</link>
       <pubDate>Fri, 21 Dec 2018 00:00:00 +0900</pubDate>
       
-      <guid>https://sumika.unyacat.net/tags/%E9%89%84%E9%81%93/</guid>
+      <guid>https://unyacat.net/tags/%E9%89%84%E9%81%93/</guid>
       <description></description>
     </item>
     

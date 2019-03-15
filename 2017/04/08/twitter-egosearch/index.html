@@ -253,169 +253,6 @@
 
         
 
-        <section id="main">
-            
-    <article id="page-undefined" class="article article-type-page" itemscope="" itemprop="blogPost">
-    <div class="article-inner">
-        
-            <img src="https://lh5.googleusercontent.com/YTA2cIAjg42nhqfg1mxpI--dhxWWDY13oOwJjqzEi501oZVgNqf9Aqh9C8M=w2400" class="article-banner">
-        
-
-        <header class="article-header">
-    <a href="https://unyacat.net/2017/04/08/twitter-egosearch/">
-    <h1 class="article-title" itemprop="name">
-        Twitterエゴサ用検索コマンド
-    </h1>
-    </a>
-    <div class="article-meta">
-
-        
-        <div class="article-date">
-            <i class="fa fa-calendar"></i>
-            <time datetime="2017-04-08 00:00:00 &#43;0000 UTC" itemprop="datePublished">2017-04-08</time>
-        </div>
-        
-        
-            
-            
-            <div class="article-category">
-                <i class="fa fa-folder"></i>
-                
-                
-                <a class="article-category-link" href="https://unyacat.net/categories/twitter">Twitter</a>
-                
-                
-            </div>
-            
-        
-
-        
-            
-            
-            <div class="article-category">
-                <i class="fa fa-tags"></i>
-                
-                
-                <a class="article-category-link" href="https://unyacat.net/tags/twitter">Twitter</a>
-                &middot;
-                
-                
-                <a class="article-category-link" href="https://unyacat.net/tags/%E3%82%A8%E3%82%B4%E3%82%B5">エゴサ</a>
-                
-                
-            </div>
-            
-        
-    </div>
-</header>
-
-        <div class="article-entry" itemprop="articleBody">
-            <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>    
-            <h1 id="コマンド">コマンド</h1>
-
-<pre><code>[エゴサしたいワード] -from:[自分のID] filter:follows
-</code></pre>
-
-<p></p>
-
-<h2 id="意味">意味</h2>
-
-<p>[エゴサしたいワード] → 単純に検索ワード</p>
-
-<p>-from:[自分のID] → 検索結果から自分のツイートを除く。複数指定可、サブ垢とかで同じ名前を入れてる時などに使える。</p>
-
-<p>filter:follows → フォロワーの中から検索する、フォロー外まで検索したいときは消す。(公式ページに乗ってないため稀にこれのために検索結果が0になる時がある)</p>
-
-<h3 id="例">例</h3>
-
-<pre><code>うにゃ -from:unya_2 -from:unya_3 filter:follows
-</code></pre>
-        </div>
-        <footer class="article-footer">
-    
-    
-
-    <script>
-    (function ($) {
-        
-        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
-            __SHARE_BUTTON_BINDED__ = true;
-        } else {
-            return;
-        }
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
-
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')){
-                    box.removeClass('on');
-                    return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                        '<input class="article-share-input" value="' + url + '">',
-                        '<div class="article-share-links">',
-                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
-                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>'
-                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
-                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
-                        '</div>',
-                    '</div>'
-                ].join('');
-
-              box = $(html);
-
-              $('body').append(box);
-            }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-    </script>
-</footer>
-
-    </div>
-
-
-</article>
-
-
-
-            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-            <ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-2565580640435634" data-ad-slot="7147345245"></ins>
-            <script>
-                (adsbygoogle = window.adsbygoogle || []).push({});
-
-            </script>
-        </section>
-
         
         <aside id="sidebar">
     
@@ -771,14 +608,24 @@
     </div>
 </div>
 
+<section id="main">
+    
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-2565580640435634" data-ad-slot="7147345245"></ins>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+
+    </script>
+</section>
+
 <footer id="footer">
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      &copy; 2019
-      unyacat.net
-        / <a href="https://unyacat.net/privacy-policy">Privacy Policy</a>
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            &copy; 2019
+            unyacat.net
+            / <a href="https://unyacat.net/privacy-policy">Privacy Policy</a>
+        </div>
     </div>
-  </div>
 </footer>
 
 

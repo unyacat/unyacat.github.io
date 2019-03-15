@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://unyacat.net/2019/03/15/linepay-toku201903/</loc>
+    <lastmod>2019-03-15T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://unyacat.net/2018/12/21/renraku-unyu/</loc>
     <lastmod>2018-12-21T00:00:00+09:00</lastmod>
   </url>
@@ -43,13 +48,13 @@
   </url>
   
   <url>
-    <loc>https://unyacat.net/categories/amazon/</loc>
+    <loc>https://unyacat.net/tags/amazon/</loc>
     <lastmod>2016-11-27T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://unyacat.net/tags/amazon/</loc>
+    <loc>https://unyacat.net/categories/amazon/</loc>
     <lastmod>2016-11-27T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
@@ -79,8 +84,14 @@
   </url>
   
   <url>
+    <loc>https://unyacat.net/tags/line-pay/</loc>
+    <lastmod>2019-03-15T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://unyacat.net/post/</loc>
-    <lastmod>2018-12-21T00:00:00+09:00</lastmod>
+    <lastmod>2019-03-15T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -91,14 +102,14 @@
   </url>
   
   <url>
-    <loc>https://unyacat.net/categories/twitter/</loc>
-    <lastmod>2018-12-12T00:00:00+09:00</lastmod>
+    <loc>https://unyacat.net/tags/twitter/</loc>
+    <lastmod>2018-08-27T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://unyacat.net/tags/twitter/</loc>
-    <lastmod>2018-08-27T00:00:00+00:00</lastmod>
+    <loc>https://unyacat.net/categories/twitter/</loc>
+    <lastmod>2018-12-12T00:00:00+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -110,7 +121,7 @@
   
   <url>
     <loc>https://unyacat.net/</loc>
-    <lastmod>2018-12-21T00:00:00+09:00</lastmod>
+    <lastmod>2019-03-15T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -133,14 +144,14 @@
   </url>
   
   <url>
-    <loc>https://unyacat.net/categories/%E3%82%AD%E3%83%A3%E3%83%83%E3%82%B7%E3%83%A5%E3%83%AC%E3%82%B9/</loc>
-    <lastmod>2018-12-02T00:00:00+09:00</lastmod>
+    <loc>https://unyacat.net/tags/%E3%82%AD%E3%83%A3%E3%83%83%E3%82%B7%E3%83%A5%E3%83%AC%E3%82%B9/</loc>
+    <lastmod>2019-03-15T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://unyacat.net/tags/%E3%82%AD%E3%83%A3%E3%83%83%E3%82%B7%E3%83%A5%E3%83%AC%E3%82%B9/</loc>
-    <lastmod>2018-12-02T00:00:00+09:00</lastmod>
+    <loc>https://unyacat.net/categories/%E3%82%AD%E3%83%A3%E3%83%83%E3%82%B7%E3%83%A5%E3%83%AC%E3%82%B9/</loc>
+    <lastmod>2019-03-15T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   

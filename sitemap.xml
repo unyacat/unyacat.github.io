@@ -48,20 +48,8 @@
   </url>
   
   <url>
-    <loc>https://unyacat.net/tags/amazon/</loc>
-    <lastmod>2016-11-27T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://unyacat.net/categories/amazon/</loc>
     <lastmod>2016-11-27T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://unyacat.net/tags/api/</loc>
-    <lastmod>2017-04-08T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -84,8 +72,8 @@
   </url>
   
   <url>
-    <loc>https://unyacat.net/tags/line-pay/</loc>
-    <lastmod>2019-03-15T00:00:00+00:00</lastmod>
+    <loc>https://unyacat.net/categories/jr/</loc>
+    <lastmod>2018-12-21T00:00:00+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -97,25 +85,12 @@
   
   <url>
     <loc>https://unyacat.net/tags/</loc>
-    <lastmod>2016-11-27T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://unyacat.net/tags/twitter/</loc>
-    <lastmod>2018-08-27T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://unyacat.net/categories/twitter/</loc>
     <lastmod>2018-12-12T00:00:00+09:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://unyacat.net/tags/userstream/</loc>
-    <lastmod>2018-08-27T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -132,44 +107,18 @@
   </url>
   
   <url>
-    <loc>https://unyacat.net/tags/%E3%81%8D%E3%81%A3%E3%81%B7/</loc>
-    <lastmod>2018-12-21T00:00:00+09:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://unyacat.net/tags/%E3%82%A8%E3%82%B4%E3%82%B5/</loc>
-    <lastmod>2017-04-08T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://unyacat.net/tags/%E3%82%AD%E3%83%A3%E3%83%83%E3%82%B7%E3%83%A5%E3%83%AC%E3%82%B9/</loc>
-    <lastmod>2019-03-15T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://unyacat.net/categories/%E3%82%AD%E3%83%A3%E3%83%83%E3%82%B7%E3%83%A5%E3%83%AC%E3%82%B9/</loc>
     <lastmod>2019-03-15T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://unyacat.net/tags/%E3%82%B5%E3%83%BC%E3%83%89%E3%83%91%E3%83%BC%E3%83%86%E3%82%A3%E3%82%AF%E3%83%A9%E3%82%A4%E3%82%A2%E3%83%B3%E3%83%88/</loc>
-    <lastmod>2018-08-27T00:00:00+00:00</lastmod>
-    <priority>0</priority>
+    <loc>https://unyacat.net/privacy-policy/</loc>
   </url>
   
   <url>
     <loc>https://unyacat.net/categories/%E8%90%BD%E6%9B%B8%E3%81%8D/</loc>
     <lastmod>2016-11-27T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://unyacat.net/tags/%E9%89%84%E9%81%93/</loc>
-    <lastmod>2018-12-21T00:00:00+09:00</lastmod>
     <priority>0</priority>
   </url>
   

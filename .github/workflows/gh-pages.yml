@@ -5,7 +5,6 @@ on:
     branches:
       - source  # default branch
 
-publish_branch: master  # deploying branch
 
 jobs:
   build-deploy:
@@ -28,3 +27,4 @@ jobs:
         with:
           deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
           publish_dir: ./public
+          publish_branch: master  # deploying branch

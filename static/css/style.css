@@ -75,7 +75,8 @@ td {
     outline: 0;
     font-weight: "inherit";
     font-style: "inherit";
-    font-family: "inherit", sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", Arial, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", メイリオ, Meiryo, "ＭＳ Ｐゴシック", "MS PGothic";
+
     font-size: 100%;
     vertical-align: baseline;
 }
@@ -398,6 +399,7 @@ code {
 #header {
     background: #3f50b5; /** fff **/
     position: relative;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
 }
 
 
@@ -948,6 +950,14 @@ code {
     margin: 40px 0;
 }
 
+/** 追記 **/
+@media screen and (max-width: 1199px) {
+    .article {
+        margin: 20px 0;
+    }
+}
+
+
 .article-inner {
     overflow: hidden;
 }
@@ -957,7 +967,7 @@ code {
     .article-inner {
         overflow: hidden;
         width: 30%;
-        height: 350px;
+        height: 200px;
         margin-left: 2.5%;
         margin-bottom: 2.5%;
         float: left;
@@ -997,7 +1007,7 @@ code {
 
 @media screen and (min-width: 1200px) {
     .article-title {
-        font-size: 1.6em;
+        font-size: 2.6em;
     }
 }
 
@@ -1079,10 +1089,11 @@ a.article-title:hover {
 .article-entry p,
 .article-entry table {
     line-height: 1.6em;
+    font-size: 1.2em;
     margin: 2em 0;
 }
 
-.article-entry h1,
+.article-entry h1,f
 .article-entry h2,
 .article-entry h3,
 .article-entry h4,
@@ -1781,6 +1792,7 @@ ol.toc {
 .archive-article-date {
     display: block;
     margin-left: 10px;
+    margin-bottom: 5px;
     margin-bottom: 5px;
 }
 

@@ -56,11 +56,11 @@ theme = "hugo-icarus-theme"
 #    before = false
 #    label  = "Tags"
 #    link   = "tags/"
-
-[[params.menu]]
-    before = false
-    label  = "カテゴリー"
-    link   = "categories/"
+#
+#[[params.menu]]
+#    before = false
+#    label  = "カテゴリー"
+#    link   = "categories/"
 
 # Enter a link for the follow button on the left
 [params.profile]
@@ -71,7 +71,7 @@ theme = "hugo-icarus-theme"
 # Add your social network accounts to the profile section on the left
 # by entering your username. The links to your account will be
 # created automatically.
-    github          = ""
+    github          = "unyacat"
     gitlab          = ""
     bitbucket       = ""
     jsfiddle        = ""
@@ -81,7 +81,7 @@ theme = "hugo-icarus-theme"
     deviantart      = ""
     behance         = ""
     flickr          = ""
-    instagram       = "unya_2"
+    instagram       = ""
     youtube         = ""
     vimeo           = ""
     vine            = ""

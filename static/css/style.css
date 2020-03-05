@@ -366,6 +366,8 @@ code {
 .widget dl {
     margin: 0 20px;
     line-height: 1.6em;
+    
+    font-size: 1.2em;
 }
 
 .article-entry ul ul,

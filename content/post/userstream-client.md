@@ -6,6 +6,8 @@ description = "UserStream廃止と各サードパーティークライアント�
 images = []
 menu = ""
 title = "UserStream廃止と各サードパーティークライアントの対応まとめ"
+draft=true
+
 +++
 
 精度は保証しません。世の中にある全てのそれを載せているわけではありません。

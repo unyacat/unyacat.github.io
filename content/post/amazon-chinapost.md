@@ -6,6 +6,8 @@ menu = ""
 banner = ""
 images = []
 date = "2016-11-27"
+draft=true
+
 +++
 
 到着予定日に来ないので焦りました。  

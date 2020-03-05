@@ -259,7 +259,7 @@ code {
     text-transform: uppercase;
 }
 
-#header,
+/** #header **/
 #profile .inner,
 .article-inner,
 .article-single,
@@ -1765,7 +1765,10 @@ ol.toc {
     display: block;
     font-size: 1.6em;
     line-height: 1.4em;
-    margin-bottom: 12px;
+    margin-top: 5px;
+    margin-right: 10px;
+    margin-left: 10px;
+    margin-bottom: 5px;
 }
 
 @media screen and (max-width: 559px) {
@@ -1777,7 +1780,8 @@ ol.toc {
 
 .archive-article-date {
     display: block;
-    margin-top: 8px;
+    margin-left: 10px;
+    margin-bottom: 5px;
 }
 
 .layout-wrap-inner.list-categories ul {

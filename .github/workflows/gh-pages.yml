@@ -18,5 +18,4 @@ jobs:
           username: unyacat
           email: admin@unyacat.net
           branch: master
-          cname: unyacat.net
  

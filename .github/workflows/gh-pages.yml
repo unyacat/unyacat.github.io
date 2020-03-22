@@ -3,25 +3,22 @@ name: github pages
 on:
   push:
     branches:
-      - source  # default branch
+      - source-hexo  # default branch
 
 
 jobs:
-  build-deploy:
-    runs-on: ubuntu-18.04
+  build:
+    name: Build
+    runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1  # v2 は現在 submodules オプション未実装
+      - name: Clean
+        uses: heowc/action-hexo@master
         with:
-          submodules: true
-
-      - name: Setup Hugo
-        uses: peaceiris/actions-hugo@v2
+          args: clean
+      - name: Generate
+        uses: heowc/action-hexo@master
         with:
-          hugo-version: '0.64.0'
-
-      - name: Build
-        run: hugo --minify
-
+          args: generate
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:

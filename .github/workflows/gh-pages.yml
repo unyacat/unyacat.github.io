@@ -10,11 +10,7 @@ jobs:
   build:
     name: Build
     runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v1  # v2 は現在 submodules オプション未実装
-        with:
-          submodules: true
-          
+    steps:          
       - name: Clean
         uses: heowc/action-hexo@master
         with:
@@ -23,6 +19,9 @@ jobs:
         uses: heowc/action-hexo@master
         with:
           args: generate
+      - uses: actions/checkout@v1  # v2 は現在 submodules オプション未実装
+        with:
+          submodules: true
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:

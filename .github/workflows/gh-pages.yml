@@ -3,22 +3,36 @@ name: github pages
 on:
   push:
     branches:
-      - source-hexo  # default branch
+      - source-hexo
 
 jobs:
   build-deploy:
     runs-on: ubuntu-18.04
     steps:
-    - uses: actions/checkout@master
+    - uses: actions/checkout@v2
 
-    - name: build
-      uses: leoeatle/actions-hexo@latest
+    - name: Setup Node
+      uses: actions/setup-node@v1
       with:
-        args: g
+        node-version: '10.x'
+
+    - name: Cache dependencies
+      uses: actions/cache@v1
+      with:
+        path: ~/.npm
+        key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+        restore-keys: |
+          ${{ runner.os }}-node-
+
+    - name: Install
+      run: npm ci
+
+    - name: Build
+      run: npm run build
 
     - name: deploy
-      uses: peaceiris/actions-gh-pages@v2.1.0
-      env:
-        ACTIONS_DEPLOY_KEY: ${{ secrets.ACTIONS_DEPLOY_KEY }}
-        PUBLISH_BRANCH: master
-        PUBLISH_DIR: ./public
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+        publish_dir: ./public
+        publish_branch: master

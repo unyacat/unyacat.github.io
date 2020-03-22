@@ -20,3 +20,4 @@ jobs:
           deploykey: ${{ secrets.ACTIONS_DEPLOY_KEY }}
           username: unyacat
           email: admin@unyacat.net
+          branch: master

@@ -12,12 +12,12 @@ jobs:
         with:
           path: node_modules
           key: ${{runner.OS}}-${{hashFiles('**/package-lock.json')}}
+      - uses: finnp/create-file-action@master
+        env:
+          FILE_NAME: CNAME
+          FILE_DATA: unyacat.net
       - uses: yrpang/github-actions-hexo@master
         with:
           deploykey: ${{ secrets.ACTIONS_DEPLOY_KEY }}
           username: unyacat
           email: admin@unyacat.net
-      - uses: finnp/create-file-action@master
-        env:
-          FILE_NAME: CNAME
-          FILE_DATA: unyacat.net

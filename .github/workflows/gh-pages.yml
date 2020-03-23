@@ -1,25 +1,19 @@
-name: Deploy
+name: Hexo Build and Deploy
 
 on: [push]
 
 jobs:
   build:
-    name: Build
     runs-on: ubuntu-latest
     steps:
-    - name: Clean
-      uses: heowc/action-hexo@master
-      with:
-        args: clean
-    - name: Generate
-      uses: heowc/action-hexo@master
-      with:
-        args: generate
-    
-    - name: Deploy
-      uses: peaceiris/actions-gh-pages@v3
-      with:
-        github_token: ${{ secrets.ACTIONS_DEPLOY_KEY }}
-        publish_dir: ../public
-        publish_branch: master
-        cname: unyacat.net
+      - uses: actions/checkout@v1
+      - name: Cache node modules
+        uses: actions/cache@v1
+        with:
+          path: node_modules
+          key: ${{runner.OS}}-${{hashFiles('**/package-lock.json')}}
+      - uses: yrpang/github-actions-hexo@master
+        with:
+          deploykey: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+          username: unyacat
+          email: admin@unyacat.net

@@ -14,7 +14,7 @@ jobs:
           key: ${{runner.OS}}-${{hashFiles('**/package-lock.json')}}
       - uses: finnp/create-file-action@master
         env:
-          FILE_NAME: CNAME
+          FILE_NAME: ./CNAME
           FILE_DATA: unyacat.net
       - uses: yrpang/github-actions-hexo@master
         with:

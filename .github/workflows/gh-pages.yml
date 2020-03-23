@@ -17,7 +17,7 @@ jobs:
           deploykey: ${{ secrets.ACTIONS_DEPLOY_KEY }}
           username: unyacat
           email: admin@unyacat.net
-      - uses: "finnp/create-file-action@master"
+      - uses: finnp/create-file-action@master
         env:
-          FILE_NAME: "CNAME"
-          FILE_DATA: "unyacat.net"
+          FILE_NAME: CNAME
+          FILE_DATA: unyacat.net

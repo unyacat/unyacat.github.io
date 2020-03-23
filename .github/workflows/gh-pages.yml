@@ -1,7 +1,9 @@
 name: Hexo Build and Deploy
 
-on: [push]
-
+on:
+  push:
+    branches:
+      - source-hexo
 jobs:
   build:
     name: Build

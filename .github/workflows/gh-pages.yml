@@ -18,6 +18,6 @@ jobs:
           username: unyacat
           email: admin@unyacat.net
     　- uses: finnp/create-file-action@master
-          env: 
+          with: 
             FILE_NAME: CNAME
             FILE_DATA: unyacat.net

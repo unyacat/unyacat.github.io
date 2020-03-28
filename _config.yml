@@ -101,6 +101,3 @@ deploy:
   type: git
   repo: git@github.com:unyacat/unyacat.github.io.git
   branch: master
-  
-livereload:
-  port: 35729

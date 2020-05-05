@@ -1,11 +1,13 @@
 ---
-title: Google Colab で学習済みモデルを利用して無限にアニメ顔を生成して幸せになろう
+title: Google Colab で StyleGAN2 を利用して無限にアニメ顔を生成して幸せになろう
 date: 2020-05-05 21:39:21
 ---
 
 
 
-Google Colab 上で StyleGAN2 を動かし [This Waifu Does Not Exist](https://www.thiswaifudoesnotexist.net/) で利用されているモデルを借りてアニメ顔を生成させます．
+Google Colab 上で StyleGAN2 を動かしてアニメ顔を生成してみます．
+
+今回は [This Waifu Does Not Exist](https://www.thiswaifudoesnotexist.net/) で利用されている学習済みモデルを借ります．
 
 自前で動かすことでパラメータの調整が可能になり満足行くまで何枚でも生成できます．
 

@@ -5,7 +5,7 @@ date: 2020-05-05 21:39:21
 
 
 
-Google Colab 上で [This Waifu Does Not Exist](https://www.thiswaifudoesnotexist.net/) で利用されているモデルを使いアニメ顔を生成させます．
+Google Colab 上で StyleGAN2 を動かし [This Waifu Does Not Exist](https://www.thiswaifudoesnotexist.net/) で利用されているモデルを借りてアニメ顔を生成させます．
 
 自前で動かすことでパラメータの調整が可能になり満足行くまで何枚でも生成できます．
 

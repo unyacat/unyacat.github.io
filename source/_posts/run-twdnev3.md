@@ -1,5 +1,5 @@
 ---
-title: Google Colab で StyleGAN2 を利用して無限にアニメ顔を生成して幸せになろう
+title: Google Colab で StyleGAN2 を利用して手間なく無限にアニメ顔を生成して幸せになろう
 date: 2020-05-05 21:39:21
 ---
 
@@ -85,5 +85,5 @@ truncation-psi オプションを変更することで平均に近い顔を求�
 
 すべての生成画像はパブリックドメイン(CC-0)のようです．[参考](https://www.gwern.net/TWDNE#copyright)
 
-
+アイコン等に気兼ねなく使えそうです．
 

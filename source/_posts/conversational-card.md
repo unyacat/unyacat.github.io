@@ -1,6 +1,6 @@
 ---
 date: 2017-12-04
-title: にゃーん ~カンバセーショナルカードを使った定型ツイートの容易化~"
+title: にゃーん ~カンバセーショナルカードを使った定型ツイートの容易化~
 ---
 
 この記事は、[Lava Bucket Advent Calendar](https://adventar.org/calendars/2598) 4日目の記事です。

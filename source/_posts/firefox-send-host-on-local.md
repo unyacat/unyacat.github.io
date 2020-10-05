@@ -1,7 +1,9 @@
 ---
 title: Docker を利用して快適な Firefox Send のサーバーを自宅で建てる
 date: 2020-10-05 22:08:17
-tag: 
+tags: 
+- 自宅サーバー
+- Docker
 ---
 
 Firefox Send をネタに Web サーバーを自宅で建てます．自宅内外問わず円滑に使えるように設定をすることを目標にします．
@@ -264,6 +266,12 @@ unyacat@rabbithouse /m/2/firefox-send> wc -c 1-17eeb501acab3f88 | awk '{print $1
 ```
 
 中身は分からないですね．サイズは少し増大しました．
+
+
+
+## 感想
+
+Docker 便利すぎ．
 
 
 

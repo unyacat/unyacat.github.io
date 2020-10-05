@@ -194,6 +194,9 @@ widgets:
 #        # Where should the widget be placed, left or right
 #        position: right
 # Other plugin settings
+    -  
+        type: ads
+        position: left
 plugins:
     # Enable page animations
     animejs: true

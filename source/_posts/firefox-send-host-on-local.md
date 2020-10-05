@@ -10,7 +10,7 @@ Firefox Send をネタに Web サーバーを自宅で建てます．自宅内�
 
 ## Firefox Send とは
 
-![設定完了](/images/firefox-send-host-on-local/Firefox_Send_logo.png)
+![](/images/firefox-send-host-on-local/Firefox_Send_logo.png)
 
 ファイルを簡単に相手に送付できるWebサービスです．
 

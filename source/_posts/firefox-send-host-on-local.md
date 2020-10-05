@@ -1,6 +1,7 @@
 ---
 title: Docker を利用して快適な Firefox Send のサーバーを自宅で建てる
 date: 2020-10-05 22:08:17
+tag: 
 ---
 
 Firefox Send をネタに Web サーバーを自宅で建てます．自宅内外問わず円滑に使えるように設定をすることを目標にします．
@@ -8,6 +9,8 @@ Firefox Send をネタに Web サーバーを自宅で建てます．自宅内�
 <!--more-->
 
 ## Firefox Send とは
+
+![設定完了](/images/firefox-send-host-on-local/Firefox_Send_logo.png)
 
 ファイルを簡単に相手に送付できるWebサービスです．
 
@@ -84,7 +87,7 @@ services:
 
 既存で DDNS が設定されているドメインがあれば CNAME で登録しても動きます．
 
-![](/images/firefox-send-host-on-local/image-20201005174958020.png)
+![設定完了](/images/firefox-send-host-on-local/image-20201005174958020.png)
 
 
 
@@ -100,7 +103,7 @@ services:
 
 ### ポート開放
 
-ルータにアクセスし(デフォ: 192.168.1.1) 詳細設定 > 静的IPマスカレード から 80 番(HTTP)と 443 番(HTTPS) にアクセスしたものをサーバー機に流すように設定します．
+ルータにアクセスし(192.168.1.1) 詳細設定 > 静的IPマスカレード から 80 番(HTTP)と 443 番(HTTPS) にアクセスしたものをサーバー機に流すように設定します．
 
 ![](/images/firefox-send-host-on-local/image-20201005214232822.png)
 

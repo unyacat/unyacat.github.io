@@ -1,6 +1,8 @@
 ---
 title: 楽天モバイル MNO サポーターを終えて所感
 date: 2020-03-28 17:55:55
+tags: 
+- 日記
 ---
 
 私は楽天モバイルが MNO として参入を挑戦しようとする一環で[サポーター](https://network.mobile.rakuten.co.jp/fee/supporter-program/)として先行にお試しできる機会を頂いておりましたので感想を記します．

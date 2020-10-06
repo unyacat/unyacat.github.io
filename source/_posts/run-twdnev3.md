@@ -1,6 +1,8 @@
 ---
 title: Google Colab で StyleGAN2 を利用して手間なく無限にアニメ顔を生成して幸せになろう
 date: 2020-05-05 21:39:21
+tags: 
+- Google Colab
 ---
 
 

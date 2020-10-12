@@ -5,7 +5,7 @@
             <%= _p('common.archive', Infinity) %>
         </h3>
         <ul class="menu-list">
-        <% _list_archives().forEach(archive => { %>
+        <% _list_archives({format: "YYYY/MM"}).forEach(archive => { %>
         <li>
             <a class="level is-marginless" href="<%= archive.url %>">
                 <span class="level-start">

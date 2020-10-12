@@ -26,7 +26,7 @@ module.exports = function (hexo) {
         if (__archives.length) {
             return __archives;
         }
-        const $ = cheerio.load(this.list_archives(), { decodeEntities: false });
+        const $ = cheerio.load(this.list_archives({format: "YYYY年MM月"}), { decodeEntities: false });
         $('.archive-list-item').each(function () {
             __archives.push({
                 url: $(this).find('.archive-list-link').attr('href'),

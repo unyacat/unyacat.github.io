@@ -124,6 +124,7 @@ services:
   nginx-proxy:
     image: jwilder/nginx-proxy
     container_name: nginx-proxy
+    restart: always
     ports:
       - 80:80
       - 443:443
@@ -141,6 +142,7 @@ services:
   letsencrypt:
     image: jrcs/letsencrypt-nginx-proxy-companion
     container_name: nginx-proxy-lets-encrypt
+    restart: always
     depends_on:
       - nginx-proxy
     volumes:
@@ -172,6 +174,7 @@ services:
     build: .
     links:
       - redis
+    restart: always
     ports:
       - "1443:1443"
     environment:

@@ -32,7 +32,7 @@ Chrome 等に `http://[::ffff:192.168.0.1]` のように打ち込むと `http://
 
 ![設定画面](/images/pr500mi-dns-server-ipv4/2020-10-20-215232.jpg)
 
-![IPv4で表示される](images/pr500mi-dns-server-ipv4/2020-10-20-215400.jpg)
+![IPv4で表示される](/images/pr500mi-dns-server-ipv4/2020-10-20-215400.jpg)
 
 ほかのフレッツのルーターでもそうなのかな
 

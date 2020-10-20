@@ -224,15 +224,11 @@ services:
 
 `docker-compose up -d` します．
 
-次に DNS サーバーの存在を家中に知らしめる必要があります．`$ip a` コマンドを打ち，物理ネットワークデバイスの inet6 の横
-
-`inet6 xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx/64 scope global dynamic noprefixroute` のアドレスを控えておきます．
+次に DNS サーバーの存在を家中に知らしめる必要があります．
 
 ルータにアクセスし，詳細設定 > DNS 設定 から，自ドメインに対しては起動した DNS サーバーを利用するように設定します．
 
-![](/images/firefox-send-host-on-local/image-20201005222418279.png)
-
-
+![PR-500MI](/images/firefox-send-host-on-local/165839.jpg)
 
 ### 完成
 
@@ -284,3 +280,9 @@ Docker 便利すぎ．
 [CA marked some of the authorizations as invalid](https://github.com/nginx-proxy/docker-letsencrypt-nginx-proxy-companion/issues/464#issuecomment-434234506)
 
 [[Windows] Hostsファイルの追記方法、確認方法](https://faq.mypage.otsuka-shokai.co.jp/app/answers/detail/a_id/126047/~/%5Bwindows%5D-hosts%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E3%81%AE%E8%BF%BD%E8%A8%98%E6%96%B9%E6%B3%95%E3%80%81%E7%A2%BA%E8%AA%8D%E6%96%B9%E6%B3%95)
+
+
+
+## 修正
+
+2020/10/20: DNSのルータ設定を修正しました．

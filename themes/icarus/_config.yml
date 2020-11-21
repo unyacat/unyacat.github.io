@@ -28,7 +28,7 @@ navbar:
     # Navigation bar menu links
     menu:
         Home: /
-#        Archives: /archives
+        Archives: /archives
 #        Categories: /categories
 #        Tags: /tags
         About: https://sumika.unyacat.net

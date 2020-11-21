@@ -1,6 +1,7 @@
 ---
 title: PR-500MIでDNSサーバーをIPv4で指定する
 date: 2020-10-20 18:38:35
+thumbnail: /images/pr500mi-dns-server-ipv4/stephen-phillips-hostreviews-co-uk-tN344soypQM-unsplash.jpg
 ---
 
 DNSを立てたのでPR-500MIにIPv4で設定しようと試みた話．

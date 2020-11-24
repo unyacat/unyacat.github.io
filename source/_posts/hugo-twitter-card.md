@@ -70,6 +70,3 @@ config.toml に Twitter ID を書いていないのならば 11，12 行目 cont
 1. おわり。  
     [Card validator](https://cards-dev.twitter.com/validator) に URL を打ち込むと確認し、即時実装可能です
     
-![画像なし記事](images/hugo-twitter-card/image-20201125001117269.png)
-
-![画像つき記事](images/hugo-twitter-card/image-20201125001022350.png)

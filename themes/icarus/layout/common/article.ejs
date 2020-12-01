@@ -67,6 +67,7 @@
         <div class="content">
             <%- index && post.excerpt ? post.excerpt : post.content %>
         </div>
+<!--
         <% if (index && post.excerpt) { %>
         <div class="level is-mobile">
             <div class="level-start">
@@ -76,6 +77,7 @@
             </div>
         </div>
         <% } %>
+-->
         <% if (!index && has_config('share.type')) { %>
         <%- _partial('share/' + get_config('share.type')) %>
         <% } %>

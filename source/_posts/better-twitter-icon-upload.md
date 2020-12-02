@@ -23,7 +23,8 @@ Twitter でアップロードしたときに出てくる切り抜き機能を使
 
 [waifu2x](http://waifu2x.udp.jp/index.ja.html)を試してみます．
 
-<iframe class="hatenablogcard" style="width:100%;height:155px;max-width:680px;" title="waifu2x" src="https://hatenablog-parts.com/embed?url=http://waifu2x.udp.jp/index.ja.html" width="300" height="150" frameborder="0" scrolling="no"></iframe>
+<div class="bcard-wrapper"><span class="bcard-header withgfav"><div class="bcard-favicon" style="background-image: url(https://www.google.com/s2/favicons?domain=http://waifu2x.udp.jp/index.ja.html)"></div><div class="bcard-site"><a href="http://waifu2x.udp.jp/index.ja.html" rel="nofollow" target="_blank"></a></div><div class="bcard-url"><a href="http://waifu2x.udp.jp/index.ja.html" rel="nofollow" target="_blank">http://waifu2x.udp.jp/index.ja.html</a></div></span><span class="bcard-main"><div class="bcard-title"><a href="http://waifu2x.udp.jp/index.ja.html" rel="nofollow" target="_blank">waifu2x</a></div><div class="bcard-description">深層畳み込みニューラルネットワークによる二次元画像のための超解像システム。 写真にも対応。</div></span></div>
+
 
 2回目以上やるとちょっと違和感がある場合が増えてくるので何回か試行してみるといいでしょう。  
 
@@ -37,7 +38,7 @@ Twitter でアップロードしたときに出てくる切り抜き機能を使
 
 [TwitterのアイコンをAPI経由でアップロードするツール](https://retrorocket.biz/upico/)
 
-<iframe class="hatenablogcard" style="width:100%;height:155px;max-width:680px;" title="TwitterのアイコンをAPI経由でアップロードするツール" src="https://hatenablog-parts.com/embed?url=https://retrorocket.biz/upico/" width="300" height="150" frameborder="0" scrolling="no"></iframe>
+<div class="bcard-wrapper"><span class="bcard-header"><div class="bcard-site"><a href="https://retrorocket.biz/upico/" rel="nofollow" target="_blank"></a></div><div class="bcard-url"><a href="https://retrorocket.biz/upico/" rel="nofollow" target="_blank">https://retrorocket.biz/upico/</a></div></span><span class="bcard-main"><div class="bcard-title"><a href="https://retrorocket.biz/upico/" rel="nofollow" target="_blank">TwitterのアイコンをAPI経由でアップロードするツール</a></div><div class="bcard-description"></div></span></div>
 
 サイト下の注意点をよく読んで利用しましょう． 
 

@@ -29,6 +29,9 @@ Google Colab に 上げましたのでこれを実行すれば試すことがで
 
 下記 URL にアクセスして Playground モードにし ドライブにコピー してからランタイム > すべてのセルを実行．
 
+<div class="bcard-wrapper"><span class="bcard-header withgfav"><div class="bcard-favicon" style="background-image: url(https://www.google.com/s2/favicons?domain=https://colab.research.google.com/drive/1GeKHArMzxBiBNNp_Kk-W-y7tnIay_Op9)"></div><div class="bcard-site"><a href="https://colab.research.google.com/drive/1GeKHArMzxBiBNNp_Kk-W-y7tnIay_Op9" rel="nofollow" target="_blank"></a></div><div class="bcard-url"><a href="https://colab.research.google.com/drive/1GeKHArMzxBiBNNp_Kk-W-y7tnIay_Op9" rel="nofollow" target="_blank">https://colab.research.google.com/drive/1GeKHArMzxBiBNNp_Kk-W-y7tnIay_Op9</a></div></span><span class="bcard-main withogimg"><div class="bcard-title"><a href="https://colab.research.google.com/drive/1GeKHArMzxBiBNNp_Kk-W-y7tnIay_Op9" rel="nofollow" target="_blank">Google Colaboratory</a></div><div class="bcard-description"></div><a href="https://colab.research.google.com/drive/1GeKHArMzxBiBNNp_Kk-W-y7tnIay_Op9" rel="nofollow" target="_blank"><div class="bcard-img" style="background-image: url(https://colab.research.google.com/img/colab_favicon_256px.png)"></div></a></span></div>
+
+
 https://colab.research.google.com/drive/1GeKHArMzxBiBNNp_Kk-W-y7tnIay_Op9
 
 序盤に Drive へのアクセス権を求められます．URLに飛んでログインし，枠にコード貼り付けて Enter すれば許可されます．

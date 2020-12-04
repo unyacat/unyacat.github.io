@@ -3,9 +3,9 @@ title: socket.io で接続は確認できるがイベントに反応してくれ
 date: 2020-12-04 14:55:57
 thumbnail: images/socket-io-different-version/thumbnail.jpg
 tags:
-- socket.io
+- socket-io
 - React
-- Node.js
+- Node-js
 ---
 
 socket.io でサーバーに接続されてそうだけどそれ以上何もしてくれなくて困った話．

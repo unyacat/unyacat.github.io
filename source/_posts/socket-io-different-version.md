@@ -30,7 +30,7 @@ io.on('connection', function (socket) {
 });
 ```
 
-と書くとたしかに [socket.io](http://socket.io) が接続されてそうなのに emit とか on には何も反応してくれない．
+と書くとたしかに [socket.io](http://socket.io) が接続されているログが流れるのに emit とか on には何も反応してくれない．
 
 `localStorage.debug = '*';` でデバッグするとどうやら
 

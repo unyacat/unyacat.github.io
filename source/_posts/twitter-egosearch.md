@@ -1,5 +1,5 @@
 ---
-date: 2017-04-08
+date: 2017-04-07
 title: "Twitterエゴサ用検索コマンド"
 tags: 
 - Twitter

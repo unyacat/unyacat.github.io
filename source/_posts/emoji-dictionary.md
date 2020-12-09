@@ -2,6 +2,7 @@
 title: 絵文字辞書📚を導入して文章を彩る🌸
 date: 2020-12-09 00:00:00
 thumbnail: ./images/emoji-dictionary/thumbnail.png
+twitter_card: summary_large_image
 tags:
 - 絵文字
 - 日記

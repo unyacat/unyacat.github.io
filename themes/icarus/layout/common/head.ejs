@@ -14,7 +14,7 @@
         fb_admins: get_config('open_graph.fb_admins'),
         fb_app_id: get_config('open_graph.fb_app_id'),
         image: get_og_image(page),
-        hasThumbnail: hasThumbnail(page)
+        twitter_card: has_thumbnail(page) ? 'summary_large_image' : 'summary'
     }) %>
 <% } %>
 

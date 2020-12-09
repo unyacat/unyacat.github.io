@@ -84,4 +84,8 @@ module.exports = function (hexo) {
 
         return this.url_for(og_image);
     });
+    hexo.extend.helper.register('hasThumbnail', function (post) {
+        return hexo.extend.helper.get('has_thumbnail').bind(this)(post);
+    });
+    
 }

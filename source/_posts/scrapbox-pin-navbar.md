@@ -44,7 +44,7 @@ span.kamon.kamon-caret-down {
 
 ### ホームに移動するボタンを上に固定する
 
-```
+```CSS
 .quick-launch .flex-box .flex-item .left-box {
    position: fixed;
    top: 0.45rem;

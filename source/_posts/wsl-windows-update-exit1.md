@@ -16,7 +16,7 @@ tags:
 ## 現象
 Ubuntu が起動しなくなりました．最初は VSCode から WSL にアクセスできないとエラーが発生して何事かと思いましたが WIndows Terminal から開こうとしても [プロセスはコード 1 で終了しました] ([process exited with code 1])とだけ表示されて何もできなくなってしまいました．
 
-![](images/wsl-windows-update-exit1/process-exit1.png)
+![](/images/wsl-windows-update-exit1/process-exit1.png)
 
 ## 試す
 管理者でPowershellを起動して `netsh winsock reset` と入力することで復活することもあるようです．

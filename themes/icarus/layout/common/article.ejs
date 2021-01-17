@@ -101,7 +101,10 @@
     </div>
 </div>
 <% } %>
-<%- _partial('widget/ads')%>
+<% if (!index) { %>
+    <%- _partial('widget/ads')%>
+<% } %>
+
 
 <% if (!index && (post.prev || post.next)) { %>
 <div class="card card-transparent">

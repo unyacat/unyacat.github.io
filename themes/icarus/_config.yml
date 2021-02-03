@@ -59,9 +59,10 @@ article:
 #        theme: atom-one-light
         theme: atom-one-dark
         # Show code copying button
-        clipboard: true
+        clipboard: false
         # Default folding status of the code blocks. Can be "", "folded", "unfolded"
         fold: unfolded
+        line_number: false
     # Whether to show article thumbnail images
     thumbnail: true
     # Whether to show estimate article reading time

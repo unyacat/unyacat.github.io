@@ -14,7 +14,7 @@ Vue.js + vue2-leaflet で v-for を利用している箇所で明らかに遅く
 
 ## Object.freeze()
 
-リアクティブから解き放つには Object.freeze() を利用すると良いようです．
+リアクティブから解き放つには Object.freeze() を利用すると良いようです．リアクティブを諦めることで高速化を望めるようです．
 
 ```jsx
 data: function () {
@@ -27,8 +27,6 @@ mounted(): {
   this.data = Object.freeze(this.data)
 }
 ```
-
-リアクティブを諦めることで高速化を望めるようです．
 
 
 
@@ -70,9 +68,11 @@ methods: {
 
 これで無事解決しました．
 
-## Devtools を導入していない環境で確認する
+## Devtools を導入していない環境で確認してみる
 
-なぜか Vue Devtools 拡張を導入していると遅くなる事象が発生したので一度シークレットモードなどで試してみたほうが良さそうです．
+なぜか Vue Devtools 拡張を導入していると遅くなる事象が発生するようです．
+
+悩む前に一度シークレットモードなどで試してみたほうが良さそうです．
 
 ## 参考
 <div class="bcard-wrapper"><span class="bcard-header withgfav"><div class="bcard-favicon" style="background-image: url(https://www.google.com/s2/favicons?domain=https://qiita.com/isuke/items/441c21e7f99e3a619803)"></div><div class="bcard-site"><a href="https://qiita.com/isuke/items/441c21e7f99e3a619803" rel="nofollow" target="_blank">Qiita</a></div><div class="bcard-url"><a href="https://qiita.com/isuke/items/441c21e7f99e3a619803" rel="nofollow" target="_blank">https://qiita.com/isuke/items/441c21e7f99e3a619803</a></div></span><span class="bcard-main withogimg"><div class="bcard-title"><a href="https://qiita.com/isuke/items/441c21e7f99e3a619803" rel="nofollow" target="_blank">Vue.jsで大きなObjectを扱うときはObject.freezeすると100倍くらい速くなるよ - Qiita</a></div><div class="bcard-description">タイトル通りなのでとりあえず結果を見てもらいましょう。

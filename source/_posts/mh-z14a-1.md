@@ -13,19 +13,20 @@ tags:
 <!-- more -->
 
 ## きっかけ
-最近換気をするようによく耳にします．換気をすることで感染症対策のみならず，作業効率のアップにもつながるようです．実際，建築物環境衛生管理基準(環境衛生上，良好な状態を目標にしている基準らしい) では 1000 ppm以下になるよう決められています．[(Wikipedia)](https://ja.wikipedia.org/wiki/%E5%BB%BA%E7%AF%89%E7%89%A9%E7%92%B0%E5%A2%83%E8%A1%9B%E7%94%9F%E7%AE%A1%E7%90%86%E5%9F%BA%E6%BA%96)
+最近換気をするようによく耳にします👂．換気をすることで感染症対策😷のみならず，作業効率のアップ⤴️にもつながるようです．実際，建築物環境衛生管理基準(環境衛生上，良好な状態を目標にしている基準らしい) では 1000 ppm以下になるよう決められています．[(Wikipedia)](https://ja.wikipedia.org/wiki/%E5%BB%BA%E7%AF%89%E7%89%A9%E7%92%B0%E5%A2%83%E8%A1%9B%E7%94%9F%E7%AE%A1%E7%90%86%E5%9F%BA%E6%BA%96)
 
-そこで自室の二酸化炭素濃度が気になりました．
+そこで自室の二酸化炭素濃度が気になりました．👀
 
-二酸化炭素濃度計を購入しようと Amazon でざっと検索したところまともそうな商品は 1 万円弱くらいで販売されていて，換気指標にするという目的に見合う金額ではありません．
+二酸化炭素濃度計を購入しようと Amazon 🛒でざっと検索したところまともそうな商品は 1 万円弱くらいで販売されていて，換気指標にするという目的に見合う金額ではありません．😢
 
-どうせならセンサーだけ買ってきた方がカスタマイズできるし良いのではないかと思いシステムを自作してみることにしました．
+どうせならセンサーだけ買ってきた方がカスタマイズできるし良いのではないかと思いシステムを自作してみることにしました😄
+
 
 ## 用意したもの
 
 ### 二酸化炭素濃度センサー(MH-Z14A)
 
-中華通販に興味があったのもあって Banggood で「NDIR 二酸化炭素」などと適当に検索して買いました．
+中華通販に興味があったのもあって Banggood で「NDIR 二酸化炭素」などと適当に検索して買いました💸
 
 <div class="bcard-wrapper"><span class="bcard-header"><div class="bcard-site"><a href="https://jp.banggood.com/NDIR-CO2-Sensor-MH-Z14A-PWM-NDIR-Infrared-Carbon-Dioxide-Sensor-Module-Serial-Port-0-5000PPM-Controller-p-1248270.html" rel="nofollow" target="_blank">www.banggood.com</a></div><div class="bcard-url"><a href="https://jp.banggood.com/NDIR-CO2-Sensor-MH-Z14A-PWM-NDIR-Infrared-Carbon-Dioxide-Sensor-Module-Serial-Port-0-5000PPM-Controller-p-1248270.html" rel="nofollow" target="_blank">https://jp.banggood.com/NDIR-CO2-Sensor-MH-Z14A-PWM-NDIR-Infrared-Carbon-Dioxide-Sensor-Module-Serial-Port-0-5000PPM-Controller-p-1248270.html</a></div></span><span class="bcard-main"><div class="bcard-title"><a href="https://jp.banggood.com/NDIR-CO2-Sensor-MH-Z14A-PWM-NDIR-Infrared-Carbon-Dioxide-Sensor-Module-Serial-Port-0-5000PPM-Controller-p-1248270.html" rel="nofollow" target="_blank">NDIRCO2センサーMH-Z14APWMNDIR赤外線二酸化炭素センサーモジュールシリアルポート0-5000PPMコントローラー</a></div><div class="bcard-description">Only US$22.99, buy best ndir co2 sensor mh-z14a pwm ndir infrared carbon dioxide sensor module serial port 0-5000ppm controller sale online store at wholesale price.</div></span></div>
 
@@ -33,7 +34,7 @@ tags:
 
 最初は 2 週間かかると書いてありましたが 5 日で届きました，初めての中華通販でしたが思ったより早くて驚きです💨
 
-データシートはここです．仕様とか通信方法とか載っています．
+データシート📖はここです．仕様とか通信方法とか載っています．
 
 [](https://www.winsen-sensor.com/d/files/MH-Z14A.pdf)
 
@@ -54,7 +55,7 @@ OS を入れるための micro SD も必要です．今回は Armbian をイン�
 
 ## サイズ感
 
-左がMH-Z14A，右がNanoPi NEO2です．大きさほぼほぼ同じで手の中に収まる大きさです．
+左がMH-Z14A，右がNanoPi NEO2です．大きさほぼほぼ同じで手の中に収まる大きさです🖐
 
 ![](/images/mh-z14a-1/1.png)
 
@@ -67,7 +68,7 @@ Tx の対は Rx，Rx の対は Tx です．
 
 T は Transmitter，R は Receiver の意味なようです．
 
-5V を V+，GND を V- につないで完成しました．
+5V を V+，GND を V- につないで完成しました✨
 
 ![](/images/mh-z14a-1/3.png)
 
@@ -86,7 +87,7 @@ System > Hardware > uart1 に ✔ して Save
 
 ## 動作確認
 ### 値を取得する
-Python で実装・公開されている方がいたのでお借りしました．デバイスのパスを修正して実行．
+Python で実装・公開されている方がいたのでお借りしました．デバイスのパスを修正して実行💻．
 
 
 <div class="bcard-wrapper"><span class="bcard-header"><div class="bcard-site"><a href="https://github.com/chez-shanpu/co2-sensor-pi" rel="nofollow" target="_blank">GitHub</a></div><div class="bcard-url"><a href="https://github.com/chez-shanpu/co2-sensor-pi" rel="nofollow" target="_blank">https://github.com/chez-shanpu/co2-sensor-pi</a></div></span><span class="bcard-main"><div class="bcard-title"><a href="https://github.com/chez-shanpu/co2-sensor-pi" rel="nofollow" target="_blank">chez-shanpu/co2-sensor-pi</a></div><div class="bcard-description">MH-Z14Aモジュール. Contribute to chez-shanpu/co2-sensor-pi development by creating an account on GitHub.</div></span></div>

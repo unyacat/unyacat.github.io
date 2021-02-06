@@ -3,6 +3,7 @@ title: 二酸化炭素濃度センサーMH-Z14AとNanoPiでブラウザで見れ
 date: 2021-02-06 17:54:44
 thumbnail: /images/mh-z14a-1/thumbnail.png
 tags:
+  - 日記
   - mh-z14a
   - NanoPi
   - 二酸化炭素濃度

@@ -12,6 +12,8 @@ thumbnail: /images/nicehash-mining/thumbnail.jpg
 
 マイニングは [NiceHash](http://nicehash.com/) を使えばソフトが勝手にやってくれるので初心者でも簡単にすぐに始められて楽です．
 
+![](/images/nicehash-mining/nicehash1.jpg)
+
 自分がメインで使っているPCに搭載されている GTX1070Ti も仮想通貨マイニングをしたくて購入した人からいただいたものだったのでそれを活用すべく暇があれば稼働させるようにしてみました．
 
 NiceHash は 0.001BTC 貯まらないと出金できない仕様になっています．つまり中途半端なマイニングでは電気代の無駄遣いです．

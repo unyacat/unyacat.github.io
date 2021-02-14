@@ -2,6 +2,10 @@
 title: おうちでビットコインマイニングに挑戦！NiceHashからbitFlyerに送金して現金化した
 date: 2021-02-14 09:00:00
 thumbnail: /images/nicehash-mining/thumbnail.jpg
+tags:
+  - Bitcoin
+  - マイニング
+  - 小銭稼ぎ
 ---
 
 どうやら最近BTC価格が高騰して難易度も下がり仮想通貨のマイニングが再加熱しているらしい・・・．とそんな噂を嗅ぎつけてマイニングを初めてみました．

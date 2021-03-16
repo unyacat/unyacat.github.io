@@ -1,0 +1,1252 @@
+<!DOCTYPE html>
+<html  lang="ja">
+<head>
+    <meta charset="utf-8" />
+
+<meta name="generator" content="Hexo 4.2.1" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+<title>socket.io で接続は確認できるがイベントに反応してくれない問題の解決 - うにゃのすみか</title>
+
+
+    <meta name="description" content="socket.io でサーバーに接続されてそうだけどそれ以上何もしてくれなくて困った話．">
+<meta property="og:type" content="article">
+<meta property="og:title" content="socket.io で接続は確認できるがイベントに反応してくれない問題の解決">
+<meta property="og:url" content="https://unyacat.net/2020/12/04/socket-io-different-version/index.html">
+<meta property="og:site_name" content="うにゃのすみか">
+<meta property="og:description" content="socket.io でサーバーに接続されてそうだけどそれ以上何もしてくれなくて困った話．">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:image" content="https://unyacat.net/images/socket-io-different-version/thumbnail.jpg">
+<meta property="article:published_time" content="2020-12-04T05:55:57.000Z">
+<meta property="article:modified_time" content="2021-03-16T09:05:56.474Z">
+<meta property="article:author" content="うにゃ &#x2F; unyacat">
+<meta property="article:tag" content="socket-io">
+<meta property="article:tag" content="React">
+<meta property="article:tag" content="Node-js">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://unyacat.net/images/socket-io-different-version/thumbnail.jpg">
+<meta name="twitter:creator" content="@unya_2">
+
+
+
+
+
+
+
+<link rel="icon" href="/images/favicon.jpg">
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.7.2/css/bulma.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans+JP">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:400,600|Source+Code+Pro">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-dark.css">
+
+
+    
+    
+    
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css">
+
+
+    
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.css">
+
+    
+    
+    
+    
+<link rel="stylesheet" href="/css/back-to-top.css">
+
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-72037216-2"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-72037216-2');
+</script>
+
+    
+    
+    
+    
+    
+    <link rel="stylesheet" href="/css/progressbar.css">
+<script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+    
+    
+    
+
+<script src="https://twemoji.maxcdn.com/v/latest/twemoji.min.js" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="/css/style.css">
+<link rel="alternate" href="/atom.xml" title="うにゃのすみか" type="application/atom+xml">
+</head>
+<body class="is-3-column">
+    <nav class="navbar navbar-main">
+    <div class="container">
+        <div class="navbar-brand is-flex-center">
+            <a class="navbar-item navbar-logo" href="/">
+                
+                <img src="/images/favicon.jpg" alt="socket.io で接続は確認できるがイベントに反応してくれない問題の解決" height="28" style="border-radius: 50%; padding-right: 5px">
+                うにゃのすみか
+                
+            </a>
+        </div>
+        <div class="navbar-menu">
+            
+            <div class="navbar-start">
+                
+                <a class="navbar-item" href="/">Home</a>
+                
+                <a class="navbar-item" href="/archives">Archives</a>
+                
+                <a class="navbar-item" href="/tags">Tags</a>
+                
+                <a class="navbar-item" href="https://sumika.unyacat.net">About</a>
+                
+            </div>
+            
+            <div class="navbar-end">
+                
+                
+                
+                <a class="navbar-item search" title="検索" href="javascript:;">
+                    <i class="fas fa-search"></i>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+</nav>
+
+    
+    <section class="section">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main">
+<div class="card">
+    
+    <div class="card-image"
+        <span  class="image is-7by1">
+        <img class="thumbnail" src="/images/socket-io-different-version/thumbnail.jpg" alt="socket.io で接続は確認できるがイベントに反応してくれない問題の解決">
+        </span>
+    </div>
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2020-12-04T05:55:57.000Z">2020/12/04</time>
+                
+                <!--
+                
+-->
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+            socket.io で接続は確認できるがイベントに反応してくれない問題の解決
+            
+        </h1>
+        
+        <div class="level is-size-7">
+            <div class="level-start">
+                <div class="level-item">
+                    <div class="field is-grouped is-grouped-multiline">
+                        
+                        <div class="control">
+                            <a class="tags has-addons" href="/tags/socket-io">
+                                <span class="tag">#socket-io</span>
+                            </a>
+                        </div>
+                        
+                        <div class="control">
+                            <a class="tags has-addons" href="/tags/React">
+                                <span class="tag">#React</span>
+                            </a>
+                        </div>
+                        
+                        <div class="control">
+                            <a class="tags has-addons" href="/tags/Node-js">
+                                <span class="tag">#Node-js</span>
+                            </a>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="content">
+            <p>socket.io でサーバーに接続されてそうだけどそれ以上何もしてくれなくて困った話．</p>
+<a id="more"></a>
+
+<h2 id="結論"><a href="#結論" class="headerlink" title="結論"></a>結論</h2><p><a href="http://socket.io">socket.io</a> のバージョンはクライアントとサーバーで揃えよう</p>
+<h2 id="事象"><a href="#事象" class="headerlink" title="事象"></a>事象</h2><p>環境: Node.js + Express / React </p>
+<p>サーバー側に</p>
+<figure class="highlight jsx"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">io.on(<span class="string">'connection'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">socket</span>) </span>{</span><br><span class="line">  socket.on(<span class="string">'message'</span>, (msg) =&gt; {</span><br><span class="line">		<span class="built_in">console</span>.log(<span class="string">'socketio connected'</span>)</span><br><span class="line">  })</span><br><span class="line">});</span><br></pre></td></tr></tbody></table></figure>
+
+<p>と書くとたしかに <a href="http://socket.io">socket.io</a> が接続されているログが流れるのに emit とか on には何も反応してくれない．</p>
+<p><code>localStorage.debug = '*';</code> でデバッグするとどうやら</p>
+<figure class="highlight jsx"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">browser.js:<span class="number">181</span> engine.io-client:socket socket receive: type <span class="string">"error"</span>, data <span class="string">"parser error"</span> +<span class="number">8</span>ms</span><br><span class="line">browser.js:<span class="number">181</span> engine.io-client:socket socket error {<span class="string">"code"</span>:<span class="string">"parser error"</span>} +<span class="number">0</span>ms</span><br><span class="line">browser.js:<span class="number">181</span> socket.io-client:manager error +<span class="number">8</span>ms</span><br><span class="line">browser.js:<span class="number">181</span> socket.io-client:manager cleanup +<span class="number">0</span>ms</span><br><span class="line">browser.js:<span class="number">181</span> socket.io-client:manager reconnect attempt error +<span class="number">1</span>ms</span><br><span class="line">browser.js:<span class="number">181</span> socket.io-client:manager will wait <span class="number">2696</span>ms before reconnect attempt +<span class="number">0</span>ms</span><br><span class="line">browser.js:<span class="number">181</span> engine.io-client:socket socket close <span class="keyword">with</span> reason: <span class="string">"transport error"</span> +<span class="number">1</span>ms</span><br></pre></td></tr></tbody></table></figure>
+
+<p>と，エラーが出ていることは確認できるけどコードは正しそう．</p>
+<h2 id="解決"><a href="#解決" class="headerlink" title="解決"></a>解決</h2><p>クライアントの <a href="http://socket.io">socket.io</a> のバージョンが 2.0.3，サーバーのバージョンが 3.0.3 だった．</p>
+<p>両者を 3.0.3 に揃えたらうごいた．</p>
+<figure class="highlight jsx"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// server </span></span><br><span class="line"><span class="keyword">const</span> express = <span class="built_in">require</span>(<span class="string">'express'</span>);</span><br><span class="line"><span class="keyword">const</span> app = express();</span><br><span class="line">http = <span class="built_in">require</span>(<span class="string">'http'</span>).createServer(app);</span><br><span class="line"><span class="keyword">const</span> io = <span class="built_in">require</span>(<span class="string">'socket.io'</span>)(http, {</span><br><span class="line">  cors: {</span><br><span class="line">    origin: <span class="string">'*'</span>,</span><br><span class="line">  }</span><br><span class="line">})</span><br><span class="line">...</span><br><span class="line"></span><br><span class="line"><span class="comment">// client (React)</span></span><br><span class="line"><span class="keyword">import</span> io <span class="keyword">from</span> <span class="string">"socket.io-client"</span>;</span><br><span class="line"><span class="keyword">const</span> socket = io.connect(<span class="string">":3000"</span>);</span><br><span class="line">...</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">BulletinBoard</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span>&lt;</span></span><br><span class="line"><span class="class">	... </span></span><br><span class="line"><span class="class">	<span class="title">componentDidMount</span>() </span>{</span><br><span class="line">		socket.on(<span class="string">'message'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">data: any</span>) </span>{</span><br><span class="line">      <span class="built_in">console</span>.log(data);</span><br><span class="line">    })</span><br><span class="line">	...</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure><script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
+        </div>
+        
+        
+    </div>
+    <script>
+    twemoji.parse(document.body);</script>
+
+</div>
+
+
+
+
+    <div class="card widget">
+    <div class="card-content has-text-centered">
+        <p class="is-size-6 is-flex is-flex-center has-text-grey">Adsense</p>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- unyacat.net / 左 Widget -->
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-2565580640435634"
+         data-ad-slot="7170420181"
+         data-ad-format="auto"
+         data-full-width-responsive="false"></ins>
+        <script>
+         (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+    </div>
+</div>
+
+
+
+
+<div class="card card-transparent">
+    <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        <div class="level-start">
+            <a class="level level-item has-link-grey  article-nav-prev" href="/2020/12/09/emoji-dictionary/">
+                <i class="level-item fas fa-chevron-left"></i>
+                <span class="level-item">絵文字辞書📚を導入して文章を彩る🌸</span>
+            </a>
+        </div>
+        
+        
+        <div class="level-end">
+            <a class="level level-item has-link-grey  article-nav-next" href="/2020/10/20/pr500mi-dns-ipv4/">
+                <span class="level-item">PR-500MIでDNSサーバーをIPv4で指定する</span>
+                <i class="level-item fas fa-chevron-right"></i>
+            </a>
+        </div>
+        
+    </div>
+</div>
+
+
+
+</div>
+                
+
+
+
+
+<div class="column is-4-tablet is-4-desktop is-3-widescreen  has-order-1 column-left ">
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <nav class="level">
+            <div class="level-item has-text-centered" style="flex-shrink: 1">
+                <div>
+                    
+                    <figure class="image is-128x128 has-mb-6">
+                        <img class="is-rounded" src="https://www.gravatar.com/avatar/4ca6ba813b1d336bf6b6e4d616f3dbde?s=128" alt="うにゃ / unyacat">
+                    </figure>
+                    
+                    <p class="is-size-4 is-block">
+                        うにゃ / unyacat
+                    </p>
+                    
+                    
+                    
+                    <p class="is-size-6 is-flex is-flex-center has-text-grey">
+                        <i class="fas fa-map-marker-alt has-mr-7"></i>
+                        <span>Kobe, Japan</span>
+                    </p>
+                    
+                </div>
+            </div>
+        </nav>
+<!--
+        <nav class="level is-mobile">
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        投稿
+                    </p>
+                    <a href="/archives">
+                        <p class="title has-text-weight-normal">
+                            22
+                        </p>
+                    </a>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        カテゴリ
+                    </p>
+                    <a href="/categories">
+                        <p class="title has-text-weight-normal">
+                            0
+                        </p>
+                    </a>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        タグ
+                    </p>
+                    <a href="/tags">
+                        <p class="title has-text-weight-normal">
+                            25
+                        </p>
+                    </a>
+                </div>
+            </div>
+        </nav>
+-->
+        
+        
+        
+        <div class="level is-mobile">
+            
+            <a class="level-item button is-white is-marginless" target="_blank" rel="noopener"
+                title="Github" href="https://github.com/unyacat">
+                
+                <i class="fab fa-github"></i>
+                
+            </a>
+            
+            <a class="level-item button is-white is-marginless" target="_blank" rel="noopener"
+                title="Twitter" href="https://twitter.com/unya_2">
+                
+                <i class="fab fa-twitter"></i>
+                
+            </a>
+            
+        </div>
+        
+    </div>
+</div>
+    
+        
+    
+        <div class="card widget">
+    <div class="card-content has-text-centered">
+        <p class="is-size-6 is-flex is-flex-center has-text-grey">Adsense</p>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- unyacat.net / 左 Widget -->
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-2565580640435634"
+         data-ad-slot="7170420181"
+         data-ad-format="auto"
+         data-full-width-responsive="false"></ins>
+        <script>
+         (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+    </div>
+</div>
+    
+        <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                タグ
+            </h3>
+            <div class="field is-grouped is-grouped-multiline">
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Bitcoin/">
+                        <span class="tag">Bitcoin</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Docker/">
+                        <span class="tag">Docker</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Google-Colab/">
+                        <span class="tag">Google Colab</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/JavaScript/">
+                        <span class="tag">JavaScript</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/NanoPi/">
+                        <span class="tag">NanoPi</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Node-js/">
+                        <span class="tag">Node-js</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/React/">
+                        <span class="tag">React</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Scrapbox/">
+                        <span class="tag">Scrapbox</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Twitter/">
+                        <span class="tag">Twitter</span>
+                        <span class="tag is-grey">3</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Vue/">
+                        <span class="tag">Vue</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/WSL/">
+                        <span class="tag">WSL</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Windows/">
+                        <span class="tag">Windows</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/mh-z14a/">
+                        <span class="tag">mh-z14a</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/socket-io/">
+                        <span class="tag">socket-io</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/%E3%81%8A%E3%81%A7%E3%81%8B%E3%81%91/">
+                        <span class="tag">おでかけ</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/%E3%82%AD%E3%83%A3%E3%83%83%E3%82%B7%E3%83%A5%E3%83%AC%E3%82%B9/">
+                        <span class="tag">キャッシュレス</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/%E3%82%AF%E3%83%AC%E3%82%B8%E3%83%83%E3%83%88/">
+                        <span class="tag">クレジット</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/%E3%83%9E%E3%82%A4%E3%83%8B%E3%83%B3%E3%82%B0/">
+                        <span class="tag">マイニング</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/%E4%BA%8C%E9%85%B8%E5%8C%96%E7%82%AD%E7%B4%A0%E6%BF%83%E5%BA%A6/">
+                        <span class="tag">二酸化炭素濃度</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/%E4%BA%A4%E9%80%9A/">
+                        <span class="tag">交通</span>
+                        <span class="tag is-grey">3</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/%E5%B0%8F%E9%8A%AD%E7%A8%BC%E3%81%8E/">
+                        <span class="tag">小銭稼ぎ</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/%E6%97%A5%E8%A8%98/">
+                        <span class="tag">日記</span>
+                        <span class="tag is-grey">7</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/%E6%A5%BD%E5%A4%A9%E3%83%A2%E3%83%90%E3%82%A4%E3%83%AB/">
+                        <span class="tag">楽天モバイル</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/%E7%B5%B5%E6%96%87%E5%AD%97/">
+                        <span class="tag">絵文字</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/%E8%87%AA%E5%AE%85%E3%82%B5%E3%83%BC%E3%83%90%E3%83%BC/">
+                        <span class="tag">自宅サーバー</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+    
+    
+        <div class="column-right-shadow is-hidden-widescreen ">
+        
+            <div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            最近の記事
+        </h3>
+        
+        <article class="media">
+<!--
+            
+            <a href="/2021/03/16/jal-card-navi-raise-the-upper-limit/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="学生専用クレカのJALカードnaviでも限度額(ご利用可能枠)が10万から30万に引き上がった">
+                </p>
+            </a>
+            
+-->
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2021-03-16T07:18:21.000Z">2021-03-16</time></div>
+                    <a href="/2021/03/16/jal-card-navi-raise-the-upper-limit/" class="title has-link-black-ter is-size-6 has-text-weight-normal">学生専用クレカのJALカードnaviでも限度額(ご利用可能枠)が10万から30万に引き上がった</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+<!--
+            
+            <a href="/2021/03/05/fda-8-flight-210328-211030/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="FDAに1日で8区間乗るルート一覧[2021年03月28日から2021年10月30日まで]">
+                </p>
+            </a>
+            
+-->
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2021-03-05T05:30:00.000Z">2021-03-05</time></div>
+                    <a href="/2021/03/05/fda-8-flight-210328-211030/" class="title has-link-black-ter is-size-6 has-text-weight-normal">FDAに1日で8区間乗るルート一覧[2021年03月28日から2021年10月30日まで]</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+<!--
+            
+            <a href="/2021/03/04/fda-8-flight-201025-210327-more-airports/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="FDAで2日で最も多くの空港を訪れるルート[2021年03月27日まで]">
+                </p>
+            </a>
+            
+-->
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2021-03-03T16:00:00.000Z">2021-03-04</time></div>
+                    <a href="/2021/03/04/fda-8-flight-201025-210327-more-airports/" class="title has-link-black-ter is-size-6 has-text-weight-normal">FDAで2日で最も多くの空港を訪れるルート[2021年03月27日まで]</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+<!--
+            
+            <a href="/2021/03/03/fda-8-flight-201025-210327/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="FDAに1日で8区間乗るルート一覧[2021年03月27日まで]">
+                </p>
+            </a>
+            
+-->
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2021-03-03T12:30:00.000Z">2021-03-03</time></div>
+                    <a href="/2021/03/03/fda-8-flight-201025-210327/" class="title has-link-black-ter is-size-6 has-text-weight-normal">FDAに1日で8区間乗るルート一覧[2021年03月27日まで]</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+<!--
+            
+            <a href="/2021/02/14/nicehash-mining/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/nicehash-mining/thumbnail.jpg" alt="おうちでビットコインマイニングに挑戦！NiceHashからbitFlyerに送金して現金化した">
+                </p>
+            </a>
+            
+-->
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2021-02-14T00:00:00.000Z">2021-02-14</time></div>
+                    <a href="/2021/02/14/nicehash-mining/" class="title has-link-black-ter is-size-6 has-text-weight-normal">おうちでビットコインマイニングに挑戦！NiceHashからbitFlyerに送金して現金化した</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+    </div>
+</div>
+        
+            <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+        <h3 class="menu-label">
+            アーカイブ
+        </h3>
+        <ul class="menu-list">
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2021/03/">
+                <span class="level-start">
+                    <span class="level-item">2021年03月</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">4</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2021/02/">
+                <span class="level-start">
+                    <span class="level-item">2021年02月</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">4</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2021/01/">
+                <span class="level-start">
+                    <span class="level-item">2021年01月</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/12/">
+                <span class="level-start">
+                    <span class="level-item">2020年12月</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/10/">
+                <span class="level-start">
+                    <span class="level-item">2020年10月</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/08/">
+                <span class="level-start">
+                    <span class="level-item">2020年08月</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/05/">
+                <span class="level-start">
+                    <span class="level-item">2020年05月</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/03/">
+                <span class="level-start">
+                    <span class="level-item">2020年03月</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/12/">
+                <span class="level-start">
+                    <span class="level-item">2018年12月</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2017/12/">
+                <span class="level-start">
+                    <span class="level-item">2017年12月</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2017/04/">
+                <span class="level-start">
+                    <span class="level-item">2017年04月</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        </ul>
+        </div>
+    </div>
+</div>
+        
+        </div>
+    
+</div>
+
+                
+
+
+
+
+<div class="column is-4-tablet is-4-desktop is-3-widescreen is-hidden-touch is-hidden-desktop-only has-order-3 column-right ">
+    
+        <div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            最近の記事
+        </h3>
+        
+        <article class="media">
+<!--
+            
+            <a href="/2021/03/16/jal-card-navi-raise-the-upper-limit/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="学生専用クレカのJALカードnaviでも限度額(ご利用可能枠)が10万から30万に引き上がった">
+                </p>
+            </a>
+            
+-->
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2021-03-16T07:18:21.000Z">2021-03-16</time></div>
+                    <a href="/2021/03/16/jal-card-navi-raise-the-upper-limit/" class="title has-link-black-ter is-size-6 has-text-weight-normal">学生専用クレカのJALカードnaviでも限度額(ご利用可能枠)が10万から30万に引き上がった</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+<!--
+            
+            <a href="/2021/03/05/fda-8-flight-210328-211030/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="FDAに1日で8区間乗るルート一覧[2021年03月28日から2021年10月30日まで]">
+                </p>
+            </a>
+            
+-->
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2021-03-05T05:30:00.000Z">2021-03-05</time></div>
+                    <a href="/2021/03/05/fda-8-flight-210328-211030/" class="title has-link-black-ter is-size-6 has-text-weight-normal">FDAに1日で8区間乗るルート一覧[2021年03月28日から2021年10月30日まで]</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+<!--
+            
+            <a href="/2021/03/04/fda-8-flight-201025-210327-more-airports/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="FDAで2日で最も多くの空港を訪れるルート[2021年03月27日まで]">
+                </p>
+            </a>
+            
+-->
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2021-03-03T16:00:00.000Z">2021-03-04</time></div>
+                    <a href="/2021/03/04/fda-8-flight-201025-210327-more-airports/" class="title has-link-black-ter is-size-6 has-text-weight-normal">FDAで2日で最も多くの空港を訪れるルート[2021年03月27日まで]</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+<!--
+            
+            <a href="/2021/03/03/fda-8-flight-201025-210327/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="FDAに1日で8区間乗るルート一覧[2021年03月27日まで]">
+                </p>
+            </a>
+            
+-->
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2021-03-03T12:30:00.000Z">2021-03-03</time></div>
+                    <a href="/2021/03/03/fda-8-flight-201025-210327/" class="title has-link-black-ter is-size-6 has-text-weight-normal">FDAに1日で8区間乗るルート一覧[2021年03月27日まで]</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+<!--
+            
+            <a href="/2021/02/14/nicehash-mining/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/nicehash-mining/thumbnail.jpg" alt="おうちでビットコインマイニングに挑戦！NiceHashからbitFlyerに送金して現金化した">
+                </p>
+            </a>
+            
+-->
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2021-02-14T00:00:00.000Z">2021-02-14</time></div>
+                    <a href="/2021/02/14/nicehash-mining/" class="title has-link-black-ter is-size-6 has-text-weight-normal">おうちでビットコインマイニングに挑戦！NiceHashからbitFlyerに送金して現金化した</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+    </div>
+</div>
+    
+        <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+        <h3 class="menu-label">
+            アーカイブ
+        </h3>
+        <ul class="menu-list">
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2021/03/">
+                <span class="level-start">
+                    <span class="level-item">2021年03月</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">4</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2021/02/">
+                <span class="level-start">
+                    <span class="level-item">2021年02月</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">4</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2021/01/">
+                <span class="level-start">
+                    <span class="level-item">2021年01月</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/12/">
+                <span class="level-start">
+                    <span class="level-item">2020年12月</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/10/">
+                <span class="level-start">
+                    <span class="level-item">2020年10月</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/08/">
+                <span class="level-start">
+                    <span class="level-item">2020年08月</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/05/">
+                <span class="level-start">
+                    <span class="level-item">2020年05月</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/03/">
+                <span class="level-start">
+                    <span class="level-item">2020年03月</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/12/">
+                <span class="level-start">
+                    <span class="level-item">2018年12月</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2017/12/">
+                <span class="level-start">
+                    <span class="level-item">2017年12月</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2017/04/">
+                <span class="level-start">
+                    <span class="level-item">2017年04月</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        </ul>
+        </div>
+    </div>
+</div>
+    
+    
+</div>
+
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+    <div class="container">
+        <div class="level">
+            <div class="level-start has-text-centered-mobile">
+                <a class="footer-logo is-block has-mb-6" href="/">
+                    
+                    うにゃのすみか
+                    <!--                    <img src="/images/favicon.jpg" alt="socket.io で接続は確認できるがイベントに反応してくれない問題の解決" height="28">-->
+                    
+                </a>
+                <a class="footer-logo is-block has-mb-6" href="/privacy-policy.txt">
+                     プライバシーポリシー
+                </a>
+                <p class="is-size-7">
+                    &copy; 2021 うにゃ / unyacat&nbsp;
+                    Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> & <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a>
+                    
+                </p>
+            </div>
+            <div class="level-end">
+                
+            </div>
+        </div>
+    </div>
+</footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script>
+<script>moment.locale("ja");</script>
+
+
+<script>
+var IcarusThemeSettings = {
+    site: {
+        url: 'https://unyacat.net',
+        external_link: {"enable":true,"exclude":[]}
+    },
+    article: {
+        highlight: {
+            clipboard: false,
+            fold: 'unfolded'
+        }
+    }
+};
+</script>
+
+
+
+
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script>
+<script src="/js/gallery.js" defer></script>
+
+
+
+
+<div id="outdated">
+    <h6>Your browser is out-of-date!</h6>
+    <p>Update your browser to view this website correctly. <a id="btnUpdateBrowser" href="http://outdatedbrowser.com/">Update
+            my browser now </a></p>
+    <p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">&times;</a></p>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.js" defer></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        outdatedBrowser({
+            bgColor: '#f25648',
+            color: '#ffffff',
+            lowerThan: 'flex'
+        });
+    });
+</script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/unpacked/MathJax.js?config=TeX-MML-AM_CHTML" defer></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    MathJax.Hub.Config({
+        'HTML-CSS': {
+            matchFontHeight: false
+        },
+        SVG: {
+            matchFontHeight: false
+        },
+        CommonHTML: {
+            matchFontHeight: false
+        },
+        tex2jax: {
+            inlineMath: [
+                ['$','$'],
+                ['\\(','\\)']
+            ]
+        }
+    });
+});
+</script>
+
+
+<a id="back-to-top" title="Zurück nach oben" href="javascript:;">
+    <i class="fas fa-chevron-up"></i>
+</a>
+<script src="/js/back-to-top.js" defer></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="/js/main.js" defer></script>
+
+    
+    <div class="searchbox ins-search">
+    <div class="searchbox-container ins-search-container">
+        <div class="searchbox-input-wrapper">
+            <input type="text" class="searchbox-input ins-search-input" placeholder="Type something..." />
+            <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="searchbox-result-wrapper ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: '投稿',
+                PAGES: 'Pages',
+                CATEGORIES: 'カテゴリ',
+                TAGS: 'タグ',
+                UNTITLED: '(Untitled)',
+            },
+            CONTENT_URL: '/content.json',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
+</script>
+<script src="/js/insight.js" defer></script>
+<link rel="stylesheet" href="/css/search.css">
+<link rel="stylesheet" href="/css/insight.css">
+    
+</body>
+</html>

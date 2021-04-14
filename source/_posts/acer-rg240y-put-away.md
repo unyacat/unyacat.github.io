@@ -11,10 +11,10 @@ tags:
 <!-- more -->
 1. まず T の字の土台を外します．後ろに回せる機構があり工具は不要です．
 1. モニターと支えを外します．横から覗くと見える口(画像赤丸の中)にマイナスドライバーを突っ込み爪を押し込みます．そのままスライドすると外れ作業は完了です．
-![](./images/acer-rg240y-put-away/naka.jpg)
+![](/images/acer-rg240y-put-away/naka.jpg)
 
 気をつけてやれば傷つくことなく済みそうです．
-![](./images/acer-rg240y-put-away/owari.jpg)
+![](/images/acer-rg240y-put-away/owari.jpg)
 
 
 説明書に記載がないのは優しくないですね．機構からするに外すことは想定されていないのかもしれません．

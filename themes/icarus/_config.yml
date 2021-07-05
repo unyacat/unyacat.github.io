@@ -150,6 +150,9 @@ widgets:
             Twitter:
                 icon: fab fa-twitter
                 url: 'https://twitter.com/unya_2'
+            Amazon:
+                icon: fab fa-amazon
+                url: 'https://amzn.to/3jDvSLo'
 #            Dribbble:
 #                icon: fab fa-dribbble
 #                url: 'https://dribbble.com'

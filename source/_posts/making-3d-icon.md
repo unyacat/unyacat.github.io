@@ -15,6 +15,7 @@ date: 2021-07-12 0:30:13
 
 <blockquote class="twitter-tweet"><p lang="ja" dir="ltr">3Dプリンタで物理アイコンを生成した〜 <a href="https://t.co/n1jF4NQOPq">pic.twitter.com/n1jF4NQOPq</a></p>&mdash; うにゃ (@unya_2) <a href="https://twitter.com/unya_2/status/1413106388138561542?ref_src=twsrc%5Etfw">July 8, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
+アイコンは [三白眼女の子メーカー｜Picrew ](https://picrew.me/image_maker/37650) で作りました．ありがとうございます🙏
 
 ## つくる
 

@@ -3,6 +3,7 @@ title: 3Dプリンタで物理アイコンを作った
 thumbnail: /images/making-3d-icon/thumbnail.jpg
 twitter_card: summary_large_image
 tags:
+  - 日記
   - 3Dプリンタ
   - Fusion360
 date: 2021-07-12 0:30:13

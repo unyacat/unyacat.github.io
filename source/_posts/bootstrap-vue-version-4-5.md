@@ -1,5 +1,5 @@
 ---
-title: bootstrap-vueを利用するとsr-onlyが見える問題の解決
+title: bootstrap-vueを利用するとsr-only要素が見える問題
 thumbnail: /images/bootstrap-vue-version-4-5/sr1.png
 twitter_card: summary_large_image
 tags:
@@ -9,7 +9,7 @@ date: 2021-09-19 23:15:00
 ---
 
 
-[bootstrap-vue](https://bootstrap-vue.org/)のGetting Startedにしたがってインストールすると謎の文字がたまにでてくることがあります．
+[bootstrap-vue](https://bootstrap-vue.org/)のGetting Startedにしたがってインストールすると謎の文字がでてくることがあります．
 
 <!-- more -->
 

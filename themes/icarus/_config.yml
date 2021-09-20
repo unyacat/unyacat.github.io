@@ -31,7 +31,7 @@ navbar:
         Archives: /archives
 #        Categories: /categories
         Tags: /tags
-        About: https://sumika.unyacat.net
+        About: https://sumika.unyacat.net/about
     # Navigation bar links to be shown on the right
     links:
 #        Download on GitHub:
@@ -153,6 +153,9 @@ widgets:
             Amazon:
                 icon: fab fa-amazon
                 url: 'https://amzn.to/3jDvSLo'
+            Email:
+                icon: fab fa-envelope
+                url: 'mailto:contact@unyacat.net'
 #            Dribbble:
 #                icon: fab fa-dribbble
 #                url: 'https://dribbble.com'

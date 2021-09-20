@@ -154,7 +154,7 @@ widgets:
                 icon: fab fa-amazon
                 url: 'https://amzn.to/3jDvSLo'
             Email:
-                icon: fab fa-envelope
+                icon: far fa-envelope
                 url: 'mailto:contact@unyacat.net'
 #            Dribbble:
 #                icon: fab fa-dribbble

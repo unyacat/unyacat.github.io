@@ -32,12 +32,11 @@ body, button, input, select, textarea
         width: screen-desktop - 2 * gap
 
 
-/* --------------------------------- 適用されていないCSS --------------------------------- */
-@media screen and (min-width: 2480px)
-    .is-1-column .container
-    .is-2-column .container
-        max-width: 1920 - 2 * gap
-        width: 1920 - 2 * gap
+/* ----------------------- 4Kモニターで見たときに記事幅が小さくて寂しいので ---------------------- */
+@media screen and (min-width: 1920px)
+    .is-3-column .container
+        max-width: 1920px - 2 * gap
+        width: 1920px - 2 * gap
 
 
 

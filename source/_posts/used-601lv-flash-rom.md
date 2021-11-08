@@ -71,7 +71,7 @@ date: 2021-11-08 16:48:41
 
 [601LV_S_USR_S100021_1707031034_MPM0._JPSECURE.zip | GEM-FLASH Firmware](http://firmware.gem-flash.com/index.php?a=browse&b=file-info&id=32302)
 
-3GB2.99ドルのプランを購入しました．買った時は日本円で340円でした．
+3GB2.99ドルのプランを購入．買った時は日本円で340円でした．
 
 支払画面は選択肢が多くややこしうえにPaypalは見当たらなかったのですが，とりあえずカード番号が入りそうなPaymentwallを選び決済しました．Revolutの使い捨てカード番号はこういうときに気軽に利用できるので便利ですね．
 

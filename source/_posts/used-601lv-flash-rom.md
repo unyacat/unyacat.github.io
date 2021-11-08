@@ -3,8 +3,10 @@ title: 中古で買った601LVを文鎮にして蘇生させた
 thumbnail: ./images/used-601lv-flash-rom/IMG_20211108_203626.jpg
 twitter_card: summary_large_image
 tags:
-  - null
-date: 2021-11-08 16:48:41
+  - 601lv
+  - Android
+  - タブレット
+date: 2021-11-08 20:48:41
 ---
 
 名古屋 大須の「ワールドモバイル 大須アメ横店」でLenovo Tab3(601LV) を買ってきました．

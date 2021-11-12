@@ -52,7 +52,7 @@ Tell Your Worldをはじめとする有名楽曲を楽曲を書いているkz氏
 <iframe src="https://open.spotify.com/embed/track/7LPtEFbEVTKLXvSh2qUv3E" width="100%" height="80" frameBorder="0" allowtransparency="true" allow="encrypted-media"></iframe>
 TV アニメ「ViVid Strike!」エンディングテーマ
 水瀬いのりのデビュー曲ということでこちらも毎回歌っている．
-害悪もできる(やめようね)( [ * [https://www.youtube.com/watch?v=i3rVOBg2fTk](https://www.youtube.com/watch?v=i3rVOBg2fTk)]  )
+害悪もできる(やめようね)( [*](https://www.youtube.com/watch?v=i3rVOBg2fTk)  )
 
 ## 隠れた曲
 

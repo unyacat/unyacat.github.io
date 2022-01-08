@@ -9,7 +9,7 @@
     "server": "hexo server"
   },
   "hexo": {
-    "version": "4.2.0"
+    "version": "4.2.1"
   },
   "dependencies": {
     "cheerio": "^1.0.0-rc.3",
@@ -27,6 +27,7 @@
     "hexo-renderer-marked": "^2.0.0",
     "hexo-renderer-stylus": "^1.1.0",
     "hexo-server": "^1.0.0",
+    "hexo-tag-twitter": "^1.0.2",
     "twemoji": "^13.0.1",
     "uglify-es": "^3.3.9"
   }

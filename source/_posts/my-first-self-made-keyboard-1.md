@@ -48,7 +48,7 @@ date: 2022-01-22 12:00:00
 
 [@Sigqq](https://twitter.com/sigqq) 曰く，送料がめちゃくちゃ高いけど送料込みでもお買い得なほど良い商品だから早く買いなさい，とのこと．(実際に購入した2-3日後に売り切れになっていました．)
 
-Bakenekoという名前ですが特に猫要素はありません． 
+Bakenekoという名前ですが特に猫要素はありません🐈
 
 <div class="bcard-wrapper"><span class="bcard-header withgfav"><div class="bcard-favicon" style="background-image: url(https://www.google.com/s2/favicons?domain=https://cannonkeys.com/products/bakeneko-60)"></div><div class="bcard-site"><a href="https://cannonkeys.com/products/bakeneko-60" rel="nofollow" target="_blank">Cannon Keys</a></div><div class="bcard-url"><a href="https://cannonkeys.com/products/bakeneko-60" rel="nofollow" target="_blank">https://cannonkeys.com/products/bakeneko-60</a></div></span><span class="bcard-main withogimg"><div class="bcard-title"><a href="https://cannonkeys.com/products/bakeneko-60" rel="nofollow" target="_blank">Bakeneko60</a></div><div class="bcard-description">Introducing the CannonKeys Bakeneko60 CannonKeys is proud to offer an affordable in-stock aluminum keyboard with great sound and feel.  Originally designed by kkatano, the Bakeneko60 is an open-source keyboard featuring an o-ring gasket. An o-ring between the plate and PCB provides friction to hold the plate/PCB assemb</div><a href="https://cannonkeys.com/products/bakeneko-60" rel="nofollow" target="_blank"><div class="bcard-img" style="background-image: url(http://cdn.shopify.com/s/files/1/0238/7342/1376/products/032_a3d80869-910c-4a81-890a-f470b56af16d_1200x1200.jpg?v=1637186976)"></div></a></span></div>
 
@@ -118,6 +118,6 @@ Pegasoをつけてとりあえず完成です．
 
 ## まとめ
 
-キーボードに選ぶ3つのパーツの選定と組み上げを行いました．
+キーボードを組むにあたり必要な3つのパーツの選定と組み上げを行いました．
 
 次の記事ではキーキャップをちょっと付け替えてキーマップを変更していきます．(まだ書いていない)

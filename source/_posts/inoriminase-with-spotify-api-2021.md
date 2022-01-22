@@ -2,6 +2,7 @@
 title: SpotifyAPIで見る水瀬いのり楽曲
 thumbnail: /images/inoriminase-with-spotify-api-2021/thumbnail.png
 twitter_card: summary_large_image
+toc: true
 tags:
   - 水瀬いのり
   - Spotify
@@ -42,8 +43,10 @@ BPMやキーなど一意に決まりそうな特徴量もありますが，ダ�
 テンポ、リズムの安定性、ビートの強さ、全体的な規則性に基づいてダンスのしやすさを表現しています．高いほどダンスに適しています．
 
 - 🥇1位: Morning Prism(0.726)
+	
 	<iframe src="https://open.spotify.com/embed/track/1Xn4m8cYJVos2xZortMGUW?utm_source=generator" width="100%" height="80" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
 - 最下位: 僕らは今(0.198)
+	
 	<iframe src="https://open.spotify.com/embed/track/6RSETdPr48E4ICkTfmMG6W?utm_source=generator" width="100%" height="80" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
 
 朝をテーマとした曲であるMorning Prismが1位でした．常に同じ調子で曲が進行するのでリズムの安定性という面では納得です．
@@ -55,8 +58,10 @@ BPMやキーなど一意に決まりそうな特徴量もありますが，ダ�
 高いほどエネルギッシュです．デスメタルでは高く，クラシックでは小さくなります．ダイナミックレンジ、知覚されるラウドネス、音色、オンセットレート、一般的なエントロピーなどに基づきます．
 
 - 🥇1位: 夢のつぼみ(0.992)
+	
 	<iframe src="https://open.spotify.com/embed/track/3kOSLbJuIGEJPukQrsWW6a?utm_source=generator" width="100%" height="80" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
 - 最下位: いつもずっと(0.41)
+	
 	<iframe src="https://open.spotify.com/embed/track/3sgGBPeJljUchFDW3GX4TQ?utm_source=generator" width="100%" height="80" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
 
 デビューシングルがかなり高い値を取っての1位．元気の良さが楽曲にも現れていることでしょうか．下には「いつもずっと」「あの日の空へ」「BLUE COMPASS」など落ち着くような，少し長めの曲が並びました．
@@ -66,8 +71,10 @@ BPMやキーなど一意に決まりそうな特徴量もありますが，ダ�
 高いほど非電気楽器的な楽曲です．
 
 - 🥇1位: BLUE COMPASS(0.884)
+	
 	<iframe src="https://open.spotify.com/embed/track/5llfQWIaGFlL9OM4C7inAe?utm_source=generator" width="100%" height="80" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
 - 最下位: クリスタライズ(0.000511)
+	
 	<iframe src="https://open.spotify.com/embed/track/1Upx0jgN8fU8DDerhHYyQe?utm_source=generator" width="100%" height="80" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
 
 数値に大きく差が付きました．energy項で下の方に並んだ楽曲ではこちらでは上位に入っています．「クリスタライズ」は納得の最下位．一つ上の「Catch the Rainbow!」と比べても1桁違い，圧倒的電子音楽ないのり楽曲と言えます．
@@ -77,8 +84,10 @@ BPMやキーなど一意に決まりそうな特徴量もありますが，ダ�
 高いほどライブ音源に近い値です．0.8を超えればライブ音源の可能性が高いです．
 
 - 🥇1位: Dreaming Girls(0.544)
+	
 	<iframe src="https://open.spotify.com/embed/track/4xrUMkfaW1jsfmHo5oao5w?utm_source=generator" width="100%" height="80" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
 - 最下位: Ready Steady Go!(0.0375)
+	
 	<iframe src="https://open.spotify.com/embed/track/4WHBEowThZOHkuBxElmgvs?utm_source=generator" width="100%" height="80" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
 
 「Dreaming Girls」をライブっぽさという観点で聴いたことはありませんでした．でもこのランク付けなら「Ready Steady Go!」もライブっぽい気がするのですが・・・！？
@@ -88,8 +97,10 @@ BPMやキーなど一意に決まりそうな特徴量もありますが，ダ�
 valence の値が大きいほど，ポジティブ（Happy, Cheeful, euphoric: 楽しい、陽気、多幸的）です．逆に値が低いとネガティブ (sad, depressed, angry: 悲しい、抑圧された、怒り) な楽曲です．
 
 - 🥇1位: 夏の約束(0.941)
+	
 	<iframe src="https://open.spotify.com/embed/track/2WhsifNwNIyUx9LFuxqLUC?utm_source=generator" width="100%" height="80" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
 - 最下位: 僕らは今(0.149)
+	
 	<iframe src="https://open.spotify.com/embed/track/6RSETdPr48E4ICkTfmMG6W?utm_source=generator" width="100%" height="80" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
 
 これも数値に大きな幅が生まれました．[女性向けコンテンツ](http://rejetweb.jp/hsd3/)の主題歌としてリリースされていることもあり取得範囲の中では少し特殊な楽曲である「夏の約束」が1位．一番下の「僕らは今」はlivenessさも低いところから見るとSpotifyさんは良さをわかってくれていないようです・・・．(いい曲ですよ！)

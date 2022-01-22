@@ -2,6 +2,7 @@
 title: 神姫バスの燃料電池バス(水素バス)乗車記
 date: 2021-04-15 22:25:24
 thumbnail: /images/shinki-h2o-bus/thumbnail.jpg
+toc: true
 tags:
   - 交通
   - バス

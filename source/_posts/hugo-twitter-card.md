@@ -1,6 +1,7 @@
 ---
 date: 2018-12-11
 title: Hugo で Twitter Cards を自動生成させる
+toc: true
 ---
 
 この記事は [Kaigen Discord Advent Calendar 2018](https://adventar.org/calendars/2886) の12月12日枠です。
@@ -69,4 +70,3 @@ config.toml に Twitter ID を書いていないのならば 11，12 行目 cont
 
 1. おわり。  
     [Card validator](https://cards-dev.twitter.com/validator) に URL を打ち込むと確認し、即時実装可能です
-    

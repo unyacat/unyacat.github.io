@@ -1,6 +1,7 @@
 ---
 title: 推し水瀬いのり楽曲2021
 thumbnail: /images/fav-inori-music-2021/thumbnail.jpg
+toc: true
 tags:
   - 水瀬いのり
 date: 2021-11-12 13:39:30

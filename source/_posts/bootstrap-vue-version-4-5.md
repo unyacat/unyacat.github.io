@@ -2,6 +2,7 @@
 title: bootstrap-vueを利用するとsr-only要素が見える問題
 thumbnail: /images/bootstrap-vue-version-4-5/sr1.png
 twitter_card: summary_large_image
+toc: true
 tags:
   - Vue
   - BootstrapVue

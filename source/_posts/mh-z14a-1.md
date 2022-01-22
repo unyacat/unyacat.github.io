@@ -2,6 +2,7 @@
 title: 二酸化炭素濃度センサーMH-Z14AとNanoPiでブラウザで見れる濃度計を作った(前編)
 date: 2021-02-06 17:54:44
 thumbnail: /images/mh-z14a-1/thumbnail.png
+toc: true
 tags:
   - 日記
   - mh-z14a

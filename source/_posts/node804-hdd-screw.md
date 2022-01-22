@@ -1,5 +1,6 @@
 ---
 title: Node804のHDD固定ネジを買った
+toc: true
 tags:
   - 日記
   - node804

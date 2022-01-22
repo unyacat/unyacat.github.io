@@ -166,7 +166,7 @@ widgets:
         # Widget name
         type: toc
         # Where should the widget be placed, left or right
-        position: left
+        position: right
 #    -
 #        # Widget name
 #        type: links
@@ -190,12 +190,12 @@ widgets:
         # Widget name
         type: recent_posts
         # Where should the widget be placed, left or right
-        position: right
-    -
+        position: left
+#   -
         # Widget name
-        type: archive
+#        type: archive
         # Where should the widget be placed, left or right
-        position: right
+#        position: left
 #    -
 # Other plugin settings
     -  
@@ -205,6 +205,8 @@ widgets:
     -   type: tag
 #        # Where should the widget be placed, left or right
         position: left
+
+
 plugins:
     # Enable page animations
     animejs: true
@@ -250,3 +252,6 @@ providers:
     iconcdn: fontawesome
     
 language: ja
+
+
+post_asset_folder: true

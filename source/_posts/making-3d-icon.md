@@ -2,6 +2,7 @@
 title: 3Dプリンタで物理アイコンを作った
 thumbnail: /images/making-3d-icon/thumbnail.jpg
 twitter_card: summary_large_image
+toc: true
 tags:
   - 日記
   - 3Dプリンタ

@@ -2,6 +2,7 @@
 title: Scrapbox でナビゲーションバーにホームに戻るボタンを埋め込む UserCSS
 date: 2021-02-06 11:40:00
 thumbnail: /images/scrapbox-pin-navbar/thumbnail.png
+toc: true
 tags:
 - Scrapbox
 ---

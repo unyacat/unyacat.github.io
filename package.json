@@ -15,6 +15,7 @@
     "cheerio": "^1.0.0-rc.3",
     "clean-css": "^4.2.1",
     "hexo": "^4.2.1",
+    "hexo-admin": "^2.3.0",
     "hexo-deployer-git": "^2.0.0",
     "hexo-filter-github-emojis": "^2.1.0",
     "hexo-generator-archive": "^1.0.0",

@@ -1,6 +1,7 @@
 ---
 title: iPhone 7 Plus のバッテリーを自分で交換した
 date: 2021-06-29 13:22:11
+toc: true
 tags: 
   - 日記
   - iPhone-7-Plus

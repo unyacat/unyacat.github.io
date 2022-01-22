@@ -2,6 +2,7 @@
 title: Docker を利用して快適な Firefox Send のサーバーを自宅で建てる
 date: 2020-10-05 22:08:17
 thumbnail: /images/firefox-send-host-on-local/andy-li-CpsTAUPoScw-unsplash.jpg
+toc: true
 tags: 
 - 自宅サーバー
 - Docker

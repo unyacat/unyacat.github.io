@@ -2,6 +2,7 @@
 title: 中古で買ったLenovo Tab3(601LV)を文鎮にして蘇生させた
 thumbnail: ./images/used-601lv-flash-rom/IMG_20211108_203626.jpg
 twitter_card: summary_large_image
+toc: true
 tags:
   - 601lv
   - Android

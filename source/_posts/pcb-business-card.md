@@ -1,5 +1,5 @@
 ---
-title: プリント基板でNFCタグ名刺を作った
+title: プリント基板でNFCタグ名刺を作ってみた
 thumbnail: /images/pcb-bussiness-card/thumbnail.jpg
 twitter_card: summary_large_image
 tags:

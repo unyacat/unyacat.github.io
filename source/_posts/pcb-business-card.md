@@ -188,7 +188,7 @@ LEDと抵抗をつければ光ります．タグICをつければタグになり
 
 コイルもイラストも上手く出来てよかったです．完．
 
-
+<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">NFCタグ機能付きの名刺基板を作ってみました💳 <a href="https://t.co/QOId6AlyOS">pic.twitter.com/QOId6AlyOS</a></p>&mdash; うにゃ🐈 (@unya_2) <a href="https://twitter.com/unya_2/status/1489994499702996994?ref_src=twsrc%5Etfw">February 5, 2022</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 <br />
 

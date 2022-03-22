@@ -59,7 +59,7 @@ tailscale-tailscale-1    | 2022/03/22 08:24:37 control: RegisterReq: onode= node
 
 割り当てられた IP アドレスをコピーして DNS タブの Nameservers に指定します．override local dnsを選択します．
 
-![](/images/adguardhome-on-tailscale/Untitled.png)
+![Tailscaleの設定からDNSを上書きをする](/images/adguardhome-on-tailscale/Untitled.png)
 
 これにて設定完了です．
 
@@ -88,5 +88,5 @@ tailscale-tailscale-1    | 2022/03/22 08:24:37 control: RegisterReq: onode= node
 
 モバイル回線でもブロックできていることを確認できました．
 
-![](/images/adguardhome-on-tailscale/Untitled%201.png)
+![上部の広告枠がブロックされている](/images/adguardhome-on-tailscale/Untitled%201.png)
 

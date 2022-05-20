@@ -8,7 +8,7 @@ tags:
 date: 2022-03-22 17:15:08
 ---
 
-Adguard HomeをTailscale上に載せます．Tailscaleを利用することでモバイル回線等宅外の回線を利用していても適用することができます．Tailscaleが使えるならOSによらず無料であらゆるデバイスで設定ができようできて便利です．
+Adguard HomeをTailscale上に載せます．Tailscaleを利用することで宅外の回線を利用していてもAdguard Homeを適用することができます．Tailscaleが使えるならあらゆるデバイスで無料で利用できます．
 
 <!-- more -->
 

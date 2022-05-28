@@ -70,6 +70,3 @@ span.kamon.kamon-caret-down {
 もっと適切な設定はありそうですがとりあえず．
 
 では良い Scrapbox ライフを👋
-
-
-

@@ -3,7 +3,13 @@
         <p class="is-size-6 is-flex is-flex-center has-text-grey">Adsense</p>
         <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <!-- unyacat.net / 左 Widget -->
-    <ins class="adsbygoogle"
+<!-- 広告はみ出し対策(テスト) https://support.google.com/adsense/answer/9183363-->
+    <style>
+    .example_responsive_1 { width: 320px; height: 100px; }
+    @media(min-width: 500px) { .example_responsive_1 { width: 468px; height: 60px; } }
+    @media(min-width: 800px) { .example_responsive_1 { width: 728px; height: 90px; } }
+    </style>
+    <ins class="adsbygoogle example_responsive_1"
          style="display:block"
          data-ad-client="ca-pub-2565580640435634"
          data-ad-slot="7170420181"

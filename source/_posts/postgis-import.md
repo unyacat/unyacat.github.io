@@ -1,5 +1,5 @@
 ---
-title: PostGISにshpファイルをインポートする(Windowsで変換してDockerでインポート)
+title: PostGISにshpファイルをインポートする
 tags:
   - PostGIS
   - PostgreSQL
@@ -8,8 +8,8 @@ tags:
 date: 2022-08-04 23:02:00
 ---
 
-GISデータをDocker上PostGISにインポートする方法．  
-手元のWindows機でshpファイルを処理した後，Linux機にアップロードしてインポートするときの流れ．
+GISデータをLinux(Docker上)のPostGISにインポートする方法．  
+手元のWindows機でshpファイルをSQLに変換した後，Linux機にアップロードしてインポートするときの流れ．
 
 <!-- more -->
 ## 流れ
@@ -61,20 +61,21 @@ PostGIS有効化
 
 ### PowerShellの文字コードのデフォルトがUTF-16LE
 
-`chcp 65001`でUTF-8になる
+`> chcp 65001`でUTF-8になる
 
 ### PowerShellでリダイレクトすると文字化けする
 
 コマンド実行結果をファイルにリダイレクトしたときのデフォルトの文字コードはUTF-16に設定されている．(ﾄﾞｳｼﾃ)  
 UTF-8にする設定もあるようで試してみたけどうまくいかず．  
-コマンドプロンプトで実行したら解決．
+PowerShellをやめてコマンドプロンプトで実行したら解決．
 
 ### PostGISの有効化忘れ
 
-インポート時エラー文
+有効化忘れ時インポートエラー文
 ```
 ERROR:  function addgeometrycolumn(unknown, unknown, unknown, unknown, unknown, integer) does not exist
 LINE 1: SELECT AddGeometryColumn('','stations','geom','4612','MULTIL...
 ```
 
+PostGISを有効化する．  
 解決方法: コンテナ内で，`psql -U postgres -d n0221 -c "CREATE EXTENSION postgis;"`

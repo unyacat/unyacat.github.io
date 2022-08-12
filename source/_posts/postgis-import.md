@@ -36,7 +36,8 @@ PostgreSQLのバージョンにあった番号が振られてるやつ以下か�
 参考: https://qiita.com/miyatomo1122/items/0cb67455c294943ae649#%E3%82%B7%E3%82%A7%E3%83%BC%E3%83%97%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E3%81%AE%E5%8F%96%E3%82%8A%E8%BE%BC%E3%81%BF
 
 ### データベースの作成
-コンテナの中に入る  
+今回はpostgis/postgis:14-3.2イメージで試した．  
+(コンテナの中に入る)  
 `$ docker exec -it {container_name} sh`
 
 PostgreSQLに接続

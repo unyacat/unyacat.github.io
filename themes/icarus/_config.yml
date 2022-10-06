@@ -198,9 +198,9 @@ widgets:
 #        position: left
 #    -
 # Other plugin settings
-    -  
-        type: ads
-        position: left
+    # -  
+    #     type: ads
+    #     position: left
 #        # Widget name
     -   type: tag
 #        # Where should the widget be placed, left or right

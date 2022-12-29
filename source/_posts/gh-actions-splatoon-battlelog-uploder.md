@@ -91,7 +91,7 @@ jobs:
         working-directory: s3s
         run: |
           python3 s3s.py -nsr -r
-          python3 s3s.py -osr -r
+          python3 s3s.py -osr -rg
 ```
 
 コミットすると毎朝4時に自動で戦績がアップロードされます．

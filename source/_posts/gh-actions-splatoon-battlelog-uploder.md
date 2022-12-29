@@ -13,11 +13,11 @@ GitHub Actions上で実行すると環境を持たなくてよいメリットと
 
 ## やり方
 
-[s3s](https://github.com/frozenpandaman/s3s)を用いてstat.incにデータをアップロードします．
+[s3s](https://github.com/frozenpandaman/s3s)を用いてstat.inkにデータをアップロードします．
 
 ### 1. s3sを手元で動かす
 
-手元で動かしてstat.incにアップロードできるかどうかを試すとともに認証情報を手に入れます．
+手元で動かしてstat.inkにアップロードできるかどうかを試すとともに認証情報を手に入れます．
 
 `git clone https://github.com/frozenpandaman/s3s`
 

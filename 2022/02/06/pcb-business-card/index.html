@@ -1,0 +1,1356 @@
+<!DOCTYPE html>
+<html  lang="ja">
+<head>
+    <meta charset="utf-8" />
+
+<meta name="generator" content="Hexo 4.2.1" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+<title>プリント基板でNFCタグ名刺を作ってみた - うにゃのすみか</title>
+
+
+    <meta name="description" content="名刺風の基板を設計してみました． 基板にはイラストを載せ，NFCタグとしての機能を持たせることにしました． そして基板製造サービスに依頼し製造してもらいました．">
+<meta property="og:type" content="article">
+<meta property="og:title" content="プリント基板でNFCタグ名刺を作ってみた">
+<meta property="og:url" content="https://unyacat.net/2022/02/06/pcb-business-card/index.html">
+<meta property="og:site_name" content="うにゃのすみか">
+<meta property="og:description" content="名刺風の基板を設計してみました． 基板にはイラストを載せ，NFCタグとしての機能を持たせることにしました． そして基板製造サービスに依頼し製造してもらいました．">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:image" content="https://unyacat.net/images/pcb-bussiness-card/thumbnail.jpg">
+<meta property="article:published_time" content="2022-02-05T15:08:42.000Z">
+<meta property="article:modified_time" content="2022-12-30T00:52:33.448Z">
+<meta property="article:author" content="うにゃ &#x2F; unyacat">
+<meta property="article:tag" content="名刺">
+<meta property="article:tag" content="基板">
+<meta property="article:tag" content="JLCPCB">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://unyacat.net/images/pcb-bussiness-card/thumbnail.jpg">
+<meta name="twitter:creator" content="@unya_2">
+
+
+
+
+
+
+
+<link rel="icon" href="/images/favicon.jpg">
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.7.2/css/bulma.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans+JP">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:400,600|Source+Code+Pro">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-dark.css">
+
+
+    
+    
+    
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css">
+
+
+    
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.css">
+
+    
+    
+    
+    
+<link rel="stylesheet" href="/css/back-to-top.css">
+
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-72037216-2"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-72037216-2');
+</script>
+
+    
+    
+    
+    
+    
+    <link rel="stylesheet" href="/css/progressbar.css">
+<script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+    
+    
+    
+
+<script src="https://twemoji.maxcdn.com/v/latest/twemoji.min.js" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="/css/style.css">
+<link rel="alternate" href="/atom.xml" title="うにゃのすみか" type="application/atom+xml">
+</head>
+<body class="is-3-column">
+    <nav class="navbar navbar-main">
+    <div class="container">
+        <div class="navbar-brand is-flex-center">
+            <a class="navbar-item navbar-logo" href="/">
+                
+                <img src="/images/favicon.jpg" alt="プリント基板でNFCタグ名刺を作ってみた" height="28" style="border-radius: 50%; padding-right: 5px">
+                うにゃのすみか
+                
+            </a>
+        </div>
+        <div class="navbar-menu">
+            
+            <div class="navbar-start">
+                
+                <a class="navbar-item" href="/">Home</a>
+                
+                <a class="navbar-item" href="/archives">Archives</a>
+                
+                <a class="navbar-item" href="/tags">Tags</a>
+                
+                <a class="navbar-item" href="https://sumika.unyacat.net/about">About</a>
+                
+            </div>
+            
+            <div class="navbar-end">
+                
+                
+                <a class="navbar-item is-hidden-tablet catalogue" title="カタログ" href="javascript:;">
+                    <i class="fas fa-list-ul"></i>
+                </a>
+                
+                
+                <a class="navbar-item search" title="検索" href="javascript:;">
+                    <i class="fas fa-search"></i>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+</nav>
+
+    
+    <section class="section">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main">
+<div class="card">
+    
+    <div class="card-image"
+        <span  class="image is-7by1">
+        <img class="thumbnail" src="/images/pcb-bussiness-card/thumbnail.jpg" alt="プリント基板でNFCタグ名刺を作ってみた">
+        </span>
+    </div>
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2022-02-05T15:08:42.000Z">2022/02/06</time>
+                
+                <!--
+                
+-->
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+            プリント基板でNFCタグ名刺を作ってみた
+            
+        </h1>
+        
+        <div class="level is-size-7">
+            <div class="level-start">
+                <div class="level-item">
+                    <div class="field is-grouped is-grouped-multiline">
+                        
+                        <div class="control">
+                            <a class="tags has-addons" href="/tags/名刺">
+                                <span class="tag">#名刺</span>
+                            </a>
+                        </div>
+                        
+                        <div class="control">
+                            <a class="tags has-addons" href="/tags/基板">
+                                <span class="tag">#基板</span>
+                            </a>
+                        </div>
+                        
+                        <div class="control">
+                            <a class="tags has-addons" href="/tags/JLCPCB">
+                                <span class="tag">#JLCPCB</span>
+                            </a>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="content">
+            <p>名刺風の基板を設計してみました．</p>
+<p>基板にはイラストを載せ，NFCタグとしての機能を持たせることにしました．</p>
+<p>そして基板製造サービスに依頼し製造してもらいました．</p>
+<a id="more"></a>
+
+
+
+<h2 id="🧭-設計方針"><a href="#🧭-設計方針" class="headerlink" title="🧭 設計方針"></a>🧭 設計方針</h2><ul>
+<li>基板にイラストを載せる</li>
+<li>NFCタグとして機能する</li>
+<li>名刺としての役割を持たせる</li>
+</ul>
+<p>基板設計ソフトにはEagleを使いました．</p>
+<h2 id="💳-基板のサイズ"><a href="#💳-基板のサイズ" class="headerlink" title="💳 基板のサイズ"></a>💳 基板のサイズ</h2><p>交通系IC・クレカ風にしてみたいということで同じ形の 86mm x 54mm としました．また角は3mm丸く削りました．一般的な名刺サイズより少し小さめです．</p>
+<img src="/images/pcb-bussiness-card/Untitled.png" width="40%" style="display: block; margin: auto;">
+
+<p>Dimensionレイヤーでサイズを指定しました．</p>
+<h2 id="🎨-基板にイラストを描く"><a href="#🎨-基板にイラストを描く" class="headerlink" title="🎨 基板にイラストを描く"></a>🎨 基板にイラストを描く</h2><h3 id="基板での表現手法"><a href="#基板での表現手法" class="headerlink" title="基板での表現手法"></a>基板での表現手法</h3><p>基板で多色表現をするには</p>
+<ul>
+<li>導線・銅箔を配置する(Top, Bottom)</li>
+<li>シルクを載せる(tPlace, bPlace)</li>
+<li>レジストを載せない(tStop, bStop)</li>
+</ul>
+<p>を組み合わせます．</p>
+<p>例えば，シルクを載せたら白くなり，導線を配置してレジストを載せないようにしたら導線が露出してキラキラします．</p>
+<p>プリント基板での表現が実際にどうなるかは以下のサイトで丁寧に解説されています．</p>
+<div class="bcard-wrapper"><span class="bcard-header withgfav"><div class="bcard-favicon" style="background-image: url(https://www.google.com/s2/favicons?domain=https://e3w2q.github.io/13/)"></div><div class="bcard-site"><a href="https://e3w2q.github.io/13/" rel="nofollow" target="_blank">e3w2q.github.io</a></div><div class="bcard-url"><a href="https://e3w2q.github.io/13/" rel="nofollow" target="_blank">https://e3w2q.github.io/13/</a></div></span><span class="bcard-main"><div class="bcard-title"><a href="https://e3w2q.github.io/13/" rel="nofollow" target="_blank">PCBでの多色表現の解説と2UキーマクロパッドMX2U!を作った話</a></div><div class="bcard-description"></div></span></div>
+
+<h3 id="イラスト・文字を事前処理する"><a href="#イラスト・文字を事前処理する" class="headerlink" title="イラスト・文字を事前処理する"></a>イラスト・文字を事前処理する</h3><p>各レイヤーに配置したい部分を白黒画像で出力します．</p>
+<p>事前にお好みのペイントソフトで各レイヤーごとに分けておきます．出力時はEagleで読める2ビットBMPにしておきます．</p>
+<p>対応してなければWindows標準のペイントソフトを使えば2ビットBMPに変換できます．</p>
+<p>文字も同様に画像にして用意します．</p>
+<p>今回，イラストは以前にことかす先生に依頼して描いてもらったものを使いました．</p>
+<p><a href="https://skeb.jp/@NNPS_KM_SONYA/works/29">三白眼女の子メーカーあ… by ことかす@料理研究家 | Skeb</a></p>
+<img src="/images/pcb-bussiness-card/Untitled%201.png" width="40%" style="display: block; margin: auto;">
+
+<h3 id="基板に載せる"><a href="#基板に載せる" class="headerlink" title="基板に載せる"></a>基板に載せる</h3><p>画像を基板データに変換していきます．</p>
+<p>オレンジ色のULPボタンを押して「import-bmp」，作成したBMPを選択し，黒白にチェック．スケールを選びそのまま「OK」，スクリプト実行画面が出てきたら「Run Script」を押して変換を始めます．</p>
+<p><img src="/images/pcb-bussiness-card/sch.png" alt=""></p>
+<img src="/images/pcb-bussiness-card/Untitled%205.png" width="40%" style="display: block; margin: auto;">
+
+<p>「Selection Filter」で欲しいレイヤーのみを指定し全体を選択．「Inspector」タブで全体を選びLayerを欲しいレイヤーに変更します．</p>
+<p><img src="/images/pcb-bussiness-card/Untitled%206.png" alt=""></p>
+<h2 id="🌐-NFCコイルを搭載する"><a href="#🌐-NFCコイルを搭載する" class="headerlink" title="🌐 NFCコイルを搭載する"></a>🌐 NFCコイルを搭載する</h2><h3 id="部品の選定"><a href="#部品の選定" class="headerlink" title="部品の選定"></a>部品の選定</h3><h4 id="NFCチップ"><a href="#NFCチップ" class="headerlink" title="NFCチップ"></a>NFCチップ</h4><p>マルツで調べて1個単位で買える物の中で一番安いやつにしました．</p>
+<p>裏面実装でハンダ難度高いし，容量少ないけど安さは正義です．</p>
+<p><a href="https://www.marutsu.co.jp/pc/i/41560978/">NFC FORUM TYPE 2 TAG IC WITH 1.6 ST25TN01K-AFH5 STマイクロエレクトロニクス製｜電子部品・半導体通販のマルツ</a></p>
+<p><a href="https://www.st.com/resource/en/datasheet/st25tn01k.pdf">データシート</a></p>
+<h4 id="LED"><a href="#LED" class="headerlink" title="LED"></a>LED</h4><p>コイルとして機能しているかどうかを見るためにチップLEDも適当に購入しました．</p>
+<p><a href="https://www.marutsu.co.jp/pc/i/1633530/s1=%E7%B7%91%EF%BC%8F10%E5%80%8B/">薄型SMD1608チップLED(緑色、10個入) LTST-C190KGKT*10 Lite-on製｜電子部品・半導体通販のマルツ</a></p>
+<ul>
+<li>データシート<ul>
+<li>$I = 20$mA時</li>
+<li>$V_F = 2$V</li>
+</ul>
+</li>
+</ul>
+<h4 id="チップ抵抗"><a href="#チップ抵抗" class="headerlink" title="チップ抵抗"></a>チップ抵抗</h4><p>LEDに流れる電流を調整するために必要な抵抗です．</p>
+<p>入力電圧は<a href="https://www.st.com/resource/ja/application_note/an5276-antenna-design-for-st25r3916-st25r3917-and-st25r3920-devices-stmicroelectronics.pdf">アンテナ設計推奨ルール</a>に基づいて2.8Vとします．</p>
+<p>$$<br>R = \frac{V_{CC} - V_{LED}}{I_{LED}} = \frac{2.8 - 2}{20 \times 10 ^ {-3}} = 40 \Omega<br>$$</p>
+<p>40Ωのチップ抵抗を買いました．</p>
+<p>注文パーツと価格は以下の通りです．</p>
+<p><img src="/images/pcb-bussiness-card/Untitled%207.png" alt=""></p>
+<h3 id="NFCコイルの設計"><a href="#NFCコイルの設計" class="headerlink" title="NFCコイルの設計"></a>NFCコイルの設計</h3><p>Suicaの左側の台形を意識したコイルを搭載しました．</p>
+<img src="/images/pcb-bussiness-card/Untitled%208.png" width="40%" style="display: block; margin: auto;">
+
+<p>まずNFCチップの内蔵容量から計算して，コイルの必要なインダクタンスを算出します．</p>
+<p>$$<br>f = \frac{1}{2 \pi\sqrt{LC}}<br>$$</p>
+<p>$$<br>L = \frac{1}{C (2 \pi f) ^ 2 }<br>$$</p>
+<p>$$<br>L = \frac{1}{50 \times 10 ^ {-12} \times (2 \pi \times 15.56 \times 10^6)^2 } = 2.755 \mathrm{\mu H}<br>$$</p>
+<p>雑なシミュレーションの結果(ページ最後参照)，台形で5回巻きを線と線の間は0.4mm開けて実装することでうまくいきそうであることがわかりました．</p>
+<h2 id="✨-基板データ完成"><a href="#✨-基板データ完成" class="headerlink" title="✨ 基板データ完成"></a>✨ 基板データ完成</h2><p>コイルの中に銅箔は配置できないので右側にイラストを載せてコイルの内側にシルクで文字を載せました．</p>
+<p>表面デザインで力尽きてしまったので裏面はQRを載せただけにしました．</p>
+<p><img src="/images/pcb-bussiness-card/board_data.png" alt=""></p>
+<h2 id="👨‍🏭-製造"><a href="#👨‍🏭-製造" class="headerlink" title="👨‍🏭 製造"></a>👨‍🏭 製造</h2><p>製造は<a href="https://jlcpcb.com/">JLCPCB</a>に依頼することにしました．</p>
+<p>他のプリント基板製造サービスに比べてWebサイトのUIが良かったのと，送料は安いけど早いという口コミを見て選びました．</p>
+<p>注文時にTwitterを見ると<a href="https://twitter.com/JLCPCB_Japan/status/1456555665648881664">7ドルオフクーポン</a>が配布されており，お得に製造してもらえました．感謝🙏</p>
+<p>製造過程のGIFも見れて楽しかったです．</p>
+<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">基板をJLCPCBで発注したんだけど各製造過程で行なっていることの動画がついてきて見ててとても楽しい <a href="https://t.co/fDOP2Zen1Z">pic.twitter.com/fDOP2Zen1Z</a></p>— うにゃ🐈 (@unya_2) <a href="https://twitter.com/unya_2/status/1481809951039254528?ref_src=twsrc%5Etfw">January 14, 2022</a></blockquote> <script async="" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<h2 id="✨-基板完成"><a href="#✨-基板完成" class="headerlink" title="✨ 基板完成"></a>✨ 基板完成</h2><p>中国から2週間弱で届きました．</p>
+<p><img src="/images/pcb-bussiness-card/Untitled%209.png" alt=""></p>
+<p>メガネと髪留めは銅箔が露出しているため光を照らすとキラキラします．</p>
+<p><img src="/images/pcb-bussiness-card/Untitled%2010.png" alt=""></p>
+<p>顔の部分にも銅箔を入れているため光にかざすと肌色に見えます．</p>
+<p><img src="/images/pcb-bussiness-card/Untitled%2011.png" alt=""></p>
+<p>LEDと抵抗をつければ光ります．タグICをつければタグになります．LEDとICは両方つけても機能します．</p>
+<p><img src="/images/pcb-bussiness-card/Untitled%2012.png" alt=""></p>
+<p>コイルもイラストも上手く出来てよかったです．完．</p>
+<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">NFCタグ機能付きの名刺基板を作ってみました💳 <a href="https://t.co/QOId6AlyOS">pic.twitter.com/QOId6AlyOS</a></p>— うにゃ🐈 (@unya_2) <a href="https://twitter.com/unya_2/status/1489994499702996994?ref_src=twsrc%5Etfw">February 5, 2022</a></blockquote> <script async="" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<br>
+
+<br>
+
+<br>
+
+
+
+
+
+<h2 id="おまけ"><a href="#おまけ" class="headerlink" title="おまけ"></a>おまけ</h2><h3 id="雑なコイルシミュレーション"><a href="#雑なコイルシミュレーション" class="headerlink" title="雑なコイルシミュレーション"></a>雑なコイルシミュレーション</h3><p>基板コイルのインダクタンスの計算式を探したところ，<a href="https://www.st.com/resource/en/application_note/an2866-how-to-design-a-1356-mhz-customized-antenna-for-st25-nfc--rfid-tags-stmicroelectronics.pdf">ST公式のPDF</a>に載っていたものの，形状に応じた定数があると判明．</p>
+<p>なんとなく長方形と同じだろうと思いつつも，練習を兼ねてFemtetでシミュレーションをしてみることに．とは言いつつも斜めのモデリングがめんどくさすぎたので1周で断念．</p>
+<p><a href="https://eds.st.com/antenna/#/">ST公式計算サイト</a>の四角の計算結果215.42μHに対して，214.7μHだったので最後余計に隙間開けた分も考慮すればほぼ同じだろうし，角丸くしたりするので精度はそこそこでいいやと判断し，四角のコイルとして計算サイトを使うことにしました．</p>
+<p><img src="/images/pcb-bussiness-card/rect846.png" alt=""></p>
+<p><img src="/images/pcb-bussiness-card/Untitled%2013.png" alt=""></p>
+<p><img src="/images/pcb-bussiness-card/Untitled%2014.png" alt=""></p>
+<p><img src="/images/pcb-bussiness-card/Untitled%2015.png" alt=""></p>
+<p>コイルとしての機能を持ちつつも，Suica風の形を保てそうなパラメータを探し，最も近しそうな以下の値で作ることにしました．</p>
+<p><img src="/images/pcb-bussiness-card/Untitled%2016.png" alt=""></p>
+<h3 id="ソルダレジストの色"><a href="#ソルダレジストの色" class="headerlink" title="ソルダレジストの色"></a>ソルダレジストの色</h3><p>同じデータで同タイミングで注文したのですが，レジスト部が緑と黒で製造結果が異なってしまいました．</p>
+<p>シルクを1milごとにボーダー柄することで半分の白色になるのではないかと考え製造を依頼したものの，緑は全面白指定と変わりなく，黒では疎に線が入ってしまいました．</p>
+<p>基板製造メーカによるかもしれませんが色の濃淡を調節するのは難しそうです．</p>
+<img src="/images/pcb-bussiness-card/Untitled%2017.png" width="40%" style="display: block; margin: auto;">
+
+
+
+<h3 id="NFCチップの選び方"><a href="#NFCチップの選び方" class="headerlink" title="NFCチップの選び方"></a>NFCチップの選び方</h3><p>基板に実装する際にサイズが小さすぎてコテで出来るが大変むずかしいです．</p>
+<p>それとアドレス帳データが入る容量くらいはあったほうが名刺としては良かったかもです．</p>
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
+        </div>
+        
+        
+    </div>
+    <script>
+    twemoji.parse(document.body);</script>
+
+</div>
+
+
+
+
+
+
+<div class="card card-transparent">
+    <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        <div class="level-start">
+            <a class="level level-item has-link-grey  article-nav-prev" href="/2022/03/22/adguardhome-on-tailscale/">
+                <i class="level-item fas fa-chevron-left"></i>
+                <span class="level-item">Adguard HomeをTailscale上に載せて任意デバイスで広告をブロックする</span>
+            </a>
+        </div>
+        
+        
+        <div class="level-end">
+            <a class="level level-item has-link-grey  article-nav-next" href="/2022/02/02/my-first-self-made-keyboard-2/">
+                <span class="level-item">はじめての自作キーボード第二章 ~ 細かなカスタマイズ編</span>
+                <i class="level-item fas fa-chevron-right"></i>
+            </a>
+        </div>
+        
+    </div>
+</div>
+
+
+
+</div>
+                
+
+
+
+
+<div class="column is-4-tablet is-4-desktop is-3-widescreen  has-order-1 column-left " >
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <nav class="level">
+            <div class="level-item has-text-centered" style="flex-shrink: 1">
+                <div>
+                    
+                    <figure class="image is-128x128 has-mb-6">
+                        <img class="is-rounded" src="https://www.gravatar.com/avatar/4ca6ba813b1d336bf6b6e4d616f3dbde?s=128" alt="うにゃ / unyacat">
+                    </figure>
+                    
+                    <p class="is-size-4 is-block">
+                        うにゃ / unyacat
+                    </p>
+                    
+                    
+                    
+                    <p class="is-size-6 is-flex is-flex-center has-text-grey">
+                        <i class="fas fa-map-marker-alt has-mr-7"></i>
+                        <span>Kobe, Japan</span>
+                    </p>
+                    
+                </div>
+            </div>
+        </nav>
+<!--
+        <nav class="level is-mobile">
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        投稿
+                    </p>
+                    <a href="/archives">
+                        <p class="title has-text-weight-normal">
+                            43
+                        </p>
+                    </a>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        カテゴリ
+                    </p>
+                    <a href="/categories">
+                        <p class="title has-text-weight-normal">
+                            0
+                        </p>
+                    </a>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        タグ
+                    </p>
+                    <a href="/tags">
+                        <p class="title has-text-weight-normal">
+                            57
+                        </p>
+                    </a>
+                </div>
+            </div>
+        </nav>
+-->
+        
+        
+        
+        <div class="level is-mobile">
+            
+            <a class="level-item button is-white is-marginless" target="_blank" rel="noopener"
+                title="Github" href="https://github.com/unyacat">
+                
+                <i class="fab fa-github"></i>
+                
+            </a>
+            
+            <a class="level-item button is-white is-marginless" target="_blank" rel="noopener"
+                title="Twitter" href="https://twitter.com/unya_2">
+                
+                <i class="fab fa-twitter"></i>
+                
+            </a>
+            
+            <a class="level-item button is-white is-marginless" target="_blank" rel="noopener"
+                title="Amazon" href="https://amzn.to/3jDvSLo">
+                
+                <i class="fab fa-amazon"></i>
+                
+            </a>
+            
+            <a class="level-item button is-white is-marginless" target="_blank" rel="noopener"
+                title="Email" href="mailto:contact@unyacat.net">
+                
+                <i class="far fa-envelope"></i>
+                
+            </a>
+            
+        </div>
+        
+    </div>
+</div>
+    
+        <div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            最近の記事
+        </h3>
+        
+        <article class="media">
+<!--
+            
+            <a href="/2022/12/29/gh-actions-splatoon-battlelog-uploder/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Splatoon3の戦績をstat.inkに自動アップロードするGitHub Actions">
+                </p>
+            </a>
+            
+-->
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2022-12-29T07:41:46.000Z">2022-12-29</time></div>
+                    <a href="/2022/12/29/gh-actions-splatoon-battlelog-uploder/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Splatoon3の戦績をstat.inkに自動アップロードするGitHub Actions</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+<!--
+            
+            <a href="/2022/12/25/cashless-deck-2022/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/cashless-deck-2022/thumbnail.jpg" alt="大学生のキャッシュレス環境2022">
+                </p>
+            </a>
+            
+-->
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2022-12-25T09:00:00.000Z">2022-12-25</time></div>
+                    <a href="/2022/12/25/cashless-deck-2022/" class="title has-link-black-ter is-size-6 has-text-weight-normal">大学生のキャッシュレス環境2022</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+<!--
+            
+            <a href="/2022/10/16/remove-ads/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="不快感を提供するだけだったのでブログに貼っていた広告を全部剥がした">
+                </p>
+            </a>
+            
+-->
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2022-10-16T10:40:38.000Z">2022-10-16</time></div>
+                    <a href="/2022/10/16/remove-ads/" class="title has-link-black-ter is-size-6 has-text-weight-normal">不快感を提供するだけだったのでブログに貼っていた広告を全部剥がした</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+<!--
+            
+            <a href="/2022/08/04/postgis-import/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="PostGISにshpファイルをインポートする">
+                </p>
+            </a>
+            
+-->
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2022-08-04T14:02:00.000Z">2022-08-04</time></div>
+                    <a href="/2022/08/04/postgis-import/" class="title has-link-black-ter is-size-6 has-text-weight-normal">PostGISにshpファイルをインポートする</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+<!--
+            
+            <a href="/2022/05/22/qualify-special-radio-operator-license-by-credit/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/qualify-special-radio-operator-license-by-credit/license.jpg" alt="大学の単位で第一級陸上特殊無線技士と第三級海上特殊無線技士を得た">
+                </p>
+            </a>
+            
+-->
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2022-05-22T13:39:42.000Z">2022-05-22</time></div>
+                    <a href="/2022/05/22/qualify-special-radio-operator-license-by-credit/" class="title has-link-black-ter is-size-6 has-text-weight-normal">大学の単位で第一級陸上特殊無線技士と第三級海上特殊無線技士を得た</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+    </div>
+</div>
+    
+        <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                タグ
+            </h3>
+            <div class="field is-grouped is-grouped-multiline">
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/3D%E3%83%97%E3%83%AA%E3%83%B3%E3%82%BF/">
+                        <span class="tag">3Dプリンタ</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/601lv/">
+                        <span class="tag">601lv</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/AM2301B/">
+                        <span class="tag">AM2301B</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/AdguardHome/">
+                        <span class="tag">AdguardHome</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Android/">
+                        <span class="tag">Android</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/AtCoder/">
+                        <span class="tag">AtCoder</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Bitcoin/">
+                        <span class="tag">Bitcoin</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/BootstrapVue/">
+                        <span class="tag">BootstrapVue</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Docker/">
+                        <span class="tag">Docker</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Fusion360/">
+                        <span class="tag">Fusion360</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/GitHub-Actions/">
+                        <span class="tag">GitHub-Actions</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Google-Colab/">
+                        <span class="tag">Google Colab</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/GoogleAppsScript/">
+                        <span class="tag">GoogleAppsScript</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/JLCPCB/">
+                        <span class="tag">JLCPCB</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/JavaScript/">
+                        <span class="tag">JavaScript</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Linux/">
+                        <span class="tag">Linux</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/NanoPi/">
+                        <span class="tag">NanoPi</span>
+                        <span class="tag is-grey">3</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Node-js/">
+                        <span class="tag">Node-js</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/PostGIS/">
+                        <span class="tag">PostGIS</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/PostgreSQL/">
+                        <span class="tag">PostgreSQL</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/RG240Y/">
+                        <span class="tag">RG240Y</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/React/">
+                        <span class="tag">React</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Scrapbox/">
+                        <span class="tag">Scrapbox</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Spotify/">
+                        <span class="tag">Spotify</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Tailscale/">
+                        <span class="tag">Tailscale</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Twitter/">
+                        <span class="tag">Twitter</span>
+                        <span class="tag is-grey">3</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Vue/">
+                        <span class="tag">Vue</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/WSL/">
+                        <span class="tag">WSL</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Windows/">
+                        <span class="tag">Windows</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/iPhone-7-Plus/">
+                        <span class="tag">iPhone-7-Plus</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/mh-z14a/">
+                        <span class="tag">mh-z14a</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/node804/">
+                        <span class="tag">node804</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/socket-io/">
+                        <span class="tag">socket-io</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/%E3%81%8A%E3%81%A7%E3%81%8B%E3%81%91/">
+                        <span class="tag">おでかけ</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/%E3%82%AD%E3%83%A3%E3%83%83%E3%82%B7%E3%83%A5%E3%83%AC%E3%82%B9/">
+                        <span class="tag">キャッシュレス</span>
+                        <span class="tag is-grey">3</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/%E3%82%AD%E3%83%BC%E3%83%9C%E3%83%BC%E3%83%89/">
+                        <span class="tag">キーボード</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/%E3%82%AF%E3%83%AC%E3%82%B8%E3%83%83%E3%83%88%E3%82%AB%E3%83%BC%E3%83%89/">
+                        <span class="tag">クレジットカード</span>
+                        <span class="tag is-grey">3</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/%E3%82%BF%E3%83%96%E3%83%AC%E3%83%83%E3%83%88/">
+                        <span class="tag">タブレット</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/%E3%83%90%E3%82%B9/">
+                        <span class="tag">バス</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/%E3%83%9E%E3%82%A4%E3%83%8B%E3%83%B3%E3%82%B0/">
+                        <span class="tag">マイニング</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/%E3%83%A2%E3%83%8B%E3%82%BF%E3%83%BC/">
+                        <span class="tag">モニター</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/%E4%BA%8C%E9%85%B8%E5%8C%96%E7%82%AD%E7%B4%A0%E6%BF%83%E5%BA%A6/">
+                        <span class="tag">二酸化炭素濃度</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/%E4%BA%A4%E9%80%9A/">
+                        <span class="tag">交通</span>
+                        <span class="tag is-grey">4</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/%E5%90%8D%E5%88%BA/">
+                        <span class="tag">名刺</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/%E5%9F%BA%E6%9D%BF/">
+                        <span class="tag">基板</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/%E5%A4%A7%E5%AD%A6/">
+                        <span class="tag">大学</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/%E5%B0%8F%E9%8A%AD%E7%A8%BC%E3%81%8E/">
+                        <span class="tag">小銭稼ぎ</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/%E5%BA%83%E5%91%8A%E3%83%96%E3%83%AD%E3%83%83%E3%82%AF/">
+                        <span class="tag">広告ブロック</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/%E6%97%A5%E8%A8%98/">
+                        <span class="tag">日記</span>
+                        <span class="tag is-grey">12</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/%E6%A5%BD%E5%A4%A9%E3%83%A2%E3%83%90%E3%82%A4%E3%83%AB/">
+                        <span class="tag">楽天モバイル</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/%E6%B0%B4%E7%80%AC%E3%81%84%E3%81%AE%E3%82%8A/">
+                        <span class="tag">水瀬いのり</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/%E6%B5%B7%E4%B8%8A%E7%89%B9%E6%AE%8A%E7%84%A1%E7%B7%9A%E6%8A%80%E5%A3%AB/">
+                        <span class="tag">海上特殊無線技士</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/%E6%B8%A9%E6%B9%BF%E5%BA%A6/">
+                        <span class="tag">温湿度</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/%E7%B5%B5%E6%96%87%E5%AD%97/">
+                        <span class="tag">絵文字</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/%E8%87%AA%E4%BD%9C%E3%82%AD%E3%83%BC%E3%83%9C%E3%83%BC%E3%83%89/">
+                        <span class="tag">自作キーボード</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/%E8%87%AA%E5%AE%85%E3%82%B5%E3%83%BC%E3%83%90%E3%83%BC/">
+                        <span class="tag">自宅サーバー</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/%E9%99%B8%E4%B8%8A%E7%89%B9%E6%AE%8A%E7%84%A1%E7%B7%9A%E6%8A%80%E5%A3%AB/">
+                        <span class="tag">陸上特殊無線技士</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+    
+    
+        <div class="column-right-shadow is-hidden-widescreen ">
+        
+            
+
+    <div class="card widget" id="toc" style="position: fixed;">
+        <div class="card-content">
+            <div class="menu">
+                <h3 class="menu-label">
+                </h3>
+                <ul class="menu-list"><li>
+        <a class="is-flex" href="#🧭-設計方針">
+        <span class="has-mr-6">1</span>
+        <span>🧭 設計方針</span>
+        </a></li><li>
+        <a class="is-flex" href="#💳-基板のサイズ">
+        <span class="has-mr-6">2</span>
+        <span>💳 基板のサイズ</span>
+        </a></li><li>
+        <a class="is-flex" href="#🎨-基板にイラストを描く">
+        <span class="has-mr-6">3</span>
+        <span>🎨 基板にイラストを描く</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#基板での表現手法">
+        <span class="has-mr-6">3.1</span>
+        <span>基板での表現手法</span>
+        </a></li><li>
+        <a class="is-flex" href="#イラスト・文字を事前処理する">
+        <span class="has-mr-6">3.2</span>
+        <span>イラスト・文字を事前処理する</span>
+        </a></li><li>
+        <a class="is-flex" href="#基板に載せる">
+        <span class="has-mr-6">3.3</span>
+        <span>基板に載せる</span>
+        </a></li></ul></li><li>
+        <a class="is-flex" href="#🌐-NFCコイルを搭載する">
+        <span class="has-mr-6">4</span>
+        <span>🌐 NFCコイルを搭載する</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#部品の選定">
+        <span class="has-mr-6">4.1</span>
+        <span>部品の選定</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#NFCチップ">
+        <span class="has-mr-6">4.1.1</span>
+        <span>NFCチップ</span>
+        </a></li><li>
+        <a class="is-flex" href="#LED">
+        <span class="has-mr-6">4.1.2</span>
+        <span>LED</span>
+        </a></li><li>
+        <a class="is-flex" href="#チップ抵抗">
+        <span class="has-mr-6">4.1.3</span>
+        <span>チップ抵抗</span>
+        </a></li></ul></li><li>
+        <a class="is-flex" href="#NFCコイルの設計">
+        <span class="has-mr-6">4.2</span>
+        <span>NFCコイルの設計</span>
+        </a></li></ul></li><li>
+        <a class="is-flex" href="#✨-基板データ完成">
+        <span class="has-mr-6">5</span>
+        <span>✨ 基板データ完成</span>
+        </a></li><li>
+        <a class="is-flex" href="#👨‍🏭-製造">
+        <span class="has-mr-6">6</span>
+        <span>👨‍🏭 製造</span>
+        </a></li><li>
+        <a class="is-flex" href="#✨-基板完成">
+        <span class="has-mr-6">7</span>
+        <span>✨ 基板完成</span>
+        </a></li><li>
+        <a class="is-flex" href="#おまけ">
+        <span class="has-mr-6">8</span>
+        <span>おまけ</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#雑なコイルシミュレーション">
+        <span class="has-mr-6">8.1</span>
+        <span>雑なコイルシミュレーション</span>
+        </a></li><li>
+        <a class="is-flex" href="#ソルダレジストの色">
+        <span class="has-mr-6">8.2</span>
+        <span>ソルダレジストの色</span>
+        </a></li><li>
+        <a class="is-flex" href="#NFCチップの選び方">
+        <span class="has-mr-6">8.3</span>
+        <span>NFCチップの選び方</span>
+        </a></li></ul></li></ul>
+            </div>
+        </div>
+    </div>
+
+        
+        </div>
+    
+</div>
+
+                
+
+
+
+
+<div class="column is-4-tablet is-4-desktop is-3-widescreen is-hidden-touch is-hidden-desktop-only has-order-3 column-right " >
+    
+        
+
+    <div class="card widget" id="toc" style="position: fixed;">
+        <div class="card-content">
+            <div class="menu">
+                <h3 class="menu-label">
+                </h3>
+                <ul class="menu-list"><li>
+        <a class="is-flex" href="#🧭-設計方針">
+        <span class="has-mr-6">1</span>
+        <span>🧭 設計方針</span>
+        </a></li><li>
+        <a class="is-flex" href="#💳-基板のサイズ">
+        <span class="has-mr-6">2</span>
+        <span>💳 基板のサイズ</span>
+        </a></li><li>
+        <a class="is-flex" href="#🎨-基板にイラストを描く">
+        <span class="has-mr-6">3</span>
+        <span>🎨 基板にイラストを描く</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#基板での表現手法">
+        <span class="has-mr-6">3.1</span>
+        <span>基板での表現手法</span>
+        </a></li><li>
+        <a class="is-flex" href="#イラスト・文字を事前処理する">
+        <span class="has-mr-6">3.2</span>
+        <span>イラスト・文字を事前処理する</span>
+        </a></li><li>
+        <a class="is-flex" href="#基板に載せる">
+        <span class="has-mr-6">3.3</span>
+        <span>基板に載せる</span>
+        </a></li></ul></li><li>
+        <a class="is-flex" href="#🌐-NFCコイルを搭載する">
+        <span class="has-mr-6">4</span>
+        <span>🌐 NFCコイルを搭載する</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#部品の選定">
+        <span class="has-mr-6">4.1</span>
+        <span>部品の選定</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#NFCチップ">
+        <span class="has-mr-6">4.1.1</span>
+        <span>NFCチップ</span>
+        </a></li><li>
+        <a class="is-flex" href="#LED">
+        <span class="has-mr-6">4.1.2</span>
+        <span>LED</span>
+        </a></li><li>
+        <a class="is-flex" href="#チップ抵抗">
+        <span class="has-mr-6">4.1.3</span>
+        <span>チップ抵抗</span>
+        </a></li></ul></li><li>
+        <a class="is-flex" href="#NFCコイルの設計">
+        <span class="has-mr-6">4.2</span>
+        <span>NFCコイルの設計</span>
+        </a></li></ul></li><li>
+        <a class="is-flex" href="#✨-基板データ完成">
+        <span class="has-mr-6">5</span>
+        <span>✨ 基板データ完成</span>
+        </a></li><li>
+        <a class="is-flex" href="#👨‍🏭-製造">
+        <span class="has-mr-6">6</span>
+        <span>👨‍🏭 製造</span>
+        </a></li><li>
+        <a class="is-flex" href="#✨-基板完成">
+        <span class="has-mr-6">7</span>
+        <span>✨ 基板完成</span>
+        </a></li><li>
+        <a class="is-flex" href="#おまけ">
+        <span class="has-mr-6">8</span>
+        <span>おまけ</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#雑なコイルシミュレーション">
+        <span class="has-mr-6">8.1</span>
+        <span>雑なコイルシミュレーション</span>
+        </a></li><li>
+        <a class="is-flex" href="#ソルダレジストの色">
+        <span class="has-mr-6">8.2</span>
+        <span>ソルダレジストの色</span>
+        </a></li><li>
+        <a class="is-flex" href="#NFCチップの選び方">
+        <span class="has-mr-6">8.3</span>
+        <span>NFCチップの選び方</span>
+        </a></li></ul></li></ul>
+            </div>
+        </div>
+    </div>
+
+    
+    
+</div>
+
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+    <div class="container">
+        <div class="level">
+            <div class="level-start has-text-centered-mobile">
+                <a class="footer-logo is-block has-mb-6" href="/">
+                    
+                    うにゃのすみか
+                    <!--                    <img src="/images/favicon.jpg" alt="プリント基板でNFCタグ名刺を作ってみた" height="28">-->
+                    
+                </a>
+                <a class="footer-logo is-block has-mb-6" href="/privacy-policy.txt">
+                     プライバシーポリシー
+                </a>
+                <p class="is-size-7">
+                    &copy; 2022 うにゃ / unyacat&nbsp;
+                    Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> & <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a>
+                    
+                </p>
+            </div>
+            <div class="level-end">
+                
+            </div>
+        </div>
+    </div>
+</footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script>
+<script>moment.locale("ja");</script>
+
+
+<script>
+var IcarusThemeSettings = {
+    site: {
+        url: 'https://unyacat.net',
+        external_link: {"enable":true,"exclude":[]}
+    },
+    article: {
+        highlight: {
+            clipboard: false,
+            fold: 'unfolded'
+        }
+    }
+};
+</script>
+
+
+
+
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script>
+<script src="/js/gallery.js" defer></script>
+
+
+
+
+<div id="outdated">
+    <h6>Your browser is out-of-date!</h6>
+    <p>Update your browser to view this website correctly. <a id="btnUpdateBrowser" href="http://outdatedbrowser.com/">Update
+            my browser now </a></p>
+    <p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">&times;</a></p>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.js" defer></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        outdatedBrowser({
+            bgColor: '#f25648',
+            color: '#ffffff',
+            lowerThan: 'flex'
+        });
+    });
+</script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/unpacked/MathJax.js?config=TeX-MML-AM_CHTML" defer></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    MathJax.Hub.Config({
+        'HTML-CSS': {
+            matchFontHeight: false
+        },
+        SVG: {
+            matchFontHeight: false
+        },
+        CommonHTML: {
+            matchFontHeight: false
+        },
+        tex2jax: {
+            inlineMath: [
+                ['$','$'],
+                ['\\(','\\)']
+            ]
+        }
+    });
+});
+</script>
+
+
+<a id="back-to-top" title="Zurück nach oben" href="javascript:;">
+    <i class="fas fa-chevron-up"></i>
+</a>
+<script src="/js/back-to-top.js" defer></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="/js/main.js" defer></script>
+
+    
+    <div class="searchbox ins-search">
+    <div class="searchbox-container ins-search-container">
+        <div class="searchbox-input-wrapper">
+            <input type="text" class="searchbox-input ins-search-input" placeholder="Type something..." />
+            <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="searchbox-result-wrapper ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: '投稿',
+                PAGES: 'Pages',
+                CATEGORIES: 'カテゴリ',
+                TAGS: 'タグ',
+                UNTITLED: '(Untitled)',
+            },
+            CONTENT_URL: '/content.json',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
+</script>
+<script src="/js/insight.js" defer></script>
+<link rel="stylesheet" href="/css/search.css">
+<link rel="stylesheet" href="/css/insight.css">
+    
+</body>
+</html>
